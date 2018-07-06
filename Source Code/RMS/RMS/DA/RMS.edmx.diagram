@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="598ec14a98ae434d8251a29fead7b24f" Name="Diagram1">
+        <EntityTypeShape EntityType="DocumentDBModel.Cartontmp" Width="1.5" PointX="5.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.Category" Width="1.5" PointX="5.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.Deleted_DSDOCartons" Width="1.5" PointX="7.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.Deleted_DSROCartons" Width="1.5" PointX="13.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DocumentVersion" Width="1.5" PointX="13.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSCartonCategory" Width="1.5" PointX="0.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSCartonDetail" Width="1.5" PointX="9.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSCartonMovementDetail" Width="1.5" PointX="13" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSCartonMovement" Width="1.5" PointX="10.75" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSCartonsNew" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSCartonStockOnHandDaily" Width="1.5" PointX="11.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSCartonStockOnHandMonthly" Width="1.5" PointX="13.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSClosedPeriod" Width="1.5" PointX="13.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSDispatchingOrder" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSDOCarton" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSLocation" Width="1.5" PointX="0.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSReceivingOrder" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.DSROCarton" Width="1.5" PointX="6" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.dtproperty" Width="1.5" PointX="15.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.OrderDetail" Width="1.5" PointX="15.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.OrderMaster" Width="1.5" PointX="15.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.Product" Width="1.5" PointX="15.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.RequestCarton" Width="1.5" PointX="11" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.Request" Width="1.5" PointX="8.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.sysdiagram" Width="1.5" PointX="15.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpAttachment" Width="1.5" PointX="0.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpBillingCustomer" Width="1.5" PointX="2.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpBillingReport" Width="1.5" PointX="4.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpCu" Width="1.5" PointX="6.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpCustomer" Width="1.5" PointX="15.75" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpCustomersViewStock" Width="1.5" PointX="17.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpDSCartonsNew_Import" Width="1.5" PointX="17.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpDSCustomersCarton" Width="1.5" PointX="17.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpDSDispatchingOrderID" Width="1.5" PointX="17.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpDSDispatchingOrderID_Recent" Width="1.5" PointX="11.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpDSLocation" Width="1.5" PointX="17.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpDSOrdersUpdate" Width="1.5" PointX="17.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpL" Width="1.5" PointX="17.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpLocationsWM" Width="1.5" PointX="19.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpLocForStockTake" Width="1.5" PointX="19.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpNoteDispatchingOder" Width="1.5" PointX="8.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpNoteDispatchingOderDetail" Width="1.5" PointX="11" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpTruckchecking" Width="1.5" PointX="6.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tmpWebDSStockOnHandMonthly" Width="1.5" PointX="19.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.TruckChecking" Width="1.5" PointX="8.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.Aisle" Width="1.5" PointX="19.75" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.BillingDetailBreakDown" Width="1.5" PointX="19.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.ContainerChecking" Width="1.5" PointX="19.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.Gate_ContInOut" Width="1.5" PointX="10.75" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.Gate_TruckInOut" Width="1.5" PointX="12.75" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.Location" Width="1.5" PointX="21.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.tpmContainerChecking" Width="1.5" PointX="0.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.View_aspnet_Users" Width="1.5" PointX="2.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.View_BillingBreakDown" Width="1.5" PointX="21.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.View_Customers" Width="1.5" PointX="21.75" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.View_DSCustomerListBillings_" Width="1.5" PointX="21.75" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.View_DSLocationBarcode" Width="1.5" PointX="21.75" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.View_DSLocationsAll" Width="1.5" PointX="14.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.View_DSLocationsHasCartons" Width="1.5" PointX="16.75" PointY="24.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.View_Employees" Width="1.5" PointX="23.75" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.View_ServicesDefinition" Width="1.5" PointX="23.75" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.View_WebUsers" Width="1.5" PointX="23.75" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.ViewCartonDispatchedLast2days" Width="1.5" PointX="23.75" PointY="17.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.ViewCartonOnHand" Width="1.5" PointX="23.75" PointY="21.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DocumentDBModel.ViewCustomer" Width="1.5" PointX="21.75" PointY="25.25" IsExpanded="true" />
+        <AssociationConnector Association="DocumentDBModel.FK_DSCartonsNew_DSCartonCategories" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentDBModel.FK_DSCartonMovementDetails_DSCartonMovements" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentDBModel.FK_DSDOCartons_DSDispatchingOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentDBModel.FK_DSDOCartons_DSLocations" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentDBModel.FK_DSROCartons_DSLocations" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentDBModel.FK_DSROCartons_DSReceivingOrders" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentDBModel.FK_RequestCartons_Requests" ManuallyRouted="false" />
+        <AssociationConnector Association="DocumentDBModel.FK_DtmpNoteDispatchingOderdetail_tmpNoteDispatchingOder" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

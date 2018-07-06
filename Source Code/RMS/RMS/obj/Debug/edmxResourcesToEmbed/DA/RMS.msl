@@ -1,0 +1,2467 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DocumentDBModelStoreContainer" CdmEntityContainer="DocumentDBEntities">
+    <EntitySetMapping Name="Cartontmps">
+      <EntityTypeMapping TypeName="DocumentDBModel.Cartontmp">
+        <MappingFragment StoreEntitySet="Cartontmp">
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="CTNew" ColumnName="CTNew" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="DocumentDBModel.Category">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deleted_DSDOCartons">
+      <EntityTypeMapping TypeName="DocumentDBModel.Deleted_DSDOCartons">
+        <MappingFragment StoreEntitySet="Deleted_DSDOCartons">
+          <ScalarProperty Name="CartonDeleteID" ColumnName="CartonDeleteID" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="DSDOID" ColumnName="DSDOID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="CartonCanmove" ColumnName="CartonCanmove" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="CartonDetails" ColumnName="CartonDetails" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="UserControl" ColumnName="UserControl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Deleted_DSROCartons">
+      <EntityTypeMapping TypeName="DocumentDBModel.Deleted_DSROCartons">
+        <MappingFragment StoreEntitySet="Deleted_DSROCartons">
+          <ScalarProperty Name="CartonDeleteID" ColumnName="CartonDeleteID" />
+          <ScalarProperty Name="DeletedDate" ColumnName="DeletedDate" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="CartonCanmove" ColumnName="CartonCanmove" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="CartonDetails" ColumnName="CartonDetails" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="UserControl" ColumnName="UserControl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DocumentVersions">
+      <EntityTypeMapping TypeName="DocumentDBModel.DocumentVersion">
+        <MappingFragment StoreEntitySet="DocumentVersions">
+          <ScalarProperty Name="VersionID" ColumnName="VersionID" />
+          <ScalarProperty Name="VersionDescription" ColumnName="VersionDescription" />
+          <ScalarProperty Name="VersionDate" ColumnName="VersionDate" />
+          <ScalarProperty Name="VersionRemark" ColumnName="VersionRemark" />
+          <ScalarProperty Name="VersionUpdateBy" ColumnName="VersionUpdateBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSCartonCategories">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSCartonCategory">
+        <MappingFragment StoreEntitySet="DSCartonCategories">
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+          <ScalarProperty Name="CategoryDescriptionVietnam" ColumnName="CategoryDescriptionVietnam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSCartonDetails">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSCartonDetail">
+        <MappingFragment StoreEntitySet="DSCartonDetails">
+          <ScalarProperty Name="CartonDetailID" ColumnName="CartonDetailID" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="DocumentType" ColumnName="DocumentType" />
+          <ScalarProperty Name="CartonRemark" ColumnName="CartonRemark" />
+          <ScalarProperty Name="LastUpdatedTime" ColumnName="LastUpdatedTime" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="LastUpdatedBy" ColumnName="LastUpdatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSCartonMovementDetails">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSCartonMovementDetail">
+        <MappingFragment StoreEntitySet="DSCartonMovementDetails">
+          <ScalarProperty Name="DSCartonMovementDetailID" ColumnName="DSCartonMovementDetailID" />
+          <ScalarProperty Name="DSCartonMovementID" ColumnName="DSCartonMovementID" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSCartonMovements">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSCartonMovement">
+        <MappingFragment StoreEntitySet="DSCartonMovements">
+          <ScalarProperty Name="DSCartonMovementID" ColumnName="DSCartonMovementID" />
+          <ScalarProperty Name="SourceLocationNumber" ColumnName="SourceLocationNumber" />
+          <ScalarProperty Name="DestinationLocationNumber" ColumnName="DestinationLocationNumber" />
+          <ScalarProperty Name="DateMovement" ColumnName="DateMovement" />
+          <ScalarProperty Name="ReasonMovement" ColumnName="ReasonMovement" />
+          <ScalarProperty Name="AuthorisedBy" ColumnName="AuthorisedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSCartonsNews">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSCartonsNew">
+        <MappingFragment StoreEntitySet="DSCartonsNew">
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonSelected" ColumnName="CartonSelected" />
+          <ScalarProperty Name="CustomerRef" ColumnName="CustomerRef" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CartonReturned" ColumnName="CartonReturned" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="CartonDetails" ColumnName="CartonDetails" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="CartonPrint" ColumnName="CartonPrint" />
+          <ScalarProperty Name="DestructionDate" ColumnName="DestructionDate" />
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="tmp" ColumnName="tmp" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CheckSelected" ColumnName="CheckSelected" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSCartonStockOnHandDailies">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSCartonStockOnHandDaily">
+        <MappingFragment StoreEntitySet="DSCartonStockOnHandDaily">
+          <ScalarProperty Name="ReportDateID" ColumnName="ReportDateID" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Volume" ColumnName="Volume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSCartonStockOnHandMonthlies">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSCartonStockOnHandMonthly">
+        <MappingFragment StoreEntitySet="DSCartonStockOnHandMonthly">
+          <ScalarProperty Name="MonthDateID" ColumnName="MonthDateID" />
+          <ScalarProperty Name="MonthDate" ColumnName="MonthDate" />
+          <ScalarProperty Name="CartonStock" ColumnName="CartonStock" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSClosedPeriods">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSClosedPeriod">
+        <MappingFragment StoreEntitySet="DSClosedPeriods">
+          <ScalarProperty Name="PeriodID" ColumnName="PeriodID" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="CloseDate" ColumnName="CloseDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSDispatchingOrders">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSDispatchingOrder">
+        <MappingFragment StoreEntitySet="DSDispatchingOrders">
+          <ScalarProperty Name="DSDispatchingOrderID" ColumnName="DSDispatchingOrderID" />
+          <ScalarProperty Name="DSDispatchingOrderNumber" ColumnName="DSDispatchingOrderNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="DSStatus" ColumnName="DSStatus" />
+          <ScalarProperty Name="DSDispatchingCreatedTime" ColumnName="DSDispatchingCreatedTime" />
+          <ScalarProperty Name="DSOwner" ColumnName="DSOwner" />
+          <ScalarProperty Name="DSDispatchingType" ColumnName="DSDispatchingType" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+          <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+          <ScalarProperty Name="DSOrderStatus" ColumnName="DSOrderStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSDOCartons">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSDOCarton">
+        <MappingFragment StoreEntitySet="DSDOCartons">
+          <ScalarProperty Name="DispatchedCartonID" ColumnName="DispatchedCartonID" />
+          <ScalarProperty Name="DSDOID" ColumnName="DSDOID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+          <ScalarProperty Name="CheckSelectDelete" ColumnName="CheckSelectDelete" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSLocations">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSLocation">
+        <MappingFragment StoreEntitySet="DSLocations">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="Aisle" ColumnName="Aisle" />
+          <ScalarProperty Name="Bay" ColumnName="Bay" />
+          <ScalarProperty Name="High" ColumnName="High" />
+          <ScalarProperty Name="Deep" ColumnName="Deep" />
+          <ScalarProperty Name="StandardCarton" ColumnName="StandardCarton" />
+          <ScalarProperty Name="Referent" ColumnName="Referent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSReceivingOrders">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSReceivingOrder">
+        <MappingFragment StoreEntitySet="DSReceivingOrders">
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSStatus" ColumnName="DSStatus" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="DSReceivingCreatedTime" ColumnName="DSReceivingCreatedTime" />
+          <ScalarProperty Name="DSOwner" ColumnName="DSOwner" />
+          <ScalarProperty Name="DSReceivingType" ColumnName="DSReceivingType" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+          <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+          <ScalarProperty Name="DSOrderStatus" ColumnName="DSOrderStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DSROCartons">
+      <EntityTypeMapping TypeName="DocumentDBModel.DSROCarton">
+        <MappingFragment StoreEntitySet="DSROCartons">
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CartonCanmove" ColumnName="CartonCanmove" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="CartonDetails" ColumnName="CartonDetails" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="DestructionDate" ColumnName="DestructionDate" />
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="CheckDelete" ColumnName="CheckDelete" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="CheckSelectDispatched" ColumnName="CheckSelectDispatched" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ScannedTime" ColumnName="ScannedTime" />
+          <ScalarProperty Name="ScannedUser" ColumnName="ScannedUser" />
+          <ScalarProperty Name="SealNumber" ColumnName="SealNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dtproperties">
+      <EntityTypeMapping TypeName="DocumentDBModel.dtproperty">
+        <MappingFragment StoreEntitySet="dtproperties">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="objectid" ColumnName="objectid" />
+          <ScalarProperty Name="property" ColumnName="property" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="uvalue" ColumnName="uvalue" />
+          <ScalarProperty Name="lvalue" ColumnName="lvalue" />
+          <ScalarProperty Name="version" ColumnName="version" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderDetails">
+      <EntityTypeMapping TypeName="DocumentDBModel.OrderDetail">
+        <MappingFragment StoreEntitySet="OrderDetails">
+          <ScalarProperty Name="OrderDetailsId" ColumnName="OrderDetailsId" />
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="Rate" ColumnName="Rate" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderMasters">
+      <EntityTypeMapping TypeName="DocumentDBModel.OrderMaster">
+        <MappingFragment StoreEntitySet="OrderMaster">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="DocumentDBModel.Product">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RequestCartons">
+      <EntityTypeMapping TypeName="DocumentDBModel.RequestCarton">
+        <MappingFragment StoreEntitySet="RequestCartons">
+          <ScalarProperty Name="RequestCartonID" ColumnName="RequestCartonID" />
+          <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CartonReference" ColumnName="CartonReference" />
+          <ScalarProperty Name="CartonReference2" ColumnName="CartonReference2" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Requests">
+      <EntityTypeMapping TypeName="DocumentDBModel.Request">
+        <MappingFragment StoreEntitySet="Requests">
+          <ScalarProperty Name="RequestID" ColumnName="RequestID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="EmtyCarton" ColumnName="EmtyCarton" />
+          <ScalarProperty Name="DocumentRetrieval" ColumnName="DocumentRetrieval" />
+          <ScalarProperty Name="CartonDestruction" ColumnName="CartonDestruction" />
+          <ScalarProperty Name="OnSiteChecking" ColumnName="OnSiteChecking" />
+          <ScalarProperty Name="RequestDescription" ColumnName="RequestDescription" />
+          <ScalarProperty Name="DeliveryAddress" ColumnName="DeliveryAddress" />
+          <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+          <ScalarProperty Name="ContactPhone" ColumnName="ContactPhone" />
+          <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+          <ScalarProperty Name="RequestQuantity" ColumnName="RequestQuantity" />
+          <ScalarProperty Name="RequestStatus" ColumnName="RequestStatus" />
+          <ScalarProperty Name="ProcessBy" ColumnName="ProcessBy" />
+          <ScalarProperty Name="ProcessTime" ColumnName="ProcessTime" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ReferenceOrderID" ColumnName="ReferenceOrderID" />
+          <ScalarProperty Name="FileUploaded" ColumnName="FileUploaded" />
+          <ScalarProperty Name="FileUploadedCode" ColumnName="FileUploadedCode" />
+          <ScalarProperty Name="ProcessFeedback" ColumnName="ProcessFeedback" />
+          <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DocumentDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpAttachments">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpAttachment">
+        <MappingFragment StoreEntitySet="tmpAttachment">
+          <ScalarProperty Name="AttachmentID" ColumnName="AttachmentID" />
+          <ScalarProperty Name="CheckingID" ColumnName="CheckingID" />
+          <ScalarProperty Name="AttachmentDescription" ColumnName="AttachmentDescription" />
+          <ScalarProperty Name="AttachmentFile" ColumnName="AttachmentFile" />
+          <ScalarProperty Name="AttachmentDate" ColumnName="AttachmentDate" />
+          <ScalarProperty Name="AttachmentUser" ColumnName="AttachmentUser" />
+          <ScalarProperty Name="TS" ColumnName="TS" />
+          <ScalarProperty Name="AttachmentFileSize" ColumnName="AttachmentFileSize" />
+          <ScalarProperty Name="OriginalFileName" ColumnName="OriginalFileName" />
+          <ScalarProperty Name="CheckingUpdate" ColumnName="CheckingUpdate" />
+          <ScalarProperty Name="LocationChecking" ColumnName="LocationChecking" />
+          <ScalarProperty Name="CheckingType" ColumnName="CheckingType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpBillingCustomers">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpBillingCustomer">
+        <MappingFragment StoreEntitySet="tmpBillingCustomers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpBillingReports">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpBillingReport">
+        <MappingFragment StoreEntitySet="tmpBillingReport">
+          <ScalarProperty Name="BillingDateID" ColumnName="BillingDateID" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="BeginC" ColumnName="BeginC" />
+          <ScalarProperty Name="BeginW" ColumnName="BeginW" />
+          <ScalarProperty Name="InC" ColumnName="InC" />
+          <ScalarProperty Name="InW" ColumnName="InW" />
+          <ScalarProperty Name="OutC" ColumnName="OutC" />
+          <ScalarProperty Name="OutW" ColumnName="OutW" />
+          <ScalarProperty Name="CloseC" ColumnName="CloseC" />
+          <ScalarProperty Name="CloseW" ColumnName="CloseW" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="BeginP" ColumnName="BeginP" />
+          <ScalarProperty Name="InP" ColumnName="InP" />
+          <ScalarProperty Name="OutP" ColumnName="OutP" />
+          <ScalarProperty Name="CloseP" ColumnName="CloseP" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpCus">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpCu">
+        <MappingFragment StoreEntitySet="tmpCus">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpCustomers">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpCustomer">
+        <MappingFragment StoreEntitySet="tmpCustomers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Initial" ColumnName="Initial" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+          <ScalarProperty Name="PrimaryContact" ColumnName="PrimaryContact" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Fax2" ColumnName="Fax2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="OtherContacts" ColumnName="OtherContacts" />
+          <ScalarProperty Name="MarketingInfor" ColumnName="MarketingInfor" />
+          <ScalarProperty Name="CustomerInvoiceName" ColumnName="CustomerInvoiceName" />
+          <ScalarProperty Name="CustomerInvoiceAddress" ColumnName="CustomerInvoiceAddress" />
+          <ScalarProperty Name="CustomerInvoiceTaxCode" ColumnName="CustomerInvoiceTaxCode" />
+          <ScalarProperty Name="CustomerDiscontinued" ColumnName="CustomerDiscontinued" />
+          <ScalarProperty Name="CustomerCategory" ColumnName="CustomerCategory" />
+          <ScalarProperty Name="CustomerGroup" ColumnName="CustomerGroup" />
+          <ScalarProperty Name="CustomerMainID" ColumnName="CustomerMainID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpCustomersViewStocks">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpCustomersViewStock">
+        <MappingFragment StoreEntitySet="tmpCustomersViewStock">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="SelectCustomer" ColumnName="SelectCustomer" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpDSCartonsNew_Import">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpDSCartonsNew_Import">
+        <MappingFragment StoreEntitySet="tmpDSCartonsNew_Import">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="Cartonname" ColumnName="Cartonname" />
+          <ScalarProperty Name="CustomerReference" ColumnName="CustomerReference" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="DSRDID" ColumnName="DSRDID" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="DestructionDate" ColumnName="DestructionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpDSCustomersCartons">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpDSCustomersCarton">
+        <MappingFragment StoreEntitySet="tmpDSCustomersCartons">
+          <ScalarProperty Name="IDRec" ColumnName="IDRec" />
+          <ScalarProperty Name="xXD" ColumnName="xXD" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpDSDispatchingOrderIDs">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpDSDispatchingOrderID">
+        <MappingFragment StoreEntitySet="tmpDSDispatchingOrderID">
+          <ScalarProperty Name="DSDispatchingOrderID" ColumnName="DSDispatchingOrderID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpDSDispatchingOrderID_Recent">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpDSDispatchingOrderID_Recent">
+        <MappingFragment StoreEntitySet="tmpDSDispatchingOrderID_Recent">
+          <ScalarProperty Name="DSDispatchingOrderID" ColumnName="DSDispatchingOrderID" />
+          <ScalarProperty Name="DSTime" ColumnName="DSTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpDSLocations">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpDSLocation">
+        <MappingFragment StoreEntitySet="tmpDSLocations">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpDSOrdersUpdates">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpDSOrdersUpdate">
+        <MappingFragment StoreEntitySet="tmpDSOrdersUpdate">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="OrderCheck" ColumnName="OrderCheck" />
+          <ScalarProperty Name="ts" ColumnName="ts" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpLs">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpL">
+        <MappingFragment StoreEntitySet="tmpL">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpLocationsWMS">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpLocationsWM">
+        <MappingFragment StoreEntitySet="tmpLocationsWMS">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="Aisle" ColumnName="Aisle" />
+          <ScalarProperty Name="Bay" ColumnName="Bay" />
+          <ScalarProperty Name="High" ColumnName="High" />
+          <ScalarProperty Name="Deep" ColumnName="Deep" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpLocForStockTakes">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpLocForStockTake">
+        <MappingFragment StoreEntitySet="tmpLocForStockTake">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="Aisle" ColumnName="Aisle" />
+          <ScalarProperty Name="Bay" ColumnName="Bay" />
+          <ScalarProperty Name="High" ColumnName="High" />
+          <ScalarProperty Name="Deep" ColumnName="Deep" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpNoteDispatchingOders">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpNoteDispatchingOder">
+        <MappingFragment StoreEntitySet="tmpNoteDispatchingOder">
+          <ScalarProperty Name="NoteDispatchingOderID" ColumnName="NoteDispatchingOderID" />
+          <ScalarProperty Name="NoteDispatchingOderNumber" ColumnName="NoteDispatchingOderNumber" />
+          <ScalarProperty Name="DispatchingOderID" ColumnName="DispatchingOderID" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="NoteDate" ColumnName="NoteDate" />
+          <ScalarProperty Name="NoteBy" ColumnName="NoteBy" />
+          <ScalarProperty Name="Checked" ColumnName="Checked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpNoteDispatchingOderDetails">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpNoteDispatchingOderDetail">
+        <MappingFragment StoreEntitySet="tmpNoteDispatchingOderDetail">
+          <ScalarProperty Name="NoteDispatchingOderDetailID" ColumnName="NoteDispatchingOderDetailID" />
+          <ScalarProperty Name="NoteDispatchingOderID" ColumnName="NoteDispatchingOderID" />
+          <ScalarProperty Name="LinkImg" ColumnName="LinkImg" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="UploadBy" ColumnName="UploadBy" />
+          <ScalarProperty Name="Checked" ColumnName="Checked" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpTruckcheckings">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpTruckchecking">
+        <MappingFragment StoreEntitySet="tmpTruckchecking">
+          <ScalarProperty Name="TruckCheckingID" ColumnName="TruckCheckingID" />
+          <ScalarProperty Name="TruckInOutID" ColumnName="TruckInOutID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="TruckNum" ColumnName="TruckNum" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="TruckType" ColumnName="TruckType" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="TemperatureShow" ColumnName="TemperatureShow" />
+          <ScalarProperty Name="TemperatureSetup" ColumnName="TemperatureSetup" />
+          <ScalarProperty Name="Running" ColumnName="Running" />
+          <ScalarProperty Name="Thawing" ColumnName="Thawing" />
+          <ScalarProperty Name="Stop" ColumnName="Stop" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="ProductEmpty" ColumnName="ProductEmpty" />
+          <ScalarProperty Name="Seal" ColumnName="Seal" />
+          <ScalarProperty Name="Lock" ColumnName="Lock" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="UserCheck" ColumnName="UserCheck" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Finish" ColumnName="Finish" />
+          <ScalarProperty Name="AttachmentFile" ColumnName="AttachmentFile" />
+          <ScalarProperty Name="LocationChecking" ColumnName="LocationChecking" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tmpWebDSStockOnHandMonthlies">
+      <EntityTypeMapping TypeName="DocumentDBModel.tmpWebDSStockOnHandMonthly">
+        <MappingFragment StoreEntitySet="tmpWebDSStockOnHandMonthly">
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="MonthFirstDate" ColumnName="MonthFirstDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TruckCheckings">
+      <EntityTypeMapping TypeName="DocumentDBModel.TruckChecking">
+        <MappingFragment StoreEntitySet="TruckChecking">
+          <ScalarProperty Name="TruckCheckingID" ColumnName="TruckCheckingID" />
+          <ScalarProperty Name="TruckInOutID" ColumnName="TruckInOutID" />
+          <ScalarProperty Name="TemperatureShow" ColumnName="TemperatureShow" />
+          <ScalarProperty Name="TemperatureSetup" ColumnName="TemperatureSetup" />
+          <ScalarProperty Name="Running" ColumnName="Running" />
+          <ScalarProperty Name="Thawing" ColumnName="Thawing" />
+          <ScalarProperty Name="Stop" ColumnName="Stop" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="ProductEmpty" ColumnName="ProductEmpty" />
+          <ScalarProperty Name="Seal" ColumnName="Seal" />
+          <ScalarProperty Name="Lock" ColumnName="Lock" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="UserCheck" ColumnName="UserCheck" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="AttachmentFile" ColumnName="AttachmentFile" />
+          <ScalarProperty Name="LocationChecking" ColumnName="LocationChecking" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aisles">
+      <EntityTypeMapping TypeName="DocumentDBModel.Aisle">
+        <MappingFragment StoreEntitySet="Aisles">
+          <ScalarProperty Name="AisleRoomID" ColumnName="AisleRoomID" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="Aisle1" ColumnName="Aisle" />
+          <ScalarProperty Name="NumberOfBays" ColumnName="NumberOfBays" />
+          <ScalarProperty Name="NumberOfDeeps" ColumnName="NumberOfDeeps" />
+          <ScalarProperty Name="NumberOfHighs" ColumnName="NumberOfHighs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BillingDetailBreakDowns">
+      <EntityTypeMapping TypeName="DocumentDBModel.BillingDetailBreakDown">
+        <MappingFragment StoreEntitySet="BillingDetailBreakDown">
+          <ScalarProperty Name="BillingDetailBreakdownID" ColumnName="BillingDetailBreakdownID" />
+          <ScalarProperty Name="BillingID" ColumnName="BillingID" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="BeginC" ColumnName="BeginC" />
+          <ScalarProperty Name="InC" ColumnName="InC" />
+          <ScalarProperty Name="OutC" ColumnName="OutC" />
+          <ScalarProperty Name="CloseC" ColumnName="CloseC" />
+          <ScalarProperty Name="BeginW" ColumnName="BeginW" />
+          <ScalarProperty Name="InW" ColumnName="InW" />
+          <ScalarProperty Name="OutW" ColumnName="OutW" />
+          <ScalarProperty Name="CloseW" ColumnName="CloseW" />
+          <ScalarProperty Name="BeginP" ColumnName="BeginP" />
+          <ScalarProperty Name="InP" ColumnName="InP" />
+          <ScalarProperty Name="OutP" ColumnName="OutP" />
+          <ScalarProperty Name="CloseP" ColumnName="CloseP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ContainerCheckings">
+      <EntityTypeMapping TypeName="DocumentDBModel.ContainerChecking">
+        <MappingFragment StoreEntitySet="ContainerChecking">
+          <ScalarProperty Name="ContainerCheckingID" ColumnName="ContainerCheckingID" />
+          <ScalarProperty Name="ContInOutID" ColumnName="ContInOutID" />
+          <ScalarProperty Name="TemperatureShow" ColumnName="TemperatureShow" />
+          <ScalarProperty Name="TemperatureSetup" ColumnName="TemperatureSetup" />
+          <ScalarProperty Name="Running" ColumnName="Running" />
+          <ScalarProperty Name="Thawing" ColumnName="Thawing" />
+          <ScalarProperty Name="Stop" ColumnName="Stop" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="ProductEmpty" ColumnName="ProductEmpty" />
+          <ScalarProperty Name="Seal" ColumnName="Seal" />
+          <ScalarProperty Name="Lock" ColumnName="Lock" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="UserCheck" ColumnName="UserCheck" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="AttachmentFile" ColumnName="AttachmentFile" />
+          <ScalarProperty Name="LocationChecking" ColumnName="LocationChecking" />
+          <ScalarProperty Name="DockNumber" ColumnName="DockNumber" />
+          <ScalarProperty Name="NoOperation" ColumnName="NoOperation" />
+          <ScalarProperty Name="ContainerCheckingID_old" ColumnName="ContainerCheckingID_old" />
+          <ScalarProperty Name="ContainerCheckingNumber" ColumnName="ContainerCheckingNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gate_ContInOut">
+      <EntityTypeMapping TypeName="DocumentDBModel.Gate_ContInOut">
+        <MappingFragment StoreEntitySet="Gate_ContInOut">
+          <ScalarProperty Name="ContInOutID" ColumnName="ContInOutID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ContainerNum" ColumnName="ContainerNum" />
+          <ScalarProperty Name="ContainerType" ColumnName="ContainerType" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+          <ScalarProperty Name="ProductQty" ColumnName="ProductQty" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="UserOut" ColumnName="UserOut" />
+          <ScalarProperty Name="RunningHour" ColumnName="RunningHour" />
+          <ScalarProperty Name="RunningFloat" ColumnName="RunningFloat" />
+          <ScalarProperty Name="PowerQuantity" ColumnName="PowerQuantity" />
+          <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+          <ScalarProperty Name="Via" ColumnName="Via" />
+          <ScalarProperty Name="OtherServiceID" ColumnName="OtherServiceID" />
+          <ScalarProperty Name="TruckIn" ColumnName="TruckIn" />
+          <ScalarProperty Name="TruckOut" ColumnName="TruckOut" />
+          <ScalarProperty Name="UserCheckOut" ColumnName="UserCheckOut" />
+          <ScalarProperty Name="TruckCheckOut" ColumnName="TruckCheckOut" />
+          <ScalarProperty Name="UserTruckOut" ColumnName="UserTruckOut" />
+          <ScalarProperty Name="Gate" ColumnName="Gate" />
+          <ScalarProperty Name="EstimateHour" ColumnName="EstimateHour" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="StartWorkingTime" ColumnName="StartWorkingTime" />
+          <ScalarProperty Name="EndWorkingTime" ColumnName="EndWorkingTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gate_TruckInOut">
+      <EntityTypeMapping TypeName="DocumentDBModel.Gate_TruckInOut">
+        <MappingFragment StoreEntitySet="Gate_TruckInOut">
+          <ScalarProperty Name="TruckInOutID" ColumnName="TruckInOutID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="TruckNum" ColumnName="TruckNum" />
+          <ScalarProperty Name="DriverName" ColumnName="DriverName" />
+          <ScalarProperty Name="TruckType" ColumnName="TruckType" />
+          <ScalarProperty Name="TruckReason" ColumnName="TruckReason" />
+          <ScalarProperty Name="ProductQty" ColumnName="ProductQty" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="CheckOut" ColumnName="CheckOut" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="CM_BL" ColumnName="CM_BL" />
+          <ScalarProperty Name="UserOut" ColumnName="UserOut" />
+          <ScalarProperty Name="UserCheckOut" ColumnName="UserCheckOut" />
+          <ScalarProperty Name="Gate" ColumnName="Gate" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="StartWorkingTime" ColumnName="StartWorkingTime" />
+          <ScalarProperty Name="EndWorkingTime" ColumnName="EndWorkingTime" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="OtherServiceID" ColumnName="OtherServiceID" />
+          <ScalarProperty Name="PowerQuantity" ColumnName="PowerQuantity" />
+          <ScalarProperty Name="RunningFloat" ColumnName="RunningFloat" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="DocumentDBModel.Location">
+        <MappingFragment StoreEntitySet="Locations">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="Aisle" ColumnName="Aisle" />
+          <ScalarProperty Name="Bay" ColumnName="Bay" />
+          <ScalarProperty Name="High" ColumnName="High" />
+          <ScalarProperty Name="Deep" ColumnName="Deep" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="Top" ColumnName="Top" />
+          <ScalarProperty Name="Low" ColumnName="Low" />
+          <ScalarProperty Name="LocationNumberShort" ColumnName="LocationNumberShort" />
+          <ScalarProperty Name="isBusy" ColumnName="isBusy" />
+          <ScalarProperty Name="ProductQuantity" ColumnName="ProductQuantity" />
+          <ScalarProperty Name="PalletQuantity" ColumnName="PalletQuantity" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tpmContainerCheckings">
+      <EntityTypeMapping TypeName="DocumentDBModel.tpmContainerChecking">
+        <MappingFragment StoreEntitySet="tpmContainerChecking">
+          <ScalarProperty Name="CheckingID" ColumnName="CheckingID" />
+          <ScalarProperty Name="ContInOutID" ColumnName="ContInOutID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ContainerNum" ColumnName="ContainerNum" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ContainerType" ColumnName="ContainerType" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="Operation" ColumnName="Operation" />
+          <ScalarProperty Name="TemperatureShow" ColumnName="TemperatureShow" />
+          <ScalarProperty Name="TemperatureSetup" ColumnName="TemperatureSetup" />
+          <ScalarProperty Name="Running" ColumnName="Running" />
+          <ScalarProperty Name="Thawing" ColumnName="Thawing" />
+          <ScalarProperty Name="Stop" ColumnName="Stop" />
+          <ScalarProperty Name="Error" ColumnName="Error" />
+          <ScalarProperty Name="ProductEmpty" ColumnName="ProductEmpty" />
+          <ScalarProperty Name="Seal" ColumnName="Seal" />
+          <ScalarProperty Name="Lock" ColumnName="Lock" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+          <ScalarProperty Name="UserCheck" ColumnName="UserCheck" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="Finish" ColumnName="Finish" />
+          <ScalarProperty Name="AttachmentFile" ColumnName="AttachmentFile" />
+          <ScalarProperty Name="LocationChecking" ColumnName="LocationChecking" />
+          <ScalarProperty Name="DockNumber" ColumnName="DockNumber" />
+          <ScalarProperty Name="NoOperation" ColumnName="NoOperation" />
+          <ScalarProperty Name="CheckingID_old" ColumnName="CheckingID_old" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_aspnet_Users">
+      <EntityTypeMapping TypeName="DocumentDBModel.View_aspnet_Users">
+        <MappingFragment StoreEntitySet="View_aspnet_Users">
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
+          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
+          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
+          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_BillingBreakDown">
+      <EntityTypeMapping TypeName="DocumentDBModel.View_BillingBreakDown">
+        <MappingFragment StoreEntitySet="View_BillingBreakDown">
+          <ScalarProperty Name="BillingDetailBreakdownID" ColumnName="BillingDetailBreakdownID" />
+          <ScalarProperty Name="BillingID" ColumnName="BillingID" />
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="BeginC" ColumnName="BeginC" />
+          <ScalarProperty Name="InC" ColumnName="InC" />
+          <ScalarProperty Name="OutC" ColumnName="OutC" />
+          <ScalarProperty Name="CloseC" ColumnName="CloseC" />
+          <ScalarProperty Name="BeginW" ColumnName="BeginW" />
+          <ScalarProperty Name="InW" ColumnName="InW" />
+          <ScalarProperty Name="OutW" ColumnName="OutW" />
+          <ScalarProperty Name="CloseW" ColumnName="CloseW" />
+          <ScalarProperty Name="BeginP" ColumnName="BeginP" />
+          <ScalarProperty Name="InP" ColumnName="InP" />
+          <ScalarProperty Name="OutP" ColumnName="OutP" />
+          <ScalarProperty Name="CloseP" ColumnName="CloseP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Customers">
+      <EntityTypeMapping TypeName="DocumentDBModel.View_Customers">
+        <MappingFragment StoreEntitySet="View_Customers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Initial" ColumnName="Initial" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+          <ScalarProperty Name="PrimaryContact" ColumnName="PrimaryContact" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Fax2" ColumnName="Fax2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="OtherContacts" ColumnName="OtherContacts" />
+          <ScalarProperty Name="MarketingInfor" ColumnName="MarketingInfor" />
+          <ScalarProperty Name="CustomerInvoiceName" ColumnName="CustomerInvoiceName" />
+          <ScalarProperty Name="CustomerInvoiceAddress" ColumnName="CustomerInvoiceAddress" />
+          <ScalarProperty Name="CustomerInvoiceTaxCode" ColumnName="CustomerInvoiceTaxCode" />
+          <ScalarProperty Name="CustomerDiscontinued" ColumnName="CustomerDiscontinued" />
+          <ScalarProperty Name="CustomerCategory" ColumnName="CustomerCategory" />
+          <ScalarProperty Name="CustomerGroup" ColumnName="CustomerGroup" />
+          <ScalarProperty Name="CustomerMainID" ColumnName="CustomerMainID" />
+          <ScalarProperty Name="CustomerByExpiryDate" ColumnName="CustomerByExpiryDate" />
+          <ScalarProperty Name="SendNote" ColumnName="SendNote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_DSCustomerListBillings_">
+      <EntityTypeMapping TypeName="DocumentDBModel.View_DSCustomerListBillings_">
+        <MappingFragment StoreEntitySet="View_DSCustomerListBillings ">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_DSLocationBarcode">
+      <EntityTypeMapping TypeName="DocumentDBModel.View_DSLocationBarcode">
+        <MappingFragment StoreEntitySet="View_DSLocationBarcode">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationBarcode" ColumnName="LocationBarcode" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="StandardCarton" ColumnName="StandardCarton" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_DSLocationsAll">
+      <EntityTypeMapping TypeName="DocumentDBModel.View_DSLocationsAll">
+        <MappingFragment StoreEntitySet="View_DSLocationsAll">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="L" ColumnName="L" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="Aisle" ColumnName="Aisle" />
+          <ScalarProperty Name="Bay" ColumnName="Bay" />
+          <ScalarProperty Name="High" ColumnName="High" />
+          <ScalarProperty Name="Deep" ColumnName="Deep" />
+          <ScalarProperty Name="StandardCarton" ColumnName="StandardCarton" />
+          <ScalarProperty Name="Referent" ColumnName="Referent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_DSLocationsHasCartons">
+      <EntityTypeMapping TypeName="DocumentDBModel.View_DSLocationsHasCartons">
+        <MappingFragment StoreEntitySet="View_DSLocationsHasCartons">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="L" ColumnName="L" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_Employees">
+      <EntityTypeMapping TypeName="DocumentDBModel.View_Employees">
+        <MappingFragment StoreEntitySet="View_Employees">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Education" ColumnName="Education" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="DateOfEntry" ColumnName="DateOfEntry" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="IDCardNumber" ColumnName="IDCardNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Photograph" ColumnName="Photograph" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="ContractPermanent" ColumnName="ContractPermanent" />
+          <ScalarProperty Name="ManagementLevel" ColumnName="ManagementLevel" />
+          <ScalarProperty Name="ContractDate" ColumnName="ContractDate" />
+          <ScalarProperty Name="PositionID" ColumnName="PositionID" />
+          <ScalarProperty Name="VietnamName" ColumnName="VietnamName" />
+          <ScalarProperty Name="BikeNumber" ColumnName="BikeNumber" />
+          <ScalarProperty Name="BikeUse" ColumnName="BikeUse" />
+          <ScalarProperty Name="VietnamPosition" ColumnName="VietnamPosition" />
+          <ScalarProperty Name="InOutCardNumber" ColumnName="InOutCardNumber" />
+          <ScalarProperty Name="ShiftID" ColumnName="ShiftID" />
+          <ScalarProperty Name="Grade" ColumnName="Grade" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="AddressNow" ColumnName="AddressNow" />
+          <ScalarProperty Name="PerformanceStatus" ColumnName="PerformanceStatus" />
+          <ScalarProperty Name="IDCardIssueDate" ColumnName="IDCardIssueDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_ServicesDefinition">
+      <EntityTypeMapping TypeName="DocumentDBModel.View_ServicesDefinition">
+        <MappingFragment StoreEntitySet="View_ServicesDefinition">
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="ServiceNumber" ColumnName="ServiceNumber" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="Measure" ColumnName="Measure" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="CustomerCategory" ColumnName="CustomerCategory" />
+          <ScalarProperty Name="ServiceCategory" ColumnName="ServiceCategory" />
+          <ScalarProperty Name="CheckingQuantityMax" ColumnName="CheckingQuantityMax" />
+          <ScalarProperty Name="CheckingQuantityMin" ColumnName="CheckingQuantityMin" />
+          <ScalarProperty Name="ServiceNameVietnamese" ColumnName="ServiceNameVietnamese" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="View_WebUsers">
+      <EntityTypeMapping TypeName="DocumentDBModel.View_WebUsers">
+        <MappingFragment StoreEntitySet="View_WebUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewCartonDispatchedLast2days">
+      <EntityTypeMapping TypeName="DocumentDBModel.ViewCartonDispatchedLast2days">
+        <MappingFragment StoreEntitySet="ViewCartonDispatchedLast2days">
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewCartonOnHands">
+      <EntityTypeMapping TypeName="DocumentDBModel.ViewCartonOnHand">
+        <MappingFragment StoreEntitySet="ViewCartonOnHand">
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ViewCustomers">
+      <EntityTypeMapping TypeName="DocumentDBModel.ViewCustomer">
+        <MappingFragment StoreEntitySet="ViewCustomers">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Initial" ColumnName="Initial" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+          <ScalarProperty Name="PrimaryContact" ColumnName="PrimaryContact" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Fax2" ColumnName="Fax2" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="OtherContacts" ColumnName="OtherContacts" />
+          <ScalarProperty Name="MarketingInfor" ColumnName="MarketingInfor" />
+          <ScalarProperty Name="CustomerInvoiceName" ColumnName="CustomerInvoiceName" />
+          <ScalarProperty Name="CustomerInvoiceAddress" ColumnName="CustomerInvoiceAddress" />
+          <ScalarProperty Name="CustomerInvoiceTaxCode" ColumnName="CustomerInvoiceTaxCode" />
+          <ScalarProperty Name="CustomerDiscontinued" ColumnName="CustomerDiscontinued" />
+          <ScalarProperty Name="CustomerCategory" ColumnName="CustomerCategory" />
+          <ScalarProperty Name="CustomerGroup" ColumnName="CustomerGroup" />
+          <ScalarProperty Name="CustomerMainID" ColumnName="CustomerMainID" />
+          <ScalarProperty Name="CustomerByExpiryDate" ColumnName="CustomerByExpiryDate" />
+          <ScalarProperty Name="SendNote" ColumnName="SendNote" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSBillingByCustomerPeriodAll" FunctionName="DocumentDBModel.Store.SP_DSBillingByCustomerPeriodAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSBillingByCustomerPeriodAll_Result">
+          <ScalarProperty Name="BillingID" ColumnName="BillingID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Measure" ColumnName="Measure" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="ServiceNumber" ColumnName="ServiceNumber" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="BillingDate" ColumnName="BillingDate" />
+          <ScalarProperty Name="BillingFromDate" ColumnName="BillingFromDate" />
+          <ScalarProperty Name="BillingToDate" ColumnName="BillingToDate" />
+          <ScalarProperty Name="ServiceQuantity" ColumnName="ServiceQuantity" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="BillingRemark" ColumnName="BillingRemark" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSBillingConfirmationAdd_New" FunctionName="DocumentDBModel.Store.SP_DSBillingConfirmationAdd_New" />
+    <FunctionImportMapping FunctionImportName="SP_DSBillingReport_New" FunctionName="DocumentDBModel.Store.SP_DSBillingReport_New" />
+    <FunctionImportMapping FunctionImportName="SP_DSBillingRun1Customer" FunctionName="DocumentDBModel.Store.SP_DSBillingRun1Customer" />
+    <FunctionImportMapping FunctionImportName="SP_DSBillingRunByCustomer" FunctionName="DocumentDBModel.Store.SP_DSBillingRunByCustomer" />
+    <FunctionImportMapping FunctionImportName="SP_DSBillingRunByCustomerInsert" FunctionName="DocumentDBModel.Store.SP_DSBillingRunByCustomerInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSBillingStockMovement" FunctionName="DocumentDBModel.Store.SP_DSBillingStockMovement" />
+    <FunctionImportMapping FunctionImportName="SP_DSBillingSummaryInsert" FunctionName="DocumentDBModel.Store.SP_DSBillingSummaryInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSCartonByhight_Aisle" FunctionName="DocumentDBModel.Store.SP_DSCartonByhight_Aisle">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonByhight_Aisle_Result">
+          <ScalarProperty Name="DSROCartonID" ColumnName="DSROCartonID" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="Aisle" ColumnName="Aisle" />
+          <ScalarProperty Name="High" ColumnName="High" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CartonNewIDBarcode" ColumnName="CartonNewIDBarcode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonDestructionByCustomer" FunctionName="DocumentDBModel.Store.SP_DSCartonDestructionByCustomer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonDestructionByCustomer_Result">
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="DSDispatchingOrderNumber" ColumnName="DSDispatchingOrderNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSRDSpecialRequirement" ColumnName="DSRDSpecialRequirement" />
+          <ScalarProperty Name="DSDDSpecialRequirement" ColumnName="DSDDSpecialRequirement" />
+          <ScalarProperty Name="DSDispatchingOrderID" ColumnName="DSDispatchingOrderID" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSDispatchingType" ColumnName="DSDispatchingType" />
+          <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+          <ScalarProperty Name="CustomerRef" ColumnName="CustomerRef" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonInfo_Carton" FunctionName="DocumentDBModel.Store.SP_DSCartonInfo_Carton">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonInfo_Carton_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="CartonQty" ColumnName="CartonQty" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="LocationID1" ColumnName="LocationID1" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonInfo_Carton_Location" FunctionName="DocumentDBModel.Store.SP_DSCartonInfo_Carton_Location">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonInfo_Carton_Location_Result">
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="CartonQty" ColumnName="CartonQty" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonInfo_CartonViewAll" FunctionName="DocumentDBModel.Store.SP_DSCartonInfo_CartonViewAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonInfo_CartonViewAll_Result">
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="CartonDetails" ColumnName="CartonDetails" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonInfo_details" FunctionName="DocumentDBModel.Store.SP_DSCartonInfo_details">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonInfo_details_Result">
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonInfo_DO" FunctionName="DocumentDBModel.Store.SP_DSCartonInfo_DO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonInfo_DO_Result">
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="DSDispatchingOrderNumber" ColumnName="DSDispatchingOrderNumber" />
+          <ScalarProperty Name="DSDispatchingOrderID" ColumnName="DSDispatchingOrderID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonInfo_Location" FunctionName="DocumentDBModel.Store.SP_DSCartonInfo_Location">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonInfo_Location_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="CartonQty" ColumnName="CartonQty" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonInfo_Movement" FunctionName="DocumentDBModel.Store.SP_DSCartonInfo_Movement">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonInfo_Movement_Result">
+          <ScalarProperty Name="SourceLocationNumber" ColumnName="SourceLocationNumber" />
+          <ScalarProperty Name="DestinationLocationNumber" ColumnName="DestinationLocationNumber" />
+          <ScalarProperty Name="DateMovement" ColumnName="DateMovement" />
+          <ScalarProperty Name="ReasonMovement" ColumnName="ReasonMovement" />
+          <ScalarProperty Name="AuthorisedBy" ColumnName="AuthorisedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="DSCartonMovementID" ColumnName="DSCartonMovementID" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="VietnamName" ColumnName="VietnamName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonInfo_Retrieval" FunctionName="DocumentDBModel.Store.SP_DSCartonInfo_Retrieval">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonInfo_Retrieval_Result">
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="DSDispatchingOrderID" ColumnName="DSDispatchingOrderID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CartonReturned" ColumnName="CartonReturned" />
+          <ScalarProperty Name="CartonSelected" ColumnName="CartonSelected" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CustomerRef" ColumnName="CustomerRef" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="DSDispatchingOrderNumber" ColumnName="DSDispatchingOrderNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSRDSpecialRequirement" ColumnName="DSRDSpecialRequirement" />
+          <ScalarProperty Name="DSDDSpecialRequirement" ColumnName="DSDDSpecialRequirement" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonInfo_RO" FunctionName="DocumentDBModel.Store.SP_DSCartonInfo_RO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonInfo_RO_Result">
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonLabelRemain" FunctionName="DocumentDBModel.Store.SP_DSCartonLabelRemain">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonLabelRemain_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonLabelRemain_Created" FunctionName="DocumentDBModel.Store.SP_DSCartonLabelRemain_Created">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonLabelRemain_Created_Result">
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonMovementDeSelectAll" FunctionName="DocumentDBModel.Store.SP_DSCartonMovementDeSelectAll" />
+    <FunctionImportMapping FunctionImportName="SP_DSCartonMovementFrom_combo" FunctionName="DocumentDBModel.Store.SP_DSCartonMovementFrom_combo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonMovementFrom_combo_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="L" ColumnName="L" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonMovementLocationReview" FunctionName="DocumentDBModel.Store.SP_DSCartonMovementLocationReview">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonMovementLocationReview_Result">
+          <ScalarProperty Name="DSCartonMovementID" ColumnName="DSCartonMovementID" />
+          <ScalarProperty Name="SourceLocationNumber" ColumnName="SourceLocationNumber" />
+          <ScalarProperty Name="DestinationLocationNumber" ColumnName="DestinationLocationNumber" />
+          <ScalarProperty Name="DateMovement" ColumnName="DateMovement" />
+          <ScalarProperty Name="ReasonMovement" ColumnName="ReasonMovement" />
+          <ScalarProperty Name="AuthorisedBy" ColumnName="AuthorisedBy" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Remark" ColumnName="Remark" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonMovementSelect" FunctionName="DocumentDBModel.Store.SP_DSCartonMovementSelect" />
+    <FunctionImportMapping FunctionImportName="SP_DSCartonMovementSelectAll" FunctionName="DocumentDBModel.Store.SP_DSCartonMovementSelectAll" />
+    <FunctionImportMapping FunctionImportName="SP_DSCartonMovementTo" FunctionName="DocumentDBModel.Store.SP_DSCartonMovementTo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonMovementTo_Result">
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="CartonNewIDBarcode" ColumnName="CartonNewIDBarcode" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonMovementViewDetails" FunctionName="DocumentDBModel.Store.SP_DSCartonMovementViewDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonMovementViewDetails_Result">
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSCartonMovementID" ColumnName="DSCartonMovementID" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonProblemCheckRemain" FunctionName="DocumentDBModel.Store.SP_DSCartonProblemCheckRemain">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonProblemCheckRemain_Result">
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="Received" ColumnName="Received" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="Difference" ColumnName="Difference" />
+          <ScalarProperty Name="StockOnHand_Remain" ColumnName="StockOnHand_Remain" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerRef" ColumnName="CustomerRef" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CustomerDiscontinued" ColumnName="CustomerDiscontinued" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCartonSelect_Update" FunctionName="DocumentDBModel.Store.SP_DSCartonSelect_Update" />
+    <FunctionImportMapping FunctionImportName="SP_DSCartonsNew_Import" FunctionName="DocumentDBModel.Store.SP_DSCartonsNew_Import" />
+    <FunctionImportMapping FunctionImportName="SP_DSCartonsNew_ImportNew" FunctionName="DocumentDBModel.Store.SP_DSCartonsNew_ImportNew" />
+    <FunctionImportMapping FunctionImportName="SP_DSCartonsNew_ImportTruncate" FunctionName="DocumentDBModel.Store.SP_DSCartonsNew_ImportTruncate" />
+    <FunctionImportMapping FunctionImportName="SP_DSCartonsNew_UpdateCustomerReference" FunctionName="DocumentDBModel.Store.SP_DSCartonsNew_UpdateCustomerReference" />
+    <FunctionImportMapping FunctionImportName="SP_DSCartonsNew_UpdateToOrders" FunctionName="DocumentDBModel.Store.SP_DSCartonsNew_UpdateToOrders" />
+    <FunctionImportMapping FunctionImportName="SP_DSCartonsNewDelete" FunctionName="DocumentDBModel.Store.SP_DSCartonsNewDelete" />
+    <FunctionImportMapping FunctionImportName="SP_DSCartonStockInStoreAll" FunctionName="DocumentDBModel.Store.SP_DSCartonStockInStoreAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCartonStockInStoreAll_Result">
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DScomboContracts" FunctionName="DocumentDBModel.Store.SP_DScomboContracts">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DScomboContracts_Result">
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="ServiceNumber" ColumnName="ServiceNumber" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="CheckingQuantityMin" ColumnName="CheckingQuantityMin" />
+          <ScalarProperty Name="CheckingQuantityMax" ColumnName="CheckingQuantityMax" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSComboCustomerID" FunctionName="DocumentDBModel.Store.SP_DSComboCustomerID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSComboCustomerID_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerDiscontinued" ColumnName="CustomerDiscontinued" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSComboDOCarton" FunctionName="DocumentDBModel.Store.SP_DSComboDOCarton">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSComboDOCarton_Result">
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CustomerRef" ColumnName="CustomerRef" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CartonIDSCS" ColumnName="CartonIDSCS" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSComboDOCartonByCriteria" FunctionName="DocumentDBModel.Store.SP_DSComboDOCartonByCriteria">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSComboDOCartonByCriteria_Result">
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DScomboROCartonID" FunctionName="DocumentDBModel.Store.SP_DScomboROCartonID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DScomboROCartonID_Result">
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CartonIDscs" ColumnName="CartonIDscs" />
+          <ScalarProperty Name="CartonCustomerID" ColumnName="CartonCustomerID" />
+          <ScalarProperty Name="Destruction" ColumnName="Destruction" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCreateNewCarton" FunctionName="DocumentDBModel.Store.SP_DSCreateNewCarton" />
+    <FunctionImportMapping FunctionImportName="SP_DSCustomer" FunctionName="DocumentDBModel.Store.SP_DSCustomer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSCustomer_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSCustomerProductGroupInsertNew" FunctionName="DocumentDBModel.Store.SP_DSCustomerProductGroupInsertNew" />
+    <FunctionImportMapping FunctionImportName="SP_DSDDCartonBarcode" FunctionName="DocumentDBModel.Store.SP_DSDDCartonBarcode">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSDDCartonBarcode_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CartonNewIDBarcode" ColumnName="CartonNewIDBarcode" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CustomerReference" ColumnName="CustomerReference" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DestructionDate" ColumnName="DestructionDate" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSDOID" ColumnName="DSDOID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSDispatchingNote" FunctionName="DocumentDBModel.Store.SP_DSDispatchingNote">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSDispatchingNote_Result">
+          <ScalarProperty Name="DispatchingOrderID_Barcode" ColumnName="DispatchingOrderID_Barcode" />
+          <ScalarProperty Name="DSDOID" ColumnName="DSDOID" />
+          <ScalarProperty Name="DSDispatchingOrderNumber" ColumnName="DSDispatchingOrderNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="DSDispatchingType" ColumnName="DSDispatchingType" />
+          <ScalarProperty Name="ServiceName" ColumnName="ServiceName" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Fax2" ColumnName="Fax2" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="referent" ColumnName="referent" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSDispatchingOrderCreate" FunctionName="DocumentDBModel.Store.SP_DSDispatchingOrderCreate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSDispatchingOrderCreate_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Quatity" ColumnName="Quatity" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSDispatchingOrderCreateByCustomerInsert" FunctionName="DocumentDBModel.Store.SP_DSDispatchingOrderCreateByCustomerInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSDispatchingOrderCreateByHigh" FunctionName="DocumentDBModel.Store.SP_DSDispatchingOrderCreateByHigh">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSDispatchingOrderCreateByHigh_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Quatity" ColumnName="Quatity" />
+          <ScalarProperty Name="High" ColumnName="High" />
+          <ScalarProperty Name="Aisle" ColumnName="Aisle" />
+          <ScalarProperty Name="Bay" ColumnName="Bay" />
+          <ScalarProperty Name="Deep" ColumnName="Deep" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSDispatchingOrderCreateByLocationInsert" FunctionName="DocumentDBModel.Store.SP_DSDispatchingOrderCreateByLocationInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSDispatchingOrderDetailsCreate" FunctionName="DocumentDBModel.Store.SP_DSDispatchingOrderDetailsCreate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSDispatchingOrderDetailsCreate_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSDispatchingOrderDetailsCreateInsert" FunctionName="DocumentDBModel.Store.SP_DSDispatchingOrderDetailsCreateInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSDispatchingOrdersCreateReport" FunctionName="DocumentDBModel.Store.SP_DSDispatchingOrdersCreateReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSDispatchingOrdersCreateReport_Result">
+          <ScalarProperty Name="DSDispatchingOrderNumber" ColumnName="DSDispatchingOrderNumber" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSDOCartonByLocationInsert" FunctionName="DocumentDBModel.Store.SP_DSDOCartonByLocationInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSDOCartonByLocationSelect" FunctionName="DocumentDBModel.Store.SP_DSDOCartonByLocationSelect" />
+    <FunctionImportMapping FunctionImportName="SP_DSDOCartonDelete" FunctionName="DocumentDBModel.Store.SP_DSDOCartonDelete" />
+    <FunctionImportMapping FunctionImportName="SP_DSDOCartonInsert" FunctionName="DocumentDBModel.Store.SP_DSDOCartonInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSDOCartonsAccept" FunctionName="DocumentDBModel.Store.SP_DSDOCartonsAccept" />
+    <FunctionImportMapping FunctionImportName="SP_DSDOCartonsConfirm" FunctionName="DocumentDBModel.Store.SP_DSDOCartonsConfirm" />
+    <FunctionImportMapping FunctionImportName="SP_DSDOCartonSelectAll" FunctionName="DocumentDBModel.Store.SP_DSDOCartonSelectAll" />
+    <FunctionImportMapping FunctionImportName="SP_DSDOCartonSelectInsert" FunctionName="DocumentDBModel.Store.SP_DSDOCartonSelectInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSDODeleteCartonSelect" FunctionName="DocumentDBModel.Store.SP_DSDODeleteCartonSelect" />
+    <FunctionImportMapping FunctionImportName="SP_DSDOOrderDelete" FunctionName="DocumentDBModel.Store.SP_DSDOOrderDelete" />
+    <FunctionImportMapping FunctionImportName="SP_DSDOSelectOneCarton" FunctionName="DocumentDBModel.Store.SP_DSDOSelectOneCarton" />
+    <FunctionImportMapping FunctionImportName="SP_DSDOUpdateSelectAll" FunctionName="DocumentDBModel.Store.SP_DSDOUpdateSelectAll" />
+    <FunctionImportMapping FunctionImportName="SP_DSDOUpdateSelectOne" FunctionName="DocumentDBModel.Store.SP_DSDOUpdateSelectOne" />
+    <FunctionImportMapping FunctionImportName="SP_DSEmployeeWorkingDelete" FunctionName="DocumentDBModel.Store.SP_DSEmployeeWorkingDelete" />
+    <FunctionImportMapping FunctionImportName="SP_DSFindCartons_ByLocation" FunctionName="DocumentDBModel.Store.SP_DSFindCartons_ByLocation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSFindCartons_ByLocation_Result">
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSInOutView_D" FunctionName="DocumentDBModel.Store.SP_DSInOutView_D">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSInOutView_D_Result">
+          <ScalarProperty Name="DSDispatchingOrderNumber" ColumnName="DSDispatchingOrderNumber" />
+          <ScalarProperty Name="DSDOID" ColumnName="DSDOID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="CountOfCartonID" ColumnName="CountOfCartonID" />
+          <ScalarProperty Name="DSOwner" ColumnName="DSOwner" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSInOutView_DALL" FunctionName="DocumentDBModel.Store.SP_DSInOutView_DALL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSInOutView_DALL_Result">
+          <ScalarProperty Name="DSDispatchingOrderNumber" ColumnName="DSDispatchingOrderNumber" />
+          <ScalarProperty Name="DSDOID" ColumnName="DSDOID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="CountOfCartonID" ColumnName="CountOfCartonID" />
+          <ScalarProperty Name="DSOwner" ColumnName="DSOwner" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSInOutView_DALL_SortByDate" FunctionName="DocumentDBModel.Store.SP_DSInOutView_DALL_SortByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSInOutView_DALL_SortByDate_Result">
+          <ScalarProperty Name="DSDispatchingOrderNumber" ColumnName="DSDispatchingOrderNumber" />
+          <ScalarProperty Name="DSDOID" ColumnName="DSDOID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="CountOfCartonID" ColumnName="CountOfCartonID" />
+          <ScalarProperty Name="DSOwner" ColumnName="DSOwner" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSInOutview_R" FunctionName="DocumentDBModel.Store.SP_DSInOutview_R">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSInOutview_R_Result">
+          <ScalarProperty Name="CountOfCartonID" ColumnName="CountOfCartonID" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSOwner" ColumnName="DSOwner" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="DSReceivingType" ColumnName="DSReceivingType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSInOutview_RALL" FunctionName="DocumentDBModel.Store.SP_DSInOutview_RALL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSInOutview_RALL_Result">
+          <ScalarProperty Name="CountOfCartonID" ColumnName="CountOfCartonID" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSOwner" ColumnName="DSOwner" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSReceivingType" ColumnName="DSReceivingType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSInOutview_RALL_SortByDate" FunctionName="DocumentDBModel.Store.SP_DSInOutview_RALL_SortByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSInOutview_RALL_SortByDate_Result">
+          <ScalarProperty Name="CountOfCartonID" ColumnName="CountOfCartonID" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSOwner" ColumnName="DSOwner" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSLabel" FunctionName="DocumentDBModel.Store.SP_DSLabel">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSLabel_Result">
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSLabelA5StockLocationByHight" FunctionName="DocumentDBModel.Store.SP_DSLabelA5StockLocationByHight">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSLabelA5StockLocationByHight_Result">
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CartonNumber" ColumnName="CartonNumber" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSLabelCartonMovementTo" FunctionName="DocumentDBModel.Store.SP_DSLabelCartonMovementTo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSLabelCartonMovementTo_Result">
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CartonNumber" ColumnName="CartonNumber" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSLabelCartonMovementToByHight" FunctionName="DocumentDBModel.Store.SP_DSLabelCartonMovementToByHight">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSLabelCartonMovementToByHight_Result">
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CartonNumber" ColumnName="CartonNumber" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSLabelRemainRD" FunctionName="DocumentDBModel.Store.SP_DSLabelRemainRD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSLabelRemainRD_Result">
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="CartonNumber" ColumnName="CartonNumber" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSLocationBarcode" FunctionName="DocumentDBModel.Store.SP_DSLocationBarcode">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSLocationBarcode_Result">
+          <ScalarProperty Name="LocationBarcode" ColumnName="LocationBarcode" />
+          <ScalarProperty Name="L" ColumnName="L" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSLocationBarcode_buuTest" FunctionName="DocumentDBModel.Store.SP_DSLocationBarcode_buuTest">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSLocationBarcode_buuTest_Result">
+          <ScalarProperty Name="LocationBarcode" ColumnName="LocationBarcode" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="Aisle" ColumnName="Aisle" />
+          <ScalarProperty Name="Bay" ColumnName="Bay" />
+          <ScalarProperty Name="High" ColumnName="High" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="Deep" ColumnName="Deep" />
+          <ScalarProperty Name="StandardCarton" ColumnName="StandardCarton" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSLocationInsert" FunctionName="DocumentDBModel.Store.SP_DSLocationInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSLocationsAll" FunctionName="DocumentDBModel.Store.SP_DSLocationsAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSLocationsAll_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="L" ColumnName="L" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="QuantityCarton" ColumnName="QuantityCarton" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="Referent" ColumnName="Referent" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSLocationsBusy" FunctionName="DocumentDBModel.Store.SP_DSLocationsBusy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSLocationsBusy_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="L" ColumnName="L" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="QuantityCarton" ColumnName="QuantityCarton" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="Referent" ColumnName="Referent" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSLocationsFree" FunctionName="DocumentDBModel.Store.SP_DSLocationsFree">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSLocationsFree_Result">
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="L" ColumnName="L" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="QuantityCarton" ColumnName="QuantityCarton" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="Referent" ColumnName="Referent" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSLocationsFree_TEST" FunctionName="DocumentDBModel.Store.SP_DSLocationsFree_TEST">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSLocationsFree_TEST_Result">
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="LocationBarcode" ColumnName="LocationBarcode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSMovementCartonUpdate" FunctionName="DocumentDBModel.Store.SP_DSMovementCartonUpdate" />
+    <FunctionImportMapping FunctionImportName="SP_DSMovementCartonUpdateByCarton" FunctionName="DocumentDBModel.Store.SP_DSMovementCartonUpdateByCarton" />
+    <FunctionImportMapping FunctionImportName="SP_DSMovementLocation" FunctionName="DocumentDBModel.Store.SP_DSMovementLocation" />
+    <FunctionImportMapping FunctionImportName="SP_DSMovementLocationByCarton" FunctionName="DocumentDBModel.Store.SP_DSMovementLocationByCarton" />
+    <FunctionImportMapping FunctionImportName="SP_DSOrdersUnConfirms" FunctionName="DocumentDBModel.Store.SP_DSOrdersUnConfirms">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSOrdersUnConfirms_Result">
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSStatus" ColumnName="DSStatus" />
+          <ScalarProperty Name="DSOwner" ColumnName="DSOwner" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSOrdersUnConfirmsAll" FunctionName="DocumentDBModel.Store.SP_DSOrdersUnConfirmsAll">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSOrdersUnConfirmsAll_Result">
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="DSStatus" ColumnName="DSStatus" />
+          <ScalarProperty Name="DSOwner" ColumnName="DSOwner" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSOrdersUnConfirmUpdate" FunctionName="DocumentDBModel.Store.SP_DSOrdersUnConfirmUpdate" />
+    <FunctionImportMapping FunctionImportName="SP_DSOtherServiceInsert" FunctionName="DocumentDBModel.Store.SP_DSOtherServiceInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSRDCartonsNew_Import" FunctionName="DocumentDBModel.Store.SP_DSRDCartonsNew_Import" />
+    <FunctionImportMapping FunctionImportName="SP_DSReceivingAdvice_Note" FunctionName="DocumentDBModel.Store.SP_DSReceivingAdvice_Note">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSReceivingAdvice_Note_Result">
+          <ScalarProperty Name="DSReceivingOrders_Barcode" ColumnName="DSReceivingOrders_Barcode" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="DSReceivingCreatedTime" ColumnName="DSReceivingCreatedTime" />
+          <ScalarProperty Name="DSOwner" ColumnName="DSOwner" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSReceivingType" ColumnName="DSReceivingType" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="Fax2" ColumnName="Fax2" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSReceivingCartonNewBarcode" FunctionName="DocumentDBModel.Store.SP_DSReceivingCartonNewBarcode">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSReceivingCartonNewBarcode_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CartonNewIDBarcode" ColumnName="CartonNewIDBarcode" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSReceivingOrders_NotConfirm" FunctionName="DocumentDBModel.Store.SP_DSReceivingOrders_NotConfirm">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSReceivingOrders_NotConfirm_Result">
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSStatus" ColumnName="DSStatus" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="DSReceivingType" ColumnName="DSReceivingType" />
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="TotalCarton" ColumnName="TotalCarton" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSROAllCartonsNonAllocateToOneLocation" FunctionName="DocumentDBModel.Store.SP_DSROAllCartonsNonAllocateToOneLocation" />
+    <FunctionImportMapping FunctionImportName="SP_DSROAllCartonsToOneLocation" FunctionName="DocumentDBModel.Store.SP_DSROAllCartonsToOneLocation" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonBarcode" FunctionName="DocumentDBModel.Store.SP_DSROCartonBarcode">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSROCartonBarcode_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CartonNewIDBarcode" ColumnName="CartonNewIDBarcode" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Fax" ColumnName="Fax" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CustomerReference" ColumnName="CustomerReference" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DestructionDate" ColumnName="DestructionDate" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonCancelAllocatedLocation" FunctionName="DocumentDBModel.Store.SP_DSROCartonCancelAllocatedLocation" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonCheckAllDelete" FunctionName="DocumentDBModel.Store.SP_DSROCartonCheckAllDelete" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonsAccept" FunctionName="DocumentDBModel.Store.SP_DSROCartonsAccept" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonsAllSelectInsert" FunctionName="DocumentDBModel.Store.SP_DSROCartonsAllSelectInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonsConfirm" FunctionName="DocumentDBModel.Store.SP_DSROCartonsConfirm" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonsDelete" FunctionName="DocumentDBModel.Store.SP_DSROCartonsDelete" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonSelectOne" FunctionName="DocumentDBModel.Store.SP_DSROCartonSelectOne" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonsExportToRDInsert" FunctionName="DocumentDBModel.Store.SP_DSROCartonsExportToRDInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonsSelectAllCreateUpdate_CURSOR" FunctionName="DocumentDBModel.Store.SP_DSROCartonsSelectAllCreateUpdate_CURSOR" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonsSelectAllInsert" FunctionName="DocumentDBModel.Store.SP_DSROCartonsSelectAllInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonStockSelectOne" FunctionName="DocumentDBModel.Store.SP_DSROCartonStockSelectOne" />
+    <FunctionImportMapping FunctionImportName="SP_DSROCartonUpdateAll" FunctionName="DocumentDBModel.Store.SP_DSROCartonUpdateAll" />
+    <FunctionImportMapping FunctionImportName="SP_DSROComBoCarton" FunctionName="DocumentDBModel.Store.SP_DSROComBoCarton">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSROComBoCarton_Result">
+          <ScalarProperty Name="CustomerRef" ColumnName="CustomerRef" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="DestructionDate" ColumnName="DestructionDate" />
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="IDCarton" ColumnName="IDCarton" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSRONewCartonInsert" FunctionName="DocumentDBModel.Store.SP_DSRONewCartonInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSROOrderDelete" FunctionName="DocumentDBModel.Store.SP_DSROOrderDelete" />
+    <FunctionImportMapping FunctionImportName="SP_DSROSelectDelete" FunctionName="DocumentDBModel.Store.SP_DSROSelectDelete" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptBillingByCustomers" FunctionName="DocumentDBModel.Store.SP_DSRptBillingByCustomers">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSRptBillingByCustomers_Result">
+          <ScalarProperty Name="ReportDate" ColumnName="ReportDate" />
+          <ScalarProperty Name="BeginC" ColumnName="BeginC" />
+          <ScalarProperty Name="BeginW" ColumnName="BeginW" />
+          <ScalarProperty Name="InC" ColumnName="InC" />
+          <ScalarProperty Name="InW" ColumnName="InW" />
+          <ScalarProperty Name="OutC" ColumnName="OutC" />
+          <ScalarProperty Name="OutW" ColumnName="OutW" />
+          <ScalarProperty Name="CloseC" ColumnName="CloseC" />
+          <ScalarProperty Name="CloseW" ColumnName="CloseW" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="BillingID" ColumnName="BillingID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSRptBillingDetails" FunctionName="DocumentDBModel.Store.SP_DSRptBillingDetails" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockByLocation" FunctionName="DocumentDBModel.Store.SP_DSRptStockByLocation" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockDispatchedDetailSelectCustomers" FunctionName="DocumentDBModel.Store.SP_DSRptStockDispatchedDetailSelectCustomers" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockDispatchedDetailSelectCustomersAll" FunctionName="DocumentDBModel.Store.SP_DSRptStockDispatchedDetailSelectCustomersAll" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockDispatchedReport" FunctionName="DocumentDBModel.Store.SP_DSRptStockDispatchedReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSRptStockDispatchedReport_Result">
+          <ScalarProperty Name="DSDispatchingOrderNumber" ColumnName="DSDispatchingOrderNumber" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+          <ScalarProperty Name="Carton_Qty" ColumnName="Carton_Qty" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockDispatchedSelectCustomers_bk2016_02_25" FunctionName="DocumentDBModel.Store.SP_DSRptStockDispatchedSelectCustomers_bk2016_02_25" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockDispatchedSelectCustomersAll_bk2016_02_25" FunctionName="DocumentDBModel.Store.SP_DSRptStockDispatchedSelectCustomersAll_bk2016_02_25" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockMovementSelectCustomers" FunctionName="DocumentDBModel.Store.SP_DSRptStockMovementSelectCustomers" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockMovementSelectCustomersAll" FunctionName="DocumentDBModel.Store.SP_DSRptStockMovementSelectCustomersAll" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockMovementSelectCustomersAllStockOnHand" FunctionName="DocumentDBModel.Store.SP_DSRptStockMovementSelectCustomersAllStockOnHand" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockOnHandCombo" FunctionName="DocumentDBModel.Store.SP_DSRptStockOnHandCombo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSRptStockOnHandCombo_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockReceivedDetailsSelectCustomers" FunctionName="DocumentDBModel.Store.SP_DSRptStockReceivedDetailsSelectCustomers" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockReceivedDetailsSelectCustomersAll" FunctionName="DocumentDBModel.Store.SP_DSRptStockReceivedDetailsSelectCustomersAll" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockReceivedReport" FunctionName="DocumentDBModel.Store.SP_DSRptStockReceivedReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSRptStockReceivedReport_Result">
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="CartonQty" ColumnName="CartonQty" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockReceivedSelectCustomers_bk2016_02_25" FunctionName="DocumentDBModel.Store.SP_DSRptStockReceivedSelectCustomers_bk2016_02_25" />
+    <FunctionImportMapping FunctionImportName="SP_DSRptStockReceivedSelectCustomersAll_bk2016_02_25" FunctionName="DocumentDBModel.Store.SP_DSRptStockReceivedSelectCustomersAll_bk2016_02_25" />
+    <FunctionImportMapping FunctionImportName="SP_DSStockByLocationDetails" FunctionName="DocumentDBModel.Store.SP_DSStockByLocationDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSStockByLocationDetails_Result">
+          <ScalarProperty Name="CountOfCartonDescription" ColumnName="CountOfCartonDescription" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="CartonName" ColumnName="CartonName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSStockByLocationDetailsAllCustomer" FunctionName="DocumentDBModel.Store.SP_DSStockByLocationDetailsAllCustomer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSStockByLocationDetailsAllCustomer_Result">
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CartonNumber" ColumnName="CartonNumber" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="CartonNewIDBarcode" ColumnName="CartonNewIDBarcode" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSStockByLocationDetailsByCustomer" FunctionName="DocumentDBModel.Store.SP_DSStockByLocationDetailsByCustomer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSStockByLocationDetailsByCustomer_Result">
+          <ScalarProperty Name="CountOfCartonDescription" ColumnName="CountOfCartonDescription" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="CartonName" ColumnName="CartonName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSStockByLocationDetailsByCustomerAllCustomer" FunctionName="DocumentDBModel.Store.SP_DSStockByLocationDetailsByCustomerAllCustomer">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSStockByLocationDetailsByCustomerAllCustomer_Result">
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="CartonNumber" ColumnName="CartonNumber" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSStockMovementReportListBox" FunctionName="DocumentDBModel.Store.SP_DSStockMovementReportListBox">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSStockMovementReportListBox_Result">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CustomerNumber" ColumnName="CustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="CustomerType" ColumnName="CustomerType" />
+          <ScalarProperty Name="CustomerDiscontinued" ColumnName="CustomerDiscontinued" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSStockOnHandByLocationByBay" FunctionName="DocumentDBModel.Store.SP_DSStockOnHandByLocationByBay">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSStockOnHandByLocationByBay_Result">
+          <ScalarProperty Name="DSROCartonID" ColumnName="DSROCartonID" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="Aisle" ColumnName="Aisle" />
+          <ScalarProperty Name="High" ColumnName="High" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CartonNewIDBarcode" ColumnName="CartonNewIDBarcode" />
+          <ScalarProperty Name="Bay" ColumnName="Bay" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSStockOnHandDailyInsert" FunctionName="DocumentDBModel.Store.SP_DSStockOnHandDailyInsert" />
+    <FunctionImportMapping FunctionImportName="SP_DSStockOnHandReport" FunctionName="DocumentDBModel.Store.SP_DSStockOnHandReport">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSStockOnHandReport_Result">
+          <ScalarProperty Name="DSROCartonID" ColumnName="DSROCartonID" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="FirstReceivedDate" ColumnName="FirstReceivedDate" />
+          <ScalarProperty Name="FirstReceivedRemark" ColumnName="FirstReceivedRemark" />
+          <ScalarProperty Name="FirstReceivingOrderID" ColumnName="FirstReceivingOrderID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DestructionDate" ColumnName="DestructionDate" />
+          <ScalarProperty Name="CreatedTime" ColumnName="CreatedTime" />
+          <ScalarProperty Name="DSDispatchingOrderDate" ColumnName="DSDispatchingOrderDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSStockOnHandReport_Export_GSK" FunctionName="DocumentDBModel.Store.SP_DSStockOnHandReport_Export_GSK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSStockOnHandReport_Export_GSK_Result">
+          <ScalarProperty Name="DSROCartonID" ColumnName="DSROCartonID" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="FirstReceivedDate" ColumnName="FirstReceivedDate" />
+          <ScalarProperty Name="FirstReceivedRemark" ColumnName="FirstReceivedRemark" />
+          <ScalarProperty Name="FirstReceivingOrderID" ColumnName="FirstReceivingOrderID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DestructionDate" ColumnName="DestructionDate" />
+          <ScalarProperty Name="Global_Code" ColumnName="Global Code" />
+          <ScalarProperty Name="Duration" ColumnName="Duration" />
+          <ScalarProperty Name="Dept_code" ColumnName="Dept_code" />
+          <ScalarProperty Name="Started_year" ColumnName="Started year" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="Sequence_number" ColumnName="Sequence number" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSStockOnHandReportByCartons" FunctionName="DocumentDBModel.Store.SP_DSStockOnHandReportByCartons">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSStockOnHandReportByCartons_Result">
+          <ScalarProperty Name="DSROCartonID" ColumnName="DSROCartonID" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="FirstReceivedDate" ColumnName="FirstReceivedDate" />
+          <ScalarProperty Name="FirstReceivedRemark" ColumnName="FirstReceivedRemark" />
+          <ScalarProperty Name="FirstReceivingOrderID" ColumnName="FirstReceivingOrderID" />
+          <ScalarProperty Name="CheckSelectDispatched" ColumnName="CheckSelectDispatched" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSStockOnHandReportByDate" FunctionName="DocumentDBModel.Store.SP_DSStockOnHandReportByDate">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSStockOnHandReportByDate_Result">
+          <ScalarProperty Name="DSROCartonID" ColumnName="DSROCartonID" />
+          <ScalarProperty Name="DSReceivingOrderID" ColumnName="DSReceivingOrderID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="DSROID" ColumnName="DSROID" />
+          <ScalarProperty Name="Dispatched" ColumnName="Dispatched" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSReceivingOrderDate" ColumnName="DSReceivingOrderDate" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="LocationID" ColumnName="LocationID" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="DSCartonCategoryID" ColumnName="DSCartonCategoryID" />
+          <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+          <ScalarProperty Name="CartonSize" ColumnName="CartonSize" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="FirstReceivedDate" ColumnName="FirstReceivedDate" />
+          <ScalarProperty Name="FirstReceivedRemark" ColumnName="FirstReceivedRemark" />
+          <ScalarProperty Name="FirstReceivingOrderID" ColumnName="FirstReceivingOrderID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="DestructionDate" ColumnName="DestructionDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DSStockTakeByRequest" FunctionName="DocumentDBModel.Store.SP_DSStockTakeByRequest">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_DSStockTakeByRequest_Result">
+          <ScalarProperty Name="CartonID" ColumnName="CartonID" />
+          <ScalarProperty Name="CartonDescription" ColumnName="CartonDescription" />
+          <ScalarProperty Name="LocationNumber" ColumnName="LocationNumber" />
+          <ScalarProperty Name="Used" ColumnName="Used" />
+          <ScalarProperty Name="DSReceivingOrderNumber" ColumnName="DSReceivingOrderNumber" />
+          <ScalarProperty Name="RoomID" ColumnName="RoomID" />
+          <ScalarProperty Name="DSSpecialRequirement" ColumnName="DSSpecialRequirement" />
+          <ScalarProperty Name="CartonNewID" ColumnName="CartonNewID" />
+          <ScalarProperty Name="CrowRefID" ColumnName="CrowRefID" />
+          <ScalarProperty Name="DSCustomerID" ColumnName="DSCustomerID" />
+          <ScalarProperty Name="DSCustomerNumber" ColumnName="DSCustomerNumber" />
+          <ScalarProperty Name="DSCustomerName" ColumnName="DSCustomerName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SP_DStmpCartonDescription" FunctionName="DocumentDBModel.Store.SP_DStmpCartonDescription" />
+    <FunctionImportMapping FunctionImportName="SP_DStmpCustomerUpdate" FunctionName="DocumentDBModel.Store.SP_DStmpCustomerUpdate" />
+    <FunctionImportMapping FunctionImportName="SP_Gate_ContInOutUpdate" FunctionName="DocumentDBModel.Store.SP_Gate_ContInOutUpdate" />
+    <FunctionImportMapping FunctionImportName="SP_Gate_ContInOutUpdateQty" FunctionName="DocumentDBModel.Store.SP_Gate_ContInOutUpdateQty" />
+    <FunctionImportMapping FunctionImportName="SP_Gate_TruckInOutUpdate" FunctionName="DocumentDBModel.Store.SP_Gate_TruckInOutUpdate" />
+    <FunctionImportMapping FunctionImportName="SP_Gate_TruckInOutUpdateQty" FunctionName="DocumentDBModel.Store.SP_Gate_TruckInOutUpdateQty" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="DocumentDBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="DocumentDBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="DocumentDBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="DocumentDBModel.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="SP_UserFullName" FunctionName="DocumentDBModel.Store.SP_UserFullName">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.SP_UserFullName_Result">
+          <ScalarProperty Name="LoginName" ColumnName="LoginName" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SPDOCartonsExportToDDInsert" FunctionName="DocumentDBModel.Store.SPDOCartonsExportToDDInsert" />
+    <FunctionImportMapping FunctionImportName="SPEDI_DSProcessDispatchingOrder" FunctionName="DocumentDBModel.Store.SPEDI_DSProcessDispatchingOrder" />
+    <FunctionImportMapping FunctionImportName="spx_ImportFromExcel07" FunctionName="DocumentDBModel.Store.spx_ImportFromExcel07" />
+    <FunctionImportMapping FunctionImportName="STGate_VehicleBound" FunctionName="DocumentDBModel.Store.STGate_VehicleBound">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.STGate_VehicleBound_Result">
+          <ScalarProperty Name="VehicleInOutID" ColumnName="VehicleInOutID" />
+          <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProductQty" ColumnName="ProductQty" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="Gate" ColumnName="Gate" />
+          <ScalarProperty Name="UserOut" ColumnName="UserOut" />
+          <ScalarProperty Name="UserCheckOut" ColumnName="UserCheckOut" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="R" ColumnName="R" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="STGate_VehicleInOutRemain" FunctionName="DocumentDBModel.Store.STGate_VehicleInOutRemain">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.STGate_VehicleInOutRemain_Result">
+          <ScalarProperty Name="VehicleInOutID" ColumnName="VehicleInOutID" />
+          <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProductQty" ColumnName="ProductQty" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="Gate" ColumnName="Gate" />
+          <ScalarProperty Name="UserOut" ColumnName="UserOut" />
+          <ScalarProperty Name="UserCheckOut" ColumnName="UserCheckOut" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="R" ColumnName="R" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="STGate_VehicleInOutToday" FunctionName="DocumentDBModel.Store.STGate_VehicleInOutToday">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DocumentDBModel.STGate_VehicleInOutToday_Result">
+          <ScalarProperty Name="VehicleInOutID" ColumnName="VehicleInOutID" />
+          <ScalarProperty Name="VehicleNumber" ColumnName="VehicleNumber" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="ProductQty" ColumnName="ProductQty" />
+          <ScalarProperty Name="TimeIn" ColumnName="TimeIn" />
+          <ScalarProperty Name="TimeOut" ColumnName="TimeOut" />
+          <ScalarProperty Name="Gate" ColumnName="Gate" />
+          <ScalarProperty Name="UserOut" ColumnName="UserOut" />
+          <ScalarProperty Name="UserCheckOut" ColumnName="UserCheckOut" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+          <ScalarProperty Name="Reason" ColumnName="Reason" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="STGate_VehicleInOutUpdateOrderNumber" FunctionName="DocumentDBModel.Store.STGate_VehicleInOutUpdateOrderNumber" />
+  </EntityContainerMapping>
+</Mapping>

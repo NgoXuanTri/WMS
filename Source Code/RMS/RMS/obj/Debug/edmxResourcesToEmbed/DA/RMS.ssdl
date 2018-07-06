@@ -1,0 +1,2249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DocumentDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cartontmp">
+    <Key>
+      <PropertyRef Name="CartonID" />
+    </Key>
+    <Property Name="CartonID" Type="int" Nullable="false" />
+    <Property Name="Account" Type="int" />
+    <Property Name="CTNew" Type="int" />
+  </EntityType>
+  <EntityType Name="Categories">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Deleted_DSDOCartons">
+    <Key>
+      <PropertyRef Name="CartonDeleteID" />
+    </Key>
+    <Property Name="CartonDeleteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeletedDate" Type="smalldatetime" />
+    <Property Name="CartonID" Type="int" Nullable="false" />
+    <Property Name="CartonDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="CartonNewID" Type="int" Nullable="false" />
+    <Property Name="CrowRefID" Type="nvarchar" MaxLength="50" />
+    <Property Name="DSDOID" Type="int" />
+    <Property Name="CustomerID" Type="char" MaxLength="4" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="Dispatched" Type="bit" Nullable="false" />
+    <Property Name="CartonCanmove" Type="bit" Nullable="false" />
+    <Property Name="LocationNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="CartonSize" Type="int" Nullable="false" />
+    <Property Name="CartonDetails" Type="nvarchar" MaxLength="100" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserControl" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="Deleted_DSROCartons">
+    <Key>
+      <PropertyRef Name="CartonDeleteID" />
+    </Key>
+    <Property Name="CartonDeleteID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeletedDate" Type="smalldatetime" />
+    <Property Name="CartonID" Type="int" Nullable="false" />
+    <Property Name="CartonDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="CartonNewID" Type="int" Nullable="false" />
+    <Property Name="CrowRefID" Type="nvarchar" MaxLength="50" />
+    <Property Name="DSROID" Type="int" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="Dispatched" Type="bit" Nullable="false" />
+    <Property Name="CartonCanmove" Type="bit" Nullable="false" />
+    <Property Name="LocationNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="CartonSize" Type="int" Nullable="false" />
+    <Property Name="CartonDetails" Type="nvarchar" MaxLength="100" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserControl" Type="nvarchar" MaxLength="25" />
+  </EntityType>
+  <EntityType Name="DocumentVersions">
+    <Key>
+      <PropertyRef Name="VersionID" />
+    </Key>
+    <Property Name="VersionID" Type="int" Nullable="false" />
+    <Property Name="VersionDescription" Type="nvarchar" MaxLength="50" />
+    <Property Name="VersionDate" Type="smalldatetime" />
+    <Property Name="VersionRemark" Type="nvarchar" MaxLength="50" />
+    <Property Name="VersionUpdateBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DSCartonCategories">
+    <Key>
+      <PropertyRef Name="DSCartonCategoryID" />
+    </Key>
+    <Property Name="DSCartonCategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DSCustomerID" Type="int" Nullable="false" />
+    <Property Name="CategoryDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CategoryDescriptionVietnam" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="DSCartonDetails">
+    <Key>
+      <PropertyRef Name="CartonDetailID" />
+    </Key>
+    <Property Name="CartonDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DSCustomerID" Type="int" Nullable="false" />
+    <Property Name="CartonNewID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="CustomerNumber" Type="varchar" MaxLength="10" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="250" />
+    <Property Name="FromDate" Type="smalldatetime" />
+    <Property Name="ToDate" Type="smalldatetime" />
+    <Property Name="DocumentType" Type="nvarchar" MaxLength="50" />
+    <Property Name="CartonRemark" Type="nvarchar" MaxLength="1000" />
+    <Property Name="LastUpdatedTime" Type="smalldatetime" />
+    <Property Name="CreatedTime" Type="smalldatetime" />
+    <Property Name="LastUpdatedBy" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DSCartonMovementDetails">
+    <Key>
+      <PropertyRef Name="DSCartonMovementDetailID" />
+    </Key>
+    <Property Name="DSCartonMovementDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DSCartonMovementID" Type="int" />
+    <Property Name="CartonID" Type="int" />
+  </EntityType>
+  <EntityType Name="DSCartonMovements">
+    <Key>
+      <PropertyRef Name="DSCartonMovementID" />
+    </Key>
+    <Property Name="DSCartonMovementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SourceLocationNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="DestinationLocationNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateMovement" Type="smalldatetime" />
+    <Property Name="ReasonMovement" Type="nvarchar" MaxLength="50" />
+    <Property Name="AuthorisedBy" Type="nvarchar" MaxLength="30" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="EmployeeID" Type="int" />
+  </EntityType>
+  <EntityType Name="DSCartonsNew">
+    <Key>
+      <PropertyRef Name="CartonNewID" />
+    </Key>
+    <Property Name="CartonNewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="smalldatetime" />
+    <Property Name="CartonID" Type="int" Nullable="false" />
+    <Property Name="CartonSelected" Type="bit" Nullable="false" />
+    <Property Name="CustomerRef" Type="nvarchar" MaxLength="250" />
+    <Property Name="CrowRefID" Type="nvarchar" MaxLength="150" />
+    <Property Name="CartonReturned" Type="bit" Nullable="false" />
+    <Property Name="CartonSize" Type="real" Nullable="false" />
+    <Property Name="CartonDetails" Type="nvarchar" MaxLength="50" />
+    <Property Name="DSReceivingOrderID" Type="int" />
+    <Property Name="CartonPrint" Type="bit" />
+    <Property Name="DestructionDate" Type="datetime" />
+    <Property Name="DSCartonCategoryID" Type="int" Nullable="false" />
+    <Property Name="tmp" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="CheckSelected" Type="bit" Nullable="false" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DSCartonStockOnHandDaily">
+    <Key>
+      <PropertyRef Name="ReportDateID" />
+    </Key>
+    <Property Name="ReportDateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReportDate" Type="smalldatetime" />
+    <Property Name="Quantity" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="Volume" Type="real" />
+  </EntityType>
+  <EntityType Name="DSCartonStockOnHandMonthly">
+    <Key>
+      <PropertyRef Name="MonthDateID" />
+    </Key>
+    <Property Name="MonthDateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MonthDate" Type="smalldatetime" />
+    <Property Name="CartonStock" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+  </EntityType>
+  <EntityType Name="DSClosedPeriods">
+    <Key>
+      <PropertyRef Name="PeriodID" />
+    </Key>
+    <Property Name="PeriodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FromDate" Type="smalldatetime" />
+    <Property Name="ToDate" Type="smalldatetime" />
+    <Property Name="CloseDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="DSDispatchingOrders">
+    <Key>
+      <PropertyRef Name="DSDispatchingOrderID" />
+    </Key>
+    <Property Name="DSDispatchingOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DSDispatchingOrderNumber" Type="nvarchar" MaxLength="14" />
+    <Property Name="DSCustomerName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DSCustomerNumber" Type="nvarchar" MaxLength="14" />
+    <Property Name="DSCustomerID" Type="int" Nullable="false" />
+    <Property Name="DSDispatchingOrderDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="DSSpecialRequirement" Type="nvarchar" MaxLength="250" />
+    <Property Name="DSStatus" Type="bit" Nullable="false" />
+    <Property Name="DSDispatchingCreatedTime" Type="smalldatetime" />
+    <Property Name="DSOwner" Type="nvarchar" MaxLength="10" />
+    <Property Name="DSDispatchingType" Type="varchar" MaxLength="30" />
+    <Property Name="ServiceID" Type="int" Nullable="false" />
+    <Property Name="StartTime" Type="smalldatetime" />
+    <Property Name="EndTime" Type="smalldatetime" />
+    <Property Name="ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="ContactEmail" Type="nvarchar" MaxLength="250" />
+    <Property Name="DSOrderStatus" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DSDOCartons">
+    <Key>
+      <PropertyRef Name="DispatchedCartonID" />
+    </Key>
+    <Property Name="DispatchedCartonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DSDOID" Type="int" Nullable="false" />
+    <Property Name="CartonDescription" Type="nvarchar" MaxLength="250" />
+    <Property Name="CrowRefID" Type="nvarchar" MaxLength="150" />
+    <Property Name="CartonID" Type="int" Nullable="false" />
+    <Property Name="LocationID" Type="int" />
+    <Property Name="LocationNumber" Type="nvarchar" MaxLength="12" />
+    <Property Name="ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="CheckSelectDelete" Type="bit" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="100" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedTime" Type="smalldatetime" />
+    <Property Name="Status" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="DSLocations">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationNumber" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="RoomID" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Used" Type="bit" Nullable="false" />
+    <Property Name="LocationCode" Type="tinyint" />
+    <Property Name="Aisle" Type="smallint" />
+    <Property Name="Bay" Type="smallint" />
+    <Property Name="High" Type="smallint" />
+    <Property Name="Deep" Type="smallint" />
+    <Property Name="StandardCarton" Type="tinyint" />
+    <Property Name="Referent" Type="int" />
+  </EntityType>
+  <EntityType Name="DSReceivingOrders">
+    <Key>
+      <PropertyRef Name="DSReceivingOrderID" />
+    </Key>
+    <Property Name="DSReceivingOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DSReceivingOrderNumber" Type="nvarchar" MaxLength="14" />
+    <Property Name="DSCustomerID" Type="int" Nullable="false" />
+    <Property Name="DSCustomerNumber" Type="nvarchar" MaxLength="14" />
+    <Property Name="DSCustomerName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DSReceivingOrderDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="DSStatus" Type="bit" Nullable="false" />
+    <Property Name="DSSpecialRequirement" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="DSReceivingCreatedTime" Type="smalldatetime" />
+    <Property Name="DSOwner" Type="nvarchar" MaxLength="10" />
+    <Property Name="DSReceivingType" Type="varchar" MaxLength="30" />
+    <Property Name="ServiceID" Type="int" Nullable="false" />
+    <Property Name="StartTime" Type="smalldatetime" />
+    <Property Name="EndTime" Type="smalldatetime" />
+    <Property Name="ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="ContactEmail" Type="nvarchar" MaxLength="250" />
+    <Property Name="DSOrderStatus" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DSROCartons">
+    <Key>
+      <PropertyRef Name="CartonID" />
+    </Key>
+    <Property Name="CartonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartonDescription" Type="nvarchar" MaxLength="250" />
+    <Property Name="CartonNewID" Type="int" Nullable="false" />
+    <Property Name="DSROID" Type="int" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="CartonCanmove" Type="bit" Nullable="false" />
+    <Property Name="LocationNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="CartonSize" Type="real" Nullable="false" />
+    <Property Name="CartonDetails" Type="nvarchar" MaxLength="100" />
+    <Property Name="CrowRefID" Type="nvarchar" MaxLength="150" />
+    <Property Name="DestructionDate" Type="smalldatetime" />
+    <Property Name="DSCartonCategoryID" Type="int" Nullable="false" />
+    <Property Name="CheckDelete" Type="bit" Nullable="false" />
+    <Property Name="ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="Dispatched" Type="bit" />
+    <Property Name="CheckSelectDispatched" Type="bit" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedTime" Type="smalldatetime" />
+    <Property Name="Status" Type="tinyint" />
+    <Property Name="ScannedTime" Type="smalldatetime" />
+    <Property Name="ScannedUser" Type="nvarchar" MaxLength="30" />
+    <Property Name="SealNumber" Type="varchar" MaxLength="14" />
+  </EntityType>
+  <EntityType Name="dtproperties">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="objectid" Type="int" />
+    <Property Name="property" Type="varchar" MaxLength="64" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="uvalue" Type="nvarchar" MaxLength="255" />
+    <Property Name="lvalue" Type="image" />
+    <Property Name="version" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetails">
+    <Key>
+      <PropertyRef Name="OrderDetailsId" />
+    </Key>
+    <Property Name="OrderDetailsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="false" />
+    <Property Name="Rate" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="Quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderMaster">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderNo" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ProductName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="CategoryID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RequestCartons">
+    <Key>
+      <PropertyRef Name="RequestCartonID" />
+    </Key>
+    <Property Name="RequestCartonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RequestID" Type="int" Nullable="false" />
+    <Property Name="CartonID" Type="int" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="250" />
+    <Property Name="CartonNewID" Type="int" Nullable="false" />
+    <Property Name="CartonReference" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CartonReference2" Type="nvarchar" MaxLength="50" />
+    <Property Name="CreatedTime" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Requests">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="RequestDate" Type="smalldatetime" />
+    <Property Name="CreatedTime" Type="smalldatetime" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmtyCarton" Type="bit" Nullable="false" />
+    <Property Name="DocumentRetrieval" Type="bit" Nullable="false" />
+    <Property Name="CartonDestruction" Type="bit" Nullable="false" />
+    <Property Name="OnSiteChecking" Type="bit" Nullable="false" />
+    <Property Name="RequestDescription" Type="nvarchar" MaxLength="3500" />
+    <Property Name="DeliveryAddress" Type="nvarchar" MaxLength="250" />
+    <Property Name="ContactPerson" Type="nvarchar" MaxLength="250" />
+    <Property Name="ContactPhone" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContactEmail" Type="nvarchar" MaxLength="250" />
+    <Property Name="RequestQuantity" Type="int" Nullable="false" />
+    <Property Name="RequestStatus" Type="tinyint" Nullable="false" />
+    <Property Name="ProcessBy" Type="nvarchar" MaxLength="20" />
+    <Property Name="ProcessTime" Type="smalldatetime" />
+    <Property Name="UserId" Type="uniqueidentifier" />
+    <Property Name="ReferenceOrderID" Type="int" />
+    <Property Name="FileUploaded" Type="bit" Nullable="false" />
+    <Property Name="FileUploadedCode" Type="nvarchar" MaxLength="250" />
+    <Property Name="ProcessFeedback" Type="nvarchar" MaxLength="250" />
+    <Property Name="RequestType" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'DocumentDB.dbo.temp' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="temp">
+          <Property Name="data" Type="varchar" MaxLength="2000" />
+        </EntityType>-->
+  <EntityType Name="tmpAttachment">
+    <Key>
+      <PropertyRef Name="AttachmentID" />
+    </Key>
+    <Property Name="AttachmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CheckingID" Type="int" Nullable="false" />
+    <Property Name="AttachmentDescription" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="AttachmentFile" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="AttachmentDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="AttachmentUser" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="TS" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="AttachmentFileSize" Type="int" />
+    <Property Name="OriginalFileName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CheckingUpdate" Type="bit" />
+    <Property Name="LocationChecking" Type="varchar" MaxLength="150" />
+    <Property Name="CheckingType" Type="nvarchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="tmpBillingCustomers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmpBillingReport">
+    <Key>
+      <PropertyRef Name="BillingDateID" />
+    </Key>
+    <Property Name="BillingDateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReportDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="BeginC" Type="int" Nullable="false" />
+    <Property Name="BeginW" Type="float" Nullable="false" />
+    <Property Name="InC" Type="int" Nullable="false" />
+    <Property Name="InW" Type="float" Nullable="false" />
+    <Property Name="OutC" Type="int" Nullable="false" />
+    <Property Name="OutW" Type="float" Nullable="false" />
+    <Property Name="CloseC" Type="int" Nullable="false" />
+    <Property Name="CloseW" Type="float" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="BeginP" Type="float" />
+    <Property Name="InP" Type="float" />
+    <Property Name="OutP" Type="float" />
+    <Property Name="CloseP" Type="float" />
+    <Property Name="EmployeeID" Type="int" />
+  </EntityType>
+  <EntityType Name="tmpCus">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmpCustomers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Initial" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerType" Type="varchar" MaxLength="50" />
+    <Property Name="PrimaryContact" Type="nvarchar" MaxLength="150" />
+    <Property Name="Phone1" Type="varchar" MaxLength="50" />
+    <Property Name="Phone2" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Fax2" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="1000" />
+    <Property Name="OtherContacts" Type="nvarchar" MaxLength="150" />
+    <Property Name="MarketingInfor" Type="nvarchar" MaxLength="500" />
+    <Property Name="CustomerInvoiceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerInvoiceAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="CustomerInvoiceTaxCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="CustomerDiscontinued" Type="bit" Nullable="false" />
+    <Property Name="CustomerCategory" Type="tinyint" Nullable="false" />
+    <Property Name="CustomerGroup" Type="tinyint" Nullable="false" />
+    <Property Name="CustomerMainID" Type="int" />
+  </EntityType>
+  <EntityType Name="tmpCustomersViewStock">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="CustomerNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="SelectCustomer" Type="bit" />
+    <Property Name="ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tmpDSCartonsNew_Import">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CartonID" Type="int" />
+    <Property Name="Cartonname" Type="nvarchar" MaxLength="250" />
+    <Property Name="CustomerReference" Type="nvarchar" MaxLength="250" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="DSRDID" Type="int" />
+    <Property Name="CartonSize" Type="real" />
+    <Property Name="DestructionDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="tmpDSCustomersCartons">
+    <Key>
+      <PropertyRef Name="IDRec" />
+    </Key>
+    <Property Name="IDRec" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="xXD" Type="int" />
+    <Property Name="DSCustomerID" Type="int" Nullable="false" />
+    <Property Name="Priority" Type="bit" />
+  </EntityType>
+  <EntityType Name="tmpDSDispatchingOrderID">
+    <Key>
+      <PropertyRef Name="DSDispatchingOrderID" />
+    </Key>
+    <Property Name="DSDispatchingOrderID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmpDSDispatchingOrderID_Recent">
+    <Key>
+      <PropertyRef Name="DSDispatchingOrderID" />
+    </Key>
+    <Property Name="DSDispatchingOrderID" Type="int" Nullable="false" />
+    <Property Name="DSTime" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="tmpDSLocations">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmpDSOrdersUpdate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderNumber" Type="nvarchar" MaxLength="14" />
+    <Property Name="OrderCheck" Type="bit" />
+    <Property Name="ts" Type="timestamp" StoreGeneratedPattern="Computed" />
+    <Property Name="OrderDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="tmpL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmpLocationsWMS">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="LocationNumber" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="RoomID" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Aisle" Type="smallint" Nullable="false" />
+    <Property Name="Bay" Type="smallint" Nullable="false" />
+    <Property Name="High" Type="smallint" Nullable="false" />
+    <Property Name="Deep" Type="smallint" Nullable="false" />
+    <Property Name="LocationCode" Type="tinyint" />
+  </EntityType>
+  <EntityType Name="tmpLocForStockTake">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="LocationNumber" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="RoomID" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Aisle" Type="smallint" Nullable="false" />
+    <Property Name="Bay" Type="smallint" Nullable="false" />
+    <Property Name="High" Type="smallint" Nullable="false" />
+    <Property Name="Deep" Type="smallint" Nullable="false" />
+    <Property Name="Used" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmpNoteDispatchingOder">
+    <Key>
+      <PropertyRef Name="NoteDispatchingOderID" />
+    </Key>
+    <Property Name="NoteDispatchingOderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NoteDispatchingOderNumber" Type="nvarchar" MaxLength="15" />
+    <Property Name="DispatchingOderID" Type="int" />
+    <Property Name="Note" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="NoteDate" Type="smalldatetime" />
+    <Property Name="NoteBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Checked" Type="bit" />
+  </EntityType>
+  <EntityType Name="tmpNoteDispatchingOderDetail">
+    <Key>
+      <PropertyRef Name="NoteDispatchingOderDetailID" />
+    </Key>
+    <Property Name="NoteDispatchingOderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NoteDispatchingOderID" Type="int" />
+    <Property Name="LinkImg" Type="nvarchar" MaxLength="500" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="Date" Type="smalldatetime" />
+    <Property Name="UploadBy" Type="nvarchar" MaxLength="50" />
+    <Property Name="Checked" Type="bit" />
+  </EntityType>
+  <EntityType Name="tmpTruckchecking">
+    <Key>
+      <PropertyRef Name="TruckCheckingID" />
+    </Key>
+    <Property Name="TruckCheckingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TruckInOutID" Type="int" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="TruckNum" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TruckType" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeIn" Type="smalldatetime" />
+    <Property Name="Operation" Type="nvarchar" MaxLength="10" />
+    <Property Name="TemperatureShow" Type="nvarchar" MaxLength="30" />
+    <Property Name="TemperatureSetup" Type="nvarchar" MaxLength="30" />
+    <Property Name="Running" Type="bit" />
+    <Property Name="Thawing" Type="bit" />
+    <Property Name="Stop" Type="bit" />
+    <Property Name="Error" Type="bit" />
+    <Property Name="ProductEmpty" Type="bit" />
+    <Property Name="Seal" Type="bit" />
+    <Property Name="Lock" Type="bit" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserCheck" Type="nvarchar" MaxLength="50" />
+    <Property Name="Time" Type="smalldatetime" />
+    <Property Name="Finish" Type="bit" />
+    <Property Name="AttachmentFile" Type="bit" />
+    <Property Name="LocationChecking" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="tmpWebDSStockOnHandMonthly">
+    <Key>
+      <PropertyRef Name="Month" />
+    </Key>
+    <Property Name="Month" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="MonthFirstDate" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="TruckChecking">
+    <Key>
+      <PropertyRef Name="TruckCheckingID" />
+    </Key>
+    <Property Name="TruckCheckingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TruckInOutID" Type="int" />
+    <Property Name="TemperatureShow" Type="nvarchar" MaxLength="5" />
+    <Property Name="TemperatureSetup" Type="nvarchar" MaxLength="5" />
+    <Property Name="Running" Type="bit" />
+    <Property Name="Thawing" Type="bit" />
+    <Property Name="Stop" Type="bit" />
+    <Property Name="Error" Type="bit" />
+    <Property Name="ProductEmpty" Type="bit" />
+    <Property Name="Seal" Type="bit" />
+    <Property Name="Lock" Type="bit" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserCheck" Type="nvarchar" MaxLength="50" />
+    <Property Name="Time" Type="smalldatetime" />
+    <Property Name="AttachmentFile" Type="bit" />
+    <Property Name="LocationChecking" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.Aisles' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Aisles">
+    <Key>
+      <PropertyRef Name="AisleRoomID" />
+      <PropertyRef Name="RoomID" />
+      <PropertyRef Name="Aisle" />
+      <PropertyRef Name="NumberOfBays" />
+      <PropertyRef Name="NumberOfDeeps" />
+      <PropertyRef Name="NumberOfHighs" />
+    </Key>
+    <Property Name="AisleRoomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RoomID" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Aisle" Type="tinyint" Nullable="false" />
+    <Property Name="NumberOfBays" Type="smallint" Nullable="false" />
+    <Property Name="NumberOfDeeps" Type="smallint" Nullable="false" />
+    <Property Name="NumberOfHighs" Type="smallint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.BillingDetailBreakDown' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BillingDetailBreakDown">
+    <Key>
+      <PropertyRef Name="BillingDetailBreakdownID" />
+      <PropertyRef Name="BillingID" />
+    </Key>
+    <Property Name="BillingDetailBreakdownID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BillingID" Type="int" Nullable="false" />
+    <Property Name="ReportDate" Type="smalldatetime" />
+    <Property Name="BeginC" Type="int" />
+    <Property Name="InC" Type="int" />
+    <Property Name="OutC" Type="int" />
+    <Property Name="CloseC" Type="int" />
+    <Property Name="BeginW" Type="real" />
+    <Property Name="InW" Type="real" />
+    <Property Name="OutW" Type="real" />
+    <Property Name="CloseW" Type="real" />
+    <Property Name="BeginP" Type="int" />
+    <Property Name="InP" Type="int" />
+    <Property Name="OutP" Type="int" />
+    <Property Name="CloseP" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.ContainerChecking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ContainerChecking">
+    <Key>
+      <PropertyRef Name="ContainerCheckingID" />
+      <PropertyRef Name="ContInOutID" />
+    </Key>
+    <Property Name="ContainerCheckingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContInOutID" Type="int" Nullable="false" />
+    <Property Name="TemperatureShow" Type="nvarchar" MaxLength="30" />
+    <Property Name="TemperatureSetup" Type="nvarchar" MaxLength="30" />
+    <Property Name="Running" Type="bit" />
+    <Property Name="Thawing" Type="bit" />
+    <Property Name="Stop" Type="bit" />
+    <Property Name="Error" Type="bit" />
+    <Property Name="ProductEmpty" Type="bit" />
+    <Property Name="Seal" Type="bit" />
+    <Property Name="Lock" Type="bit" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserCheck" Type="nvarchar" MaxLength="50" />
+    <Property Name="Time" Type="smalldatetime" />
+    <Property Name="AttachmentFile" Type="bit" />
+    <Property Name="LocationChecking" Type="varchar" MaxLength="150" />
+    <Property Name="DockNumber" Type="nvarchar" MaxLength="5" />
+    <Property Name="NoOperation" Type="bit" />
+    <Property Name="ContainerCheckingID_old" Type="int" />
+    <Property Name="ContainerCheckingNumber" Type="nvarchar" MaxLength="16" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.Gate_ContInOut' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Gate_ContInOut">
+    <Key>
+      <PropertyRef Name="ContInOutID" />
+    </Key>
+    <Property Name="ContInOutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContainerNum" Type="nvarchar" MaxLength="20" />
+    <Property Name="ContainerType" Type="nvarchar" MaxLength="50" />
+    <Property Name="Reason" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductQty" Type="nvarchar" MaxLength="10" />
+    <Property Name="TimeIn" Type="smalldatetime" />
+    <Property Name="TimeOut" Type="smalldatetime" />
+    <Property Name="StartTime" Type="smalldatetime" />
+    <Property Name="EndTime" Type="smalldatetime" />
+    <Property Name="UserOut" Type="char" MaxLength="50" />
+    <Property Name="RunningHour" Type="smalldatetime" />
+    <Property Name="RunningFloat" Type="float" />
+    <Property Name="PowerQuantity" Type="float" />
+    <Property Name="CheckOut" Type="bit" />
+    <Property Name="Via" Type="bit" />
+    <Property Name="OtherServiceID" Type="int" />
+    <Property Name="TruckIn" Type="nvarchar" MaxLength="13" />
+    <Property Name="TruckOut" Type="nvarchar" MaxLength="13" />
+    <Property Name="UserCheckOut" Type="bit" />
+    <Property Name="TruckCheckOut" Type="bit" />
+    <Property Name="UserTruckOut" Type="char" MaxLength="50" />
+    <Property Name="Gate" Type="tinyint" />
+    <Property Name="EstimateHour" Type="real" />
+    <Property Name="OrderNumber" Type="char" MaxLength="20" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
+    <Property Name="StartWorkingTime" Type="smalldatetime" />
+    <Property Name="EndWorkingTime" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.Gate_TruckInOut' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Gate_TruckInOut">
+    <Key>
+      <PropertyRef Name="TruckInOutID" />
+      <PropertyRef Name="Gate" />
+    </Key>
+    <Property Name="TruckInOutID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TruckNum" Type="nvarchar" MaxLength="10" />
+    <Property Name="DriverName" Type="nvarchar" MaxLength="50" />
+    <Property Name="TruckType" Type="varchar" MaxLength="50" />
+    <Property Name="TruckReason" Type="nvarchar" MaxLength="50" />
+    <Property Name="ProductQty" Type="nvarchar" MaxLength="10" />
+    <Property Name="TimeIn" Type="smalldatetime" />
+    <Property Name="CheckOut" Type="bit" />
+    <Property Name="TimeOut" Type="smalldatetime" />
+    <Property Name="CM_BL" Type="nvarchar" MaxLength="30" />
+    <Property Name="UserOut" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserCheckOut" Type="bit" />
+    <Property Name="Gate" Type="tinyint" Nullable="false" />
+    <Property Name="OrderNumber" Type="char" MaxLength="20" />
+    <Property Name="StartWorkingTime" Type="smalldatetime" />
+    <Property Name="EndWorkingTime" Type="smalldatetime" />
+    <Property Name="StartTime" Type="smalldatetime" />
+    <Property Name="EndTime" Type="smalldatetime" />
+    <Property Name="OtherServiceID" Type="int" />
+    <Property Name="PowerQuantity" Type="float" />
+    <Property Name="RunningFloat" Type="float" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.Locations' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Locations">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationNumber" />
+      <PropertyRef Name="RoomID" />
+      <PropertyRef Name="Aisle" />
+      <PropertyRef Name="Bay" />
+      <PropertyRef Name="High" />
+      <PropertyRef Name="Deep" />
+      <PropertyRef Name="Used" />
+      <PropertyRef Name="Top" />
+      <PropertyRef Name="Low" />
+    </Key>
+    <Property Name="LocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationNumber" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="RoomID" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Aisle" Type="smallint" Nullable="false" />
+    <Property Name="Bay" Type="smallint" Nullable="false" />
+    <Property Name="High" Type="smallint" Nullable="false" />
+    <Property Name="Deep" Type="smallint" Nullable="false" />
+    <Property Name="Used" Type="smallint" Nullable="false" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="50" />
+    <Property Name="Top" Type="bit" Nullable="false" />
+    <Property Name="Low" Type="bit" Nullable="false" />
+    <Property Name="LocationNumberShort" Type="char" MaxLength="6" />
+    <Property Name="isBusy" Type="tinyint" />
+    <Property Name="ProductQuantity" Type="bigint" />
+    <Property Name="PalletQuantity" Type="int" />
+    <Property Name="LocationCode" Type="tinyint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.tpmContainerChecking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="tpmContainerChecking">
+    <Key>
+      <PropertyRef Name="CheckingID" />
+      <PropertyRef Name="ContInOutID" />
+    </Key>
+    <Property Name="CheckingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContInOutID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="ContainerNum" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ContainerType" Type="nvarchar" MaxLength="50" />
+    <Property Name="TimeIn" Type="smalldatetime" />
+    <Property Name="Operation" Type="nvarchar" MaxLength="10" />
+    <Property Name="TemperatureShow" Type="nvarchar" MaxLength="30" />
+    <Property Name="TemperatureSetup" Type="nvarchar" MaxLength="30" />
+    <Property Name="Running" Type="bit" />
+    <Property Name="Thawing" Type="bit" />
+    <Property Name="Stop" Type="bit" />
+    <Property Name="Error" Type="bit" />
+    <Property Name="ProductEmpty" Type="bit" />
+    <Property Name="Seal" Type="bit" />
+    <Property Name="Lock" Type="bit" />
+    <Property Name="Remark" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserCheck" Type="nvarchar" MaxLength="50" />
+    <Property Name="Time" Type="smalldatetime" />
+    <Property Name="Finish" Type="bit" />
+    <Property Name="AttachmentFile" Type="bit" />
+    <Property Name="LocationChecking" Type="varchar" MaxLength="150" />
+    <Property Name="DockNumber" Type="nvarchar" MaxLength="5" />
+    <Property Name="NoOperation" Type="bit" />
+    <Property Name="CheckingID_old" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.View_aspnet_Users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_aspnet_Users">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="LoweredUserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.View_BillingBreakDown' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_BillingBreakDown">
+    <Key>
+      <PropertyRef Name="BillingDetailBreakdownID" />
+      <PropertyRef Name="BillingID" />
+    </Key>
+    <Property Name="BillingDetailBreakdownID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BillingID" Type="int" Nullable="false" />
+    <Property Name="ReportDate" Type="smalldatetime" />
+    <Property Name="BeginC" Type="int" />
+    <Property Name="InC" Type="int" />
+    <Property Name="OutC" Type="int" />
+    <Property Name="CloseC" Type="int" />
+    <Property Name="BeginW" Type="real" />
+    <Property Name="InW" Type="real" />
+    <Property Name="OutW" Type="real" />
+    <Property Name="CloseW" Type="real" />
+    <Property Name="BeginP" Type="int" />
+    <Property Name="InP" Type="int" />
+    <Property Name="OutP" Type="int" />
+    <Property Name="CloseP" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.View_Customers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="CustomerCategory" />
+      <PropertyRef Name="CustomerMainID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="CustomerNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Initial" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerType" Type="varchar" MaxLength="50" />
+    <Property Name="PrimaryContact" Type="nvarchar" MaxLength="150" />
+    <Property Name="Phone1" Type="varchar" MaxLength="50" />
+    <Property Name="Phone2" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Fax2" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="1000" />
+    <Property Name="OtherContacts" Type="nvarchar" MaxLength="150" />
+    <Property Name="MarketingInfor" Type="nvarchar" MaxLength="500" />
+    <Property Name="CustomerInvoiceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerInvoiceAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="CustomerInvoiceTaxCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="CustomerDiscontinued" Type="bit" />
+    <Property Name="CustomerCategory" Type="tinyint" Nullable="false" />
+    <Property Name="CustomerGroup" Type="tinyint" />
+    <Property Name="CustomerMainID" Type="int" Nullable="false" />
+    <Property Name="CustomerByExpiryDate" Type="bit" />
+    <Property Name="SendNote" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.View_DSCustomerListBillings ' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_DSCustomerListBillings ">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="CustomerName" />
+    </Key>
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="CustomerNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FromDate" Type="smalldatetime" />
+    <Property Name="ToDate" Type="smalldatetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.View_DSLocationBarcode' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_DSLocationBarcode">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationNumber" />
+    </Key>
+    <Property Name="LocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LocationBarcode" Type="nvarchar" MaxLength="11" />
+    <Property Name="LocationNumber" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="StandardCarton" Type="tinyint" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.View_DSLocationsAll' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_DSLocationsAll">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationNumber" />
+      <PropertyRef Name="RoomID" />
+      <PropertyRef Name="Used" />
+    </Key>
+    <Property Name="LocationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="L" Type="nvarchar" MaxLength="6" />
+    <Property Name="LocationNumber" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="RoomID" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="Used" Type="bit" Nullable="false" />
+    <Property Name="LocationCode" Type="tinyint" />
+    <Property Name="Aisle" Type="smallint" />
+    <Property Name="Bay" Type="smallint" />
+    <Property Name="High" Type="smallint" />
+    <Property Name="Deep" Type="smallint" />
+    <Property Name="StandardCarton" Type="tinyint" />
+    <Property Name="Referent" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.View_DSLocationsHasCartons' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_DSLocationsHasCartons">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" Nullable="false" />
+    <Property Name="LocationNumber" Type="nvarchar" MaxLength="12" />
+    <Property Name="L" Type="nvarchar" MaxLength="6" />
+    <Property Name="Quantity" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'DocumentDB.dbo.View_DSStockAverageMonthly' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="View_DSStockAverageMonthly">
+          <Property Name="ReportMonth" Type="datetime" />
+          <Property Name="AvgStock" Type="int" />
+          <Property Name="Month" Type="char" MaxLength="7" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.View_Employees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_Employees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="ContractPermanent" />
+      <PropertyRef Name="ManagementLevel" />
+      <PropertyRef Name="BikeUse" />
+      <PropertyRef Name="PerformanceStatus" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfBirth" Type="datetime" />
+    <Property Name="Status" Type="smallint" />
+    <Property Name="Education" Type="nvarchar" MaxLength="20" />
+    <Property Name="Position" Type="nvarchar" MaxLength="30" />
+    <Property Name="DateOfEntry" Type="datetime" />
+    <Property Name="Address" Type="nvarchar" MaxLength="250" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="50" />
+    <Property Name="IDCardNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Photograph" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="ContractPermanent" Type="bit" Nullable="false" />
+    <Property Name="ManagementLevel" Type="int" Nullable="false" />
+    <Property Name="ContractDate" Type="datetime" />
+    <Property Name="PositionID" Type="int" />
+    <Property Name="VietnamName" Type="nvarchar" MaxLength="50" />
+    <Property Name="BikeNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="BikeUse" Type="bit" Nullable="false" />
+    <Property Name="VietnamPosition" Type="nvarchar" MaxLength="50" />
+    <Property Name="InOutCardNumber" Type="nvarchar" MaxLength="5" />
+    <Property Name="ShiftID" Type="tinyint" />
+    <Property Name="Grade" Type="tinyint" />
+    <Property Name="Department" Type="tinyint" />
+    <Property Name="AddressNow" Type="nvarchar" MaxLength="250" />
+    <Property Name="PerformanceStatus" Type="bit" Nullable="false" />
+    <Property Name="IDCardIssueDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.View_ServicesDefinition' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_ServicesDefinition">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ServiceNumber" Type="nvarchar" MaxLength="14" />
+    <Property Name="ServiceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Measure" Type="nvarchar" MaxLength="15" />
+    <Property Name="Code" Type="bit" Nullable="false" />
+    <Property Name="CustomerCategory" Type="int" />
+    <Property Name="ServiceCategory" Type="varchar" MaxLength="50" />
+    <Property Name="CheckingQuantityMax" Type="float" />
+    <Property Name="CheckingQuantityMin" Type="float" />
+    <Property Name="ServiceNameVietnamese" Type="nvarchar" MaxLength="75" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.View_WebUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="View_WebUsers">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerID" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.ViewCartonDispatchedLast2days' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewCartonDispatchedLast2days">
+    <Key>
+      <PropertyRef Name="CartonNewID" />
+      <PropertyRef Name="DSReceivingOrderDate" />
+      <PropertyRef Name="DSDispatchingOrderDate" />
+    </Key>
+    <Property Name="CartonNewID" Type="int" Nullable="false" />
+    <Property Name="Dispatched" Type="bit" />
+    <Property Name="DSCustomerNumber" Type="nvarchar" MaxLength="14" />
+    <Property Name="DSCustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DSReceivingOrderDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="CartonDescription" Type="nvarchar" MaxLength="250" />
+    <Property Name="DSDispatchingOrderDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.ViewCartonOnHand' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewCartonOnHand">
+    <Key>
+      <PropertyRef Name="CartonNewID" />
+      <PropertyRef Name="DSReceivingOrderDate" />
+    </Key>
+    <Property Name="CartonNewID" Type="int" Nullable="false" />
+    <Property Name="Dispatched" Type="bit" />
+    <Property Name="DSCustomerNumber" Type="nvarchar" MaxLength="14" />
+    <Property Name="DSCustomerName" Type="nvarchar" MaxLength="50" />
+    <Property Name="DSReceivingOrderDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="CartonDescription" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DocumentDB.dbo.ViewCustomers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ViewCustomers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="CustomerCategory" />
+      <PropertyRef Name="CustomerMainID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="CustomerNumber" Type="varchar" MaxLength="50" />
+    <Property Name="CustomerName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Initial" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="nvarchar" MaxLength="100" />
+    <Property Name="CustomerType" Type="varchar" MaxLength="50" />
+    <Property Name="PrimaryContact" Type="nvarchar" MaxLength="150" />
+    <Property Name="Phone1" Type="varchar" MaxLength="50" />
+    <Property Name="Phone2" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile" Type="nvarchar" MaxLength="20" />
+    <Property Name="Fax" Type="varchar" MaxLength="50" />
+    <Property Name="Fax2" Type="varchar" MaxLength="50" />
+    <Property Name="Email" Type="varchar" MaxLength="1000" />
+    <Property Name="OtherContacts" Type="nvarchar" MaxLength="150" />
+    <Property Name="MarketingInfor" Type="nvarchar" MaxLength="500" />
+    <Property Name="CustomerInvoiceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CustomerInvoiceAddress" Type="nvarchar" MaxLength="150" />
+    <Property Name="CustomerInvoiceTaxCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="CustomerDiscontinued" Type="bit" />
+    <Property Name="CustomerCategory" Type="tinyint" Nullable="false" />
+    <Property Name="CustomerGroup" Type="tinyint" />
+    <Property Name="CustomerMainID" Type="int" Nullable="false" />
+    <Property Name="CustomerByExpiryDate" Type="bit" />
+    <Property Name="SendNote" Type="bit" />
+    <Property Name="Type" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_DSCartonMovementDetails_DSCartonMovements">
+    <End Role="DSCartonMovements" Type="Self.DSCartonMovements" Multiplicity="0..1" />
+    <End Role="DSCartonMovementDetails" Type="Self.DSCartonMovementDetails" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSCartonMovements">
+        <PropertyRef Name="DSCartonMovementID" />
+      </Principal>
+      <Dependent Role="DSCartonMovementDetails">
+        <PropertyRef Name="DSCartonMovementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSCartonsNew_DSCartonCategories">
+    <End Role="DSCartonCategories" Type="Self.DSCartonCategories" Multiplicity="1" />
+    <End Role="DSCartonsNew" Type="Self.DSCartonsNew" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSCartonCategories">
+        <PropertyRef Name="DSCartonCategoryID" />
+      </Principal>
+      <Dependent Role="DSCartonsNew">
+        <PropertyRef Name="DSCartonCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSDOCartons_DSDispatchingOrders">
+    <End Role="DSDispatchingOrders" Type="Self.DSDispatchingOrders" Multiplicity="1" />
+    <End Role="DSDOCartons" Type="Self.DSDOCartons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSDispatchingOrders">
+        <PropertyRef Name="DSDispatchingOrderID" />
+      </Principal>
+      <Dependent Role="DSDOCartons">
+        <PropertyRef Name="DSDOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSDOCartons_DSLocations">
+    <End Role="DSLocations" Type="Self.DSLocations" Multiplicity="0..1" />
+    <End Role="DSDOCartons" Type="Self.DSDOCartons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSLocations">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="DSDOCartons">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSROCartons_DSLocations">
+    <End Role="DSLocations" Type="Self.DSLocations" Multiplicity="1" />
+    <End Role="DSROCartons" Type="Self.DSROCartons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSLocations">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="DSROCartons">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSROCartons_DSReceivingOrders">
+    <End Role="DSReceivingOrders" Type="Self.DSReceivingOrders" Multiplicity="1" />
+    <End Role="DSROCartons" Type="Self.DSROCartons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSReceivingOrders">
+        <PropertyRef Name="DSReceivingOrderID" />
+      </Principal>
+      <Dependent Role="DSROCartons">
+        <PropertyRef Name="DSROID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DtmpNoteDispatchingOderdetail_tmpNoteDispatchingOder">
+    <End Role="tmpNoteDispatchingOder" Type="Self.tmpNoteDispatchingOder" Multiplicity="0..1" />
+    <End Role="tmpNoteDispatchingOderDetail" Type="Self.tmpNoteDispatchingOderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tmpNoteDispatchingOder">
+        <PropertyRef Name="NoteDispatchingOderID" />
+      </Principal>
+      <Dependent Role="tmpNoteDispatchingOderDetail">
+        <PropertyRef Name="NoteDispatchingOderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RequestCartons_Requests">
+    <End Role="Requests" Type="Self.Requests" Multiplicity="1" />
+    <End Role="RequestCartons" Type="Self.RequestCartons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requests">
+        <PropertyRef Name="RequestID" />
+      </Principal>
+      <Dependent Role="RequestCartons">
+        <PropertyRef Name="RequestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="SP_DSBillingByCustomerPeriodAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BillingID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSBillingConfirmationAdd_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varCustomerID" Type="int" Mode="In" />
+    <Parameter Name="varFromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varToDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="CurrentUser" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSBillingReport_New" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSBillingRun1Customer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varFromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varTodate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varCustomerID" Type="int" Mode="In" />
+    <Parameter Name="varEmployeeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSBillingRunByCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varFromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varTodate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varCustomerString" Type="varchar" Mode="In" />
+    <Parameter Name="EmployeeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSBillingRunByCustomerInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="varEmployeeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSBillingStockMovement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="varFromDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="varToDate" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSBillingSummaryInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="Todate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonByhight_Aisle" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Flag" Type="int" Mode="In" />
+    <Parameter Name="High" Type="int" Mode="In" />
+    <Parameter Name="Aisle" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonDestructionByCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSCustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonInfo_Carton" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonInfo_Carton_Location" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonInfo_CartonViewAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonInfo_details" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CartonNewID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonInfo_DO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonInfo_Location" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonInfo_Movement" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CartonNewID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonInfo_Retrieval" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSCustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonInfo_RO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonLabelRemain" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDispatchingOrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonLabelRemain_Created" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSCartonMovementDeSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonMovementFrom_combo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSCartonMovementLocationReview" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="SourceLocation" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonMovementSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="CartonNewID" Type="int" Mode="In" />
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonMovementSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonMovementTo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonMovementViewDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSCartonMovementID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonProblemCheckRemain" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSCartonSelect_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSCartonsNew_Import" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSReceivingOrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonsNew_ImportNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSReceivingOrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonsNew_ImportTruncate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSCartonsNew_UpdateCustomerReference" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSReceivingOrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonsNew_UpdateToOrders" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CartonNewID" Type="int" Mode="In" />
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+    <Parameter Name="UpdatedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonsNewDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CartonNewID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCartonStockInStoreAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DScomboContracts" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="OrderType" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSComboCustomerID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSComboDOCarton" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSCustomerID" Type="int" Mode="In" />
+    <Parameter Name="Flag" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSComboDOCartonByCriteria" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSCustomerID" Type="int" Mode="In" />
+    <Parameter Name="Criteria" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DScomboROCartonID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="OrderType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCreateNewCarton" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="QtyCarton" Type="int" Mode="In" />
+    <Parameter Name="DSReceivingOrderID" Type="int" Mode="In" />
+    <Parameter Name="CreatedBy" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSCustomerProductGroupInsertNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDDCartonBarcode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDispatchingOrdersID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDispatchingNote" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDOID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDispatchingOrderCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSDispatchingOrderCreateByCustomerInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSOwner" Type="varchar" Mode="In" />
+    <Parameter Name="varLocationIDString" Type="varchar" Mode="In" />
+    <Parameter Name="varCustomerIDString" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDispatchingOrderCreateByHigh" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSDispatchingOrderCreateByLocationInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSOwner" Type="varchar" Mode="In" />
+    <Parameter Name="varLocationIDString" Type="varchar" Mode="In" />
+    <Parameter Name="varCustomerIDString" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDispatchingOrderDetailsCreate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSDispatchingOrderDetailsCreateInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varLocationIDString" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDispatchingOrdersCreateReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSDOCartonByLocationInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDOID" Type="int" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDOCartonByLocationSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSCustomerID" Type="int" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDOCartonDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CartonID" Type="int" Mode="In" />
+    <Parameter Name="DispatchedCartonID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDOCartonInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDOID" Type="int" Mode="In" />
+    <Parameter Name="CartonID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDOCartonsAccept" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDOID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DispatchedCartonID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDOCartonsConfirm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDOID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="DispatchedCartonID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDOCartonSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSCustomerID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDOCartonSelectInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDOID" Type="int" Mode="In" />
+    <Parameter Name="DSCustomerID" Type="int" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDODeleteCartonSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDOID" Type="int" Mode="In" />
+    <Parameter Name="User" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDOOrderDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDispatchingOrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDOSelectOneCarton" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CartonNewID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDOUpdateSelectAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDOID" Type="int" Mode="In" />
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSDOUpdateSelectOne" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DispatchedCartonID" Type="int" Mode="In" />
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSEmployeeWorkingDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmployeeWorkingID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSFindCartons_ByLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSInOutView_D" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSInOutView_DALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSInOutView_DALL_SortByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSInOutview_R" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSInOutview_RALL" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSInOutview_RALL_SortByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSLabel" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSReceivingOrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSLabelA5StockLocationByHight" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="Flag" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSLabelCartonMovementTo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSLabelCartonMovementToByHight" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationNumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSLabelRemainRD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSReceivingOrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSLocationBarcode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Flag" Type="int" Mode="In" />
+    <Parameter Name="High" Type="int" Mode="In" />
+    <Parameter Name="Aisle" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSLocationBarcode_buuTest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSLocationInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RoomID" Type="char" Mode="In" />
+    <Parameter Name="Aisle" Type="int" Mode="In" />
+    <Parameter Name="FromBay" Type="int" Mode="In" />
+    <Parameter Name="ToBay" Type="int" Mode="In" />
+    <Parameter Name="FromHigh" Type="int" Mode="In" />
+    <Parameter Name="ToHigh" Type="int" Mode="In" />
+    <Parameter Name="FromDeep" Type="int" Mode="In" />
+    <Parameter Name="ToDeep" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSLocationsAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSLocationsBusy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSLocationsFree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSLocationsFree_TEST" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationNumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSMovementCartonUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varSourceLocationID" Type="int" Mode="In" />
+    <Parameter Name="varDestinationLocationID" Type="int" Mode="In" />
+    <Parameter Name="varDestinationLocationNumber" Type="varchar" Mode="In" />
+    <Parameter Name="User" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSMovementCartonUpdateByCarton" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varCartonID" Type="int" Mode="In" />
+    <Parameter Name="varDestinationLocationID" Type="int" Mode="In" />
+    <Parameter Name="varDestinationLocationNumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSMovementLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varSourceLocationNumber" Type="varchar" Mode="In" />
+    <Parameter Name="varSourceLocationID" Type="int" Mode="In" />
+    <Parameter Name="varDestinationLocationNumber" Type="varchar" Mode="In" />
+    <Parameter Name="varEmployeeID" Type="int" Mode="In" />
+    <Parameter Name="varUser" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSMovementLocationByCarton" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varSourceLocationNumber" Type="varchar" Mode="In" />
+    <Parameter Name="varSourceLocationID" Type="int" Mode="In" />
+    <Parameter Name="varDestinationLocationNumber" Type="varchar" Mode="In" />
+    <Parameter Name="varEmployeeID" Type="int" Mode="In" />
+    <Parameter Name="varUser" Type="varchar" Mode="In" />
+    <Parameter Name="varCartonID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSOrdersUnConfirms" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSOwner" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSOrdersUnConfirmsAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSOrdersUnConfirmUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Owner" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSOtherServiceInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="varFromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varToDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varEmployeeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRDCartonsNew_Import" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderType" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSReceivingAdvice_Note" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSROID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSReceivingCartonNewBarcode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSReceivingOrders_NotConfirm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSROAllCartonsNonAllocateToOneLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varLocationID" Type="int" Mode="In" />
+    <Parameter Name="varDSROID" Type="int" Mode="In" />
+    <Parameter Name="varLocationNumber" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROAllCartonsToOneLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varLocationID" Type="int" Mode="In" />
+    <Parameter Name="varDSROID" Type="int" Mode="In" />
+    <Parameter Name="varLocationNumber" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonBarcode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSReceivingOrderID" Type="int" Mode="In" />
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonCancelAllocatedLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varDSROID" Type="int" Mode="In" />
+    <Parameter Name="UserControl" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonCheckAllDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSROID" Type="int" Mode="In" />
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonsAccept" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSROID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CartonID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonsAllSelectInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="DSROID" Type="int" Mode="In" />
+    <Parameter Name="OrderType" Type="varchar" Mode="In" />
+    <Parameter Name="UserID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonsConfirm" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSROID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="UserID" Type="nvarchar" Mode="In" />
+    <Parameter Name="CartonID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonsDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSROID" Type="int" Mode="In" />
+    <Parameter Name="User" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonSelectOne" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CartonNewID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonsExportToRDInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSDOID" Type="int" Mode="In" />
+    <Parameter Name="Owner" Type="nvarchar" Mode="In" />
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonsSelectAllCreateUpdate_CURSOR" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="varROID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonsSelectAllInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="DSROID" Type="int" Mode="In" />
+    <Parameter Name="CartonID" Type="int" Mode="In" />
+    <Parameter Name="OrderType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonStockSelectOne" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROCartonUpdateAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="OrderType" Type="varchar" Mode="In" />
+    <Parameter Name="Flag" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROComBoCarton" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="OrderType" Type="varchar" Mode="In" />
+    <Parameter Name="Flag" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRONewCartonInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSROID" Type="int" Mode="In" />
+    <Parameter Name="CartonID" Type="int" Mode="InOut" />
+  </Function>
+  <Function Name="SP_DSROOrderDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSReceivingOrderID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSROSelectDelete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CartonID" Type="int" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptBillingByCustomers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BillingID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptBillingDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="varFromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockByLocation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varcondition" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockDispatchedDetailSelectCustomers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varcondition" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockDispatchedDetailSelectCustomersAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockDispatchedReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockDispatchedSelectCustomers_bk2016_02_25" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SP_DSRptStockDispatchedSelectCustomers_bk2016-02-25">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varcondition" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockDispatchedSelectCustomersAll_bk2016_02_25" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SP_DSRptStockDispatchedSelectCustomersAll_bk2016-02-25">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockMovementSelectCustomers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varFromDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="varToDate" Type="nvarchar" Mode="In" />
+    <Parameter Name="varcondition" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockMovementSelectCustomersAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varFromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockMovementSelectCustomersAllStockOnHand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varFromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockOnHandCombo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSRptStockReceivedDetailsSelectCustomers" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varcondition" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockReceivedDetailsSelectCustomersAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockReceivedReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockReceivedSelectCustomers_bk2016_02_25" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SP_DSRptStockReceivedSelectCustomers_bk2016-02-25">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="varcondition" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DSRptStockReceivedSelectCustomersAll_bk2016_02_25" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" StoreFunctionName="SP_DSRptStockReceivedSelectCustomersAll_bk2016-02-25">
+    <Parameter Name="FromDate" Type="smalldatetime" Mode="In" />
+    <Parameter Name="ToDate" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSStockByLocationDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSStockByLocationDetailsAllCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSStockByLocationDetailsByCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSStockByLocationDetailsByCustomerAllCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSStockMovementReportListBox" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSStockOnHandByLocationByBay" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="LocationNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="Location" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSStockOnHandDailyInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DSStockOnHandReport" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSStockOnHandReport_Export_GSK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="Date" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSStockOnHandReportByCartons" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_DSStockOnHandReportByDate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="Date" Type="smalldatetime" Mode="In" />
+  </Function>
+  <Function Name="SP_DSStockTakeByRequest" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="varCustomerString" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="SP_DStmpCartonDescription" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_DStmpCustomerUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_Gate_ContInOutUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContInOutID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Gate_ContInOutUpdateQty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="ContInOutID" Type="int" Mode="In" />
+    <Parameter Name="Qty" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SP_Gate_TruckInOutUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TruckInOutID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="SP_Gate_TruckInOutUpdateQty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="TruckInOutID" Type="int" Mode="In" />
+    <Parameter Name="Qty" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SP_UserFullName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SPDOCartonsExportToDDInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="DSRDID" Type="int" Mode="In" />
+    <Parameter Name="Owner" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="SPEDI_DSProcessDispatchingOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RequestID" Type="int" Mode="In" />
+    <Parameter Name="DSOwner" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spx_ImportFromExcel07" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FilePath" Type="varchar" Mode="In" />
+    <Parameter Name="RequestID" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="STGate_VehicleBound" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="OrderNumber" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="STGate_VehicleInOutRemain" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="STGate_VehicleInOutToday" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="STGate_VehicleInOutUpdateOrderNumber" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="VehicleType" Type="varchar" Mode="In" />
+    <Parameter Name="OrderNumber" Type="nvarchar" Mode="In" />
+    <Parameter Name="VehicleInOutID" Type="int" Mode="In" />
+    <Parameter Name="QuantityOut" Type="varchar" Mode="In" />
+    <Parameter Name="UserCheckOut" Type="varchar" Mode="In" />
+    <Parameter Name="CustomerID" Type="int" Mode="In" />
+    <Parameter Name="CustomerName" Type="nvarchar" Mode="In" />
+    <Parameter Name="StartTime" Type="datetime" Mode="In" />
+    <Parameter Name="EndTime" Type="datetime" Mode="In" />
+    <Parameter Name="Reason" Type="varchar" Mode="In" />
+    <Parameter Name="StartWorkingTime" Type="datetime" Mode="In" />
+    <Parameter Name="EndWorkingTime" Type="datetime" Mode="In" />
+  </Function>
+  <EntityContainer Name="DocumentDBModelStoreContainer">
+    <EntitySet Name="Cartontmp" EntityType="Self.Cartontmp" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deleted_DSDOCartons" EntityType="Self.Deleted_DSDOCartons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Deleted_DSROCartons" EntityType="Self.Deleted_DSROCartons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DocumentVersions" EntityType="Self.DocumentVersions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSCartonCategories" EntityType="Self.DSCartonCategories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSCartonDetails" EntityType="Self.DSCartonDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSCartonMovementDetails" EntityType="Self.DSCartonMovementDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSCartonMovements" EntityType="Self.DSCartonMovements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSCartonsNew" EntityType="Self.DSCartonsNew" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSCartonStockOnHandDaily" EntityType="Self.DSCartonStockOnHandDaily" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSCartonStockOnHandMonthly" EntityType="Self.DSCartonStockOnHandMonthly" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSClosedPeriods" EntityType="Self.DSClosedPeriods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSDispatchingOrders" EntityType="Self.DSDispatchingOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSDOCartons" EntityType="Self.DSDOCartons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSLocations" EntityType="Self.DSLocations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSReceivingOrders" EntityType="Self.DSReceivingOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DSROCartons" EntityType="Self.DSROCartons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperties" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderMaster" EntityType="Self.OrderMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RequestCartons" EntityType="Self.RequestCartons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Requests" EntityType="Self.Requests" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpAttachment" EntityType="Self.tmpAttachment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpBillingCustomers" EntityType="Self.tmpBillingCustomers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpBillingReport" EntityType="Self.tmpBillingReport" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpCus" EntityType="Self.tmpCus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpCustomers" EntityType="Self.tmpCustomers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpCustomersViewStock" EntityType="Self.tmpCustomersViewStock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpDSCartonsNew_Import" EntityType="Self.tmpDSCartonsNew_Import" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpDSCustomersCartons" EntityType="Self.tmpDSCustomersCartons" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpDSDispatchingOrderID" EntityType="Self.tmpDSDispatchingOrderID" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpDSDispatchingOrderID_Recent" EntityType="Self.tmpDSDispatchingOrderID_Recent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpDSLocations" EntityType="Self.tmpDSLocations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpDSOrdersUpdate" EntityType="Self.tmpDSOrdersUpdate" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpL" EntityType="Self.tmpL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpLocationsWMS" EntityType="Self.tmpLocationsWMS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpLocForStockTake" EntityType="Self.tmpLocForStockTake" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpNoteDispatchingOder" EntityType="Self.tmpNoteDispatchingOder" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpNoteDispatchingOderDetail" EntityType="Self.tmpNoteDispatchingOderDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpTruckchecking" EntityType="Self.tmpTruckchecking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tmpWebDSStockOnHandMonthly" EntityType="Self.tmpWebDSStockOnHandMonthly" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TruckChecking" EntityType="Self.TruckChecking" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Aisles" EntityType="Self.Aisles" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Aisles].[AisleRoomID] AS [AisleRoomID], 
+    [Aisles].[RoomID] AS [RoomID], 
+    [Aisles].[Aisle] AS [Aisle], 
+    [Aisles].[NumberOfBays] AS [NumberOfBays], 
+    [Aisles].[NumberOfDeeps] AS [NumberOfDeeps], 
+    [Aisles].[NumberOfHighs] AS [NumberOfHighs]
+    FROM [dbo].[Aisles] AS [Aisles]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="BillingDetailBreakDown" EntityType="Self.BillingDetailBreakDown" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BillingDetailBreakDown].[BillingDetailBreakdownID] AS [BillingDetailBreakdownID], 
+    [BillingDetailBreakDown].[BillingID] AS [BillingID], 
+    [BillingDetailBreakDown].[ReportDate] AS [ReportDate], 
+    [BillingDetailBreakDown].[BeginC] AS [BeginC], 
+    [BillingDetailBreakDown].[InC] AS [InC], 
+    [BillingDetailBreakDown].[OutC] AS [OutC], 
+    [BillingDetailBreakDown].[CloseC] AS [CloseC], 
+    [BillingDetailBreakDown].[BeginW] AS [BeginW], 
+    [BillingDetailBreakDown].[InW] AS [InW], 
+    [BillingDetailBreakDown].[OutW] AS [OutW], 
+    [BillingDetailBreakDown].[CloseW] AS [CloseW], 
+    [BillingDetailBreakDown].[BeginP] AS [BeginP], 
+    [BillingDetailBreakDown].[InP] AS [InP], 
+    [BillingDetailBreakDown].[OutP] AS [OutP], 
+    [BillingDetailBreakDown].[CloseP] AS [CloseP]
+    FROM [dbo].[BillingDetailBreakDown] AS [BillingDetailBreakDown]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ContainerChecking" EntityType="Self.ContainerChecking" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ContainerChecking].[ContainerCheckingID] AS [ContainerCheckingID], 
+    [ContainerChecking].[ContInOutID] AS [ContInOutID], 
+    [ContainerChecking].[TemperatureShow] AS [TemperatureShow], 
+    [ContainerChecking].[TemperatureSetup] AS [TemperatureSetup], 
+    [ContainerChecking].[Running] AS [Running], 
+    [ContainerChecking].[Thawing] AS [Thawing], 
+    [ContainerChecking].[Stop] AS [Stop], 
+    [ContainerChecking].[Error] AS [Error], 
+    [ContainerChecking].[ProductEmpty] AS [ProductEmpty], 
+    [ContainerChecking].[Seal] AS [Seal], 
+    [ContainerChecking].[Lock] AS [Lock], 
+    [ContainerChecking].[Remark] AS [Remark], 
+    [ContainerChecking].[UserCheck] AS [UserCheck], 
+    [ContainerChecking].[Time] AS [Time], 
+    [ContainerChecking].[AttachmentFile] AS [AttachmentFile], 
+    [ContainerChecking].[LocationChecking] AS [LocationChecking], 
+    [ContainerChecking].[DockNumber] AS [DockNumber], 
+    [ContainerChecking].[NoOperation] AS [NoOperation], 
+    [ContainerChecking].[ContainerCheckingID_old] AS [ContainerCheckingID_old], 
+    [ContainerChecking].[ContainerCheckingNumber] AS [ContainerCheckingNumber]
+    FROM [dbo].[ContainerChecking] AS [ContainerChecking]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Gate_ContInOut" EntityType="Self.Gate_ContInOut" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Gate_ContInOut].[ContInOutID] AS [ContInOutID], 
+    [Gate_ContInOut].[CustomerID] AS [CustomerID], 
+    [Gate_ContInOut].[CustomerName] AS [CustomerName], 
+    [Gate_ContInOut].[ContainerNum] AS [ContainerNum], 
+    [Gate_ContInOut].[ContainerType] AS [ContainerType], 
+    [Gate_ContInOut].[Reason] AS [Reason], 
+    [Gate_ContInOut].[ProductQty] AS [ProductQty], 
+    [Gate_ContInOut].[TimeIn] AS [TimeIn], 
+    [Gate_ContInOut].[TimeOut] AS [TimeOut], 
+    [Gate_ContInOut].[StartTime] AS [StartTime], 
+    [Gate_ContInOut].[EndTime] AS [EndTime], 
+    [Gate_ContInOut].[UserOut] AS [UserOut], 
+    [Gate_ContInOut].[RunningHour] AS [RunningHour], 
+    [Gate_ContInOut].[RunningFloat] AS [RunningFloat], 
+    [Gate_ContInOut].[PowerQuantity] AS [PowerQuantity], 
+    [Gate_ContInOut].[CheckOut] AS [CheckOut], 
+    [Gate_ContInOut].[Via] AS [Via], 
+    [Gate_ContInOut].[OtherServiceID] AS [OtherServiceID], 
+    [Gate_ContInOut].[TruckIn] AS [TruckIn], 
+    [Gate_ContInOut].[TruckOut] AS [TruckOut], 
+    [Gate_ContInOut].[UserCheckOut] AS [UserCheckOut], 
+    [Gate_ContInOut].[TruckCheckOut] AS [TruckCheckOut], 
+    [Gate_ContInOut].[UserTruckOut] AS [UserTruckOut], 
+    [Gate_ContInOut].[Gate] AS [Gate], 
+    [Gate_ContInOut].[EstimateHour] AS [EstimateHour], 
+    [Gate_ContInOut].[OrderNumber] AS [OrderNumber], 
+    [Gate_ContInOut].[Remarks] AS [Remarks], 
+    [Gate_ContInOut].[StartWorkingTime] AS [StartWorkingTime], 
+    [Gate_ContInOut].[EndWorkingTime] AS [EndWorkingTime]
+    FROM [dbo].[Gate_ContInOut] AS [Gate_ContInOut]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Gate_TruckInOut" EntityType="Self.Gate_TruckInOut" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Gate_TruckInOut].[TruckInOutID] AS [TruckInOutID], 
+    [Gate_TruckInOut].[CustomerID] AS [CustomerID], 
+    [Gate_TruckInOut].[CustomerName] AS [CustomerName], 
+    [Gate_TruckInOut].[TruckNum] AS [TruckNum], 
+    [Gate_TruckInOut].[DriverName] AS [DriverName], 
+    [Gate_TruckInOut].[TruckType] AS [TruckType], 
+    [Gate_TruckInOut].[TruckReason] AS [TruckReason], 
+    [Gate_TruckInOut].[ProductQty] AS [ProductQty], 
+    [Gate_TruckInOut].[TimeIn] AS [TimeIn], 
+    [Gate_TruckInOut].[CheckOut] AS [CheckOut], 
+    [Gate_TruckInOut].[TimeOut] AS [TimeOut], 
+    [Gate_TruckInOut].[CM_BL] AS [CM_BL], 
+    [Gate_TruckInOut].[UserOut] AS [UserOut], 
+    [Gate_TruckInOut].[UserCheckOut] AS [UserCheckOut], 
+    [Gate_TruckInOut].[Gate] AS [Gate], 
+    [Gate_TruckInOut].[OrderNumber] AS [OrderNumber], 
+    [Gate_TruckInOut].[StartWorkingTime] AS [StartWorkingTime], 
+    [Gate_TruckInOut].[EndWorkingTime] AS [EndWorkingTime], 
+    [Gate_TruckInOut].[StartTime] AS [StartTime], 
+    [Gate_TruckInOut].[EndTime] AS [EndTime], 
+    [Gate_TruckInOut].[OtherServiceID] AS [OtherServiceID], 
+    [Gate_TruckInOut].[PowerQuantity] AS [PowerQuantity], 
+    [Gate_TruckInOut].[RunningFloat] AS [RunningFloat], 
+    [Gate_TruckInOut].[Remarks] AS [Remarks]
+    FROM [dbo].[Gate_TruckInOut] AS [Gate_TruckInOut]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Locations" EntityType="Self.Locations" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Locations].[LocationID] AS [LocationID], 
+    [Locations].[LocationNumber] AS [LocationNumber], 
+    [Locations].[RoomID] AS [RoomID], 
+    [Locations].[Aisle] AS [Aisle], 
+    [Locations].[Bay] AS [Bay], 
+    [Locations].[High] AS [High], 
+    [Locations].[Deep] AS [Deep], 
+    [Locations].[Used] AS [Used], 
+    [Locations].[Remark] AS [Remark], 
+    [Locations].[Top] AS [Top], 
+    [Locations].[Low] AS [Low], 
+    [Locations].[LocationNumberShort] AS [LocationNumberShort], 
+    [Locations].[isBusy] AS [isBusy], 
+    [Locations].[ProductQuantity] AS [ProductQuantity], 
+    [Locations].[PalletQuantity] AS [PalletQuantity], 
+    [Locations].[LocationCode] AS [LocationCode]
+    FROM [dbo].[Locations] AS [Locations]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="tpmContainerChecking" EntityType="Self.tpmContainerChecking" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [tpmContainerChecking].[CheckingID] AS [CheckingID], 
+    [tpmContainerChecking].[ContInOutID] AS [ContInOutID], 
+    [tpmContainerChecking].[CustomerID] AS [CustomerID], 
+    [tpmContainerChecking].[ContainerNum] AS [ContainerNum], 
+    [tpmContainerChecking].[CustomerName] AS [CustomerName], 
+    [tpmContainerChecking].[ContainerType] AS [ContainerType], 
+    [tpmContainerChecking].[TimeIn] AS [TimeIn], 
+    [tpmContainerChecking].[Operation] AS [Operation], 
+    [tpmContainerChecking].[TemperatureShow] AS [TemperatureShow], 
+    [tpmContainerChecking].[TemperatureSetup] AS [TemperatureSetup], 
+    [tpmContainerChecking].[Running] AS [Running], 
+    [tpmContainerChecking].[Thawing] AS [Thawing], 
+    [tpmContainerChecking].[Stop] AS [Stop], 
+    [tpmContainerChecking].[Error] AS [Error], 
+    [tpmContainerChecking].[ProductEmpty] AS [ProductEmpty], 
+    [tpmContainerChecking].[Seal] AS [Seal], 
+    [tpmContainerChecking].[Lock] AS [Lock], 
+    [tpmContainerChecking].[Remark] AS [Remark], 
+    [tpmContainerChecking].[UserCheck] AS [UserCheck], 
+    [tpmContainerChecking].[Time] AS [Time], 
+    [tpmContainerChecking].[Finish] AS [Finish], 
+    [tpmContainerChecking].[AttachmentFile] AS [AttachmentFile], 
+    [tpmContainerChecking].[LocationChecking] AS [LocationChecking], 
+    [tpmContainerChecking].[DockNumber] AS [DockNumber], 
+    [tpmContainerChecking].[NoOperation] AS [NoOperation], 
+    [tpmContainerChecking].[CheckingID_old] AS [CheckingID_old]
+    FROM [dbo].[tpmContainerChecking] AS [tpmContainerChecking]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_aspnet_Users" EntityType="Self.View_aspnet_Users" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_aspnet_Users].[ApplicationId] AS [ApplicationId], 
+    [View_aspnet_Users].[UserId] AS [UserId], 
+    [View_aspnet_Users].[UserName] AS [UserName], 
+    [View_aspnet_Users].[LoweredUserName] AS [LoweredUserName], 
+    [View_aspnet_Users].[MobileAlias] AS [MobileAlias], 
+    [View_aspnet_Users].[IsAnonymous] AS [IsAnonymous], 
+    [View_aspnet_Users].[LastActivityDate] AS [LastActivityDate]
+    FROM [dbo].[View_aspnet_Users] AS [View_aspnet_Users]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_BillingBreakDown" EntityType="Self.View_BillingBreakDown" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_BillingBreakDown].[BillingDetailBreakdownID] AS [BillingDetailBreakdownID], 
+    [View_BillingBreakDown].[BillingID] AS [BillingID], 
+    [View_BillingBreakDown].[ReportDate] AS [ReportDate], 
+    [View_BillingBreakDown].[BeginC] AS [BeginC], 
+    [View_BillingBreakDown].[InC] AS [InC], 
+    [View_BillingBreakDown].[OutC] AS [OutC], 
+    [View_BillingBreakDown].[CloseC] AS [CloseC], 
+    [View_BillingBreakDown].[BeginW] AS [BeginW], 
+    [View_BillingBreakDown].[InW] AS [InW], 
+    [View_BillingBreakDown].[OutW] AS [OutW], 
+    [View_BillingBreakDown].[CloseW] AS [CloseW], 
+    [View_BillingBreakDown].[BeginP] AS [BeginP], 
+    [View_BillingBreakDown].[InP] AS [InP], 
+    [View_BillingBreakDown].[OutP] AS [OutP], 
+    [View_BillingBreakDown].[CloseP] AS [CloseP]
+    FROM [dbo].[View_BillingBreakDown] AS [View_BillingBreakDown]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Customers" EntityType="Self.View_Customers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_Customers].[CustomerID] AS [CustomerID], 
+    [View_Customers].[CustomerNumber] AS [CustomerNumber], 
+    [View_Customers].[CustomerName] AS [CustomerName], 
+    [View_Customers].[Initial] AS [Initial], 
+    [View_Customers].[Address] AS [Address], 
+    [View_Customers].[CustomerType] AS [CustomerType], 
+    [View_Customers].[PrimaryContact] AS [PrimaryContact], 
+    [View_Customers].[Phone1] AS [Phone1], 
+    [View_Customers].[Phone2] AS [Phone2], 
+    [View_Customers].[Mobile] AS [Mobile], 
+    [View_Customers].[Fax] AS [Fax], 
+    [View_Customers].[Fax2] AS [Fax2], 
+    [View_Customers].[Email] AS [Email], 
+    [View_Customers].[OtherContacts] AS [OtherContacts], 
+    [View_Customers].[MarketingInfor] AS [MarketingInfor], 
+    [View_Customers].[CustomerInvoiceName] AS [CustomerInvoiceName], 
+    [View_Customers].[CustomerInvoiceAddress] AS [CustomerInvoiceAddress], 
+    [View_Customers].[CustomerInvoiceTaxCode] AS [CustomerInvoiceTaxCode], 
+    [View_Customers].[CustomerDiscontinued] AS [CustomerDiscontinued], 
+    [View_Customers].[CustomerCategory] AS [CustomerCategory], 
+    [View_Customers].[CustomerGroup] AS [CustomerGroup], 
+    [View_Customers].[CustomerMainID] AS [CustomerMainID], 
+    [View_Customers].[CustomerByExpiryDate] AS [CustomerByExpiryDate], 
+    [View_Customers].[SendNote] AS [SendNote]
+    FROM [dbo].[View_Customers] AS [View_Customers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_DSCustomerListBillings " EntityType="Self.View_DSCustomerListBillings " store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_DSCustomerListBillings ].[CustomerID] AS [CustomerID], 
+    [View_DSCustomerListBillings ].[CustomerNumber] AS [CustomerNumber], 
+    [View_DSCustomerListBillings ].[CustomerName] AS [CustomerName], 
+    [View_DSCustomerListBillings ].[FromDate] AS [FromDate], 
+    [View_DSCustomerListBillings ].[ToDate] AS [ToDate]
+    FROM [dbo].[View_DSCustomerListBillings ] AS [View_DSCustomerListBillings ]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_DSLocationBarcode" EntityType="Self.View_DSLocationBarcode" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_DSLocationBarcode].[LocationID] AS [LocationID], 
+    [View_DSLocationBarcode].[LocationBarcode] AS [LocationBarcode], 
+    [View_DSLocationBarcode].[LocationNumber] AS [LocationNumber], 
+    [View_DSLocationBarcode].[StandardCarton] AS [StandardCarton]
+    FROM [dbo].[View_DSLocationBarcode] AS [View_DSLocationBarcode]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_DSLocationsAll" EntityType="Self.View_DSLocationsAll" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_DSLocationsAll].[LocationID] AS [LocationID], 
+    [View_DSLocationsAll].[L] AS [L], 
+    [View_DSLocationsAll].[LocationNumber] AS [LocationNumber], 
+    [View_DSLocationsAll].[RoomID] AS [RoomID], 
+    [View_DSLocationsAll].[Used] AS [Used], 
+    [View_DSLocationsAll].[LocationCode] AS [LocationCode], 
+    [View_DSLocationsAll].[Aisle] AS [Aisle], 
+    [View_DSLocationsAll].[Bay] AS [Bay], 
+    [View_DSLocationsAll].[High] AS [High], 
+    [View_DSLocationsAll].[Deep] AS [Deep], 
+    [View_DSLocationsAll].[StandardCarton] AS [StandardCarton], 
+    [View_DSLocationsAll].[Referent] AS [Referent]
+    FROM [dbo].[View_DSLocationsAll] AS [View_DSLocationsAll]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_DSLocationsHasCartons" EntityType="Self.View_DSLocationsHasCartons" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_DSLocationsHasCartons].[LocationID] AS [LocationID], 
+    [View_DSLocationsHasCartons].[LocationNumber] AS [LocationNumber], 
+    [View_DSLocationsHasCartons].[L] AS [L], 
+    [View_DSLocationsHasCartons].[Quantity] AS [Quantity]
+    FROM [dbo].[View_DSLocationsHasCartons] AS [View_DSLocationsHasCartons]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_Employees" EntityType="Self.View_Employees" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_Employees].[EmployeeID] AS [EmployeeID], 
+    [View_Employees].[FirstName] AS [FirstName], 
+    [View_Employees].[LastName] AS [LastName], 
+    [View_Employees].[DateOfBirth] AS [DateOfBirth], 
+    [View_Employees].[Status] AS [Status], 
+    [View_Employees].[Education] AS [Education], 
+    [View_Employees].[Position] AS [Position], 
+    [View_Employees].[DateOfEntry] AS [DateOfEntry], 
+    [View_Employees].[Address] AS [Address], 
+    [View_Employees].[Phone] AS [Phone], 
+    [View_Employees].[Mobile] AS [Mobile], 
+    [View_Employees].[IDCardNumber] AS [IDCardNumber], 
+    [View_Employees].[Email] AS [Email], 
+    [View_Employees].[Photograph] AS [Photograph], 
+    [View_Employees].[Active] AS [Active], 
+    [View_Employees].[ContractPermanent] AS [ContractPermanent], 
+    [View_Employees].[ManagementLevel] AS [ManagementLevel], 
+    [View_Employees].[ContractDate] AS [ContractDate], 
+    [View_Employees].[PositionID] AS [PositionID], 
+    [View_Employees].[VietnamName] AS [VietnamName], 
+    [View_Employees].[BikeNumber] AS [BikeNumber], 
+    [View_Employees].[BikeUse] AS [BikeUse], 
+    [View_Employees].[VietnamPosition] AS [VietnamPosition], 
+    [View_Employees].[InOutCardNumber] AS [InOutCardNumber], 
+    [View_Employees].[ShiftID] AS [ShiftID], 
+    [View_Employees].[Grade] AS [Grade], 
+    [View_Employees].[Department] AS [Department], 
+    [View_Employees].[AddressNow] AS [AddressNow], 
+    [View_Employees].[PerformanceStatus] AS [PerformanceStatus], 
+    [View_Employees].[IDCardIssueDate] AS [IDCardIssueDate]
+    FROM [dbo].[View_Employees] AS [View_Employees]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_ServicesDefinition" EntityType="Self.View_ServicesDefinition" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_ServicesDefinition].[ServiceID] AS [ServiceID], 
+    [View_ServicesDefinition].[ServiceNumber] AS [ServiceNumber], 
+    [View_ServicesDefinition].[ServiceName] AS [ServiceName], 
+    [View_ServicesDefinition].[Measure] AS [Measure], 
+    [View_ServicesDefinition].[Code] AS [Code], 
+    [View_ServicesDefinition].[CustomerCategory] AS [CustomerCategory], 
+    [View_ServicesDefinition].[ServiceCategory] AS [ServiceCategory], 
+    [View_ServicesDefinition].[CheckingQuantityMax] AS [CheckingQuantityMax], 
+    [View_ServicesDefinition].[CheckingQuantityMin] AS [CheckingQuantityMin], 
+    [View_ServicesDefinition].[ServiceNameVietnamese] AS [ServiceNameVietnamese]
+    FROM [dbo].[View_ServicesDefinition] AS [View_ServicesDefinition]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="View_WebUsers" EntityType="Self.View_WebUsers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [View_WebUsers].[UserName] AS [UserName], 
+    [View_WebUsers].[Password] AS [Password], 
+    [View_WebUsers].[CustomerID] AS [CustomerID]
+    FROM [dbo].[View_WebUsers] AS [View_WebUsers]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewCartonDispatchedLast2days" EntityType="Self.ViewCartonDispatchedLast2days" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewCartonDispatchedLast2days].[CartonNewID] AS [CartonNewID], 
+    [ViewCartonDispatchedLast2days].[Dispatched] AS [Dispatched], 
+    [ViewCartonDispatchedLast2days].[DSCustomerNumber] AS [DSCustomerNumber], 
+    [ViewCartonDispatchedLast2days].[DSCustomerName] AS [DSCustomerName], 
+    [ViewCartonDispatchedLast2days].[DSReceivingOrderDate] AS [DSReceivingOrderDate], 
+    [ViewCartonDispatchedLast2days].[CartonDescription] AS [CartonDescription], 
+    [ViewCartonDispatchedLast2days].[DSDispatchingOrderDate] AS [DSDispatchingOrderDate]
+    FROM [dbo].[ViewCartonDispatchedLast2days] AS [ViewCartonDispatchedLast2days]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewCartonOnHand" EntityType="Self.ViewCartonOnHand" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewCartonOnHand].[CartonNewID] AS [CartonNewID], 
+    [ViewCartonOnHand].[Dispatched] AS [Dispatched], 
+    [ViewCartonOnHand].[DSCustomerNumber] AS [DSCustomerNumber], 
+    [ViewCartonOnHand].[DSCustomerName] AS [DSCustomerName], 
+    [ViewCartonOnHand].[DSReceivingOrderDate] AS [DSReceivingOrderDate], 
+    [ViewCartonOnHand].[CartonDescription] AS [CartonDescription]
+    FROM [dbo].[ViewCartonOnHand] AS [ViewCartonOnHand]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ViewCustomers" EntityType="Self.ViewCustomers" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ViewCustomers].[CustomerID] AS [CustomerID], 
+    [ViewCustomers].[CustomerNumber] AS [CustomerNumber], 
+    [ViewCustomers].[CustomerName] AS [CustomerName], 
+    [ViewCustomers].[Initial] AS [Initial], 
+    [ViewCustomers].[Address] AS [Address], 
+    [ViewCustomers].[CustomerType] AS [CustomerType], 
+    [ViewCustomers].[PrimaryContact] AS [PrimaryContact], 
+    [ViewCustomers].[Phone1] AS [Phone1], 
+    [ViewCustomers].[Phone2] AS [Phone2], 
+    [ViewCustomers].[Mobile] AS [Mobile], 
+    [ViewCustomers].[Fax] AS [Fax], 
+    [ViewCustomers].[Fax2] AS [Fax2], 
+    [ViewCustomers].[Email] AS [Email], 
+    [ViewCustomers].[OtherContacts] AS [OtherContacts], 
+    [ViewCustomers].[MarketingInfor] AS [MarketingInfor], 
+    [ViewCustomers].[CustomerInvoiceName] AS [CustomerInvoiceName], 
+    [ViewCustomers].[CustomerInvoiceAddress] AS [CustomerInvoiceAddress], 
+    [ViewCustomers].[CustomerInvoiceTaxCode] AS [CustomerInvoiceTaxCode], 
+    [ViewCustomers].[CustomerDiscontinued] AS [CustomerDiscontinued], 
+    [ViewCustomers].[CustomerCategory] AS [CustomerCategory], 
+    [ViewCustomers].[CustomerGroup] AS [CustomerGroup], 
+    [ViewCustomers].[CustomerMainID] AS [CustomerMainID], 
+    [ViewCustomers].[CustomerByExpiryDate] AS [CustomerByExpiryDate], 
+    [ViewCustomers].[SendNote] AS [SendNote], 
+    [ViewCustomers].[Type] AS [Type]
+    FROM [dbo].[ViewCustomers] AS [ViewCustomers]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_DSCartonMovementDetails_DSCartonMovements" Association="Self.FK_DSCartonMovementDetails_DSCartonMovements">
+      <End Role="DSCartonMovements" EntitySet="DSCartonMovements" />
+      <End Role="DSCartonMovementDetails" EntitySet="DSCartonMovementDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSCartonsNew_DSCartonCategories" Association="Self.FK_DSCartonsNew_DSCartonCategories">
+      <End Role="DSCartonCategories" EntitySet="DSCartonCategories" />
+      <End Role="DSCartonsNew" EntitySet="DSCartonsNew" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSDOCartons_DSDispatchingOrders" Association="Self.FK_DSDOCartons_DSDispatchingOrders">
+      <End Role="DSDispatchingOrders" EntitySet="DSDispatchingOrders" />
+      <End Role="DSDOCartons" EntitySet="DSDOCartons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSDOCartons_DSLocations" Association="Self.FK_DSDOCartons_DSLocations">
+      <End Role="DSLocations" EntitySet="DSLocations" />
+      <End Role="DSDOCartons" EntitySet="DSDOCartons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSROCartons_DSLocations" Association="Self.FK_DSROCartons_DSLocations">
+      <End Role="DSLocations" EntitySet="DSLocations" />
+      <End Role="DSROCartons" EntitySet="DSROCartons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSROCartons_DSReceivingOrders" Association="Self.FK_DSROCartons_DSReceivingOrders">
+      <End Role="DSReceivingOrders" EntitySet="DSReceivingOrders" />
+      <End Role="DSROCartons" EntitySet="DSROCartons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DtmpNoteDispatchingOderdetail_tmpNoteDispatchingOder" Association="Self.FK_DtmpNoteDispatchingOderdetail_tmpNoteDispatchingOder">
+      <End Role="tmpNoteDispatchingOder" EntitySet="tmpNoteDispatchingOder" />
+      <End Role="tmpNoteDispatchingOderDetail" EntitySet="tmpNoteDispatchingOderDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RequestCartons_Requests" Association="Self.FK_RequestCartons_Requests">
+      <End Role="Requests" EntitySet="Requests" />
+      <End Role="RequestCartons" EntitySet="RequestCartons" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

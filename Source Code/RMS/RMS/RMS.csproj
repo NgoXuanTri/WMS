@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0847D4D-8683-46F6-9599-DEB222F0B990}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RMS</RootNamespace>
+    <AssemblyName>RMS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.CodeParser.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Mvvm.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v18.1.Export, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.DocumentViewer.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpo.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGauges.v18.1.Core, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v18.1, Version=18.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Report\frmReportPreview.xaml.cs">
+      <DependentUpon>frmReportPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Report\rptNotes.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\rptNotes.Designer.cs">
+      <DependentUpon>rptNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\RecevingDocumentsViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelBase.cs" />
+    <Compile Include="View\frmReceivingDocumentsView.xaml.cs">
+      <DependentUpon>frmReceivingDocumentsView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Common\Class1.cs" />
+    <Compile Include="Common\DelegateCommand.cs" />
+    <Compile Include="DA\Aisle.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\BillingDetailBreakDown.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\Cartontmp.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\Category.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\Class1.cs" />
+    <Compile Include="DA\ContainerChecking.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DataProcess.cs" />
+    <Compile Include="DA\Deleted_DSDOCartons.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\Deleted_DSROCartons.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DocumentVersion.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSCartonCategory.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSCartonDetail.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSCartonMovement.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSCartonMovementDetail.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSCartonsNew.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSCartonStockOnHandDaily.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSCartonStockOnHandMonthly.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSClosedPeriod.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSDispatchingOrder.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSDOCarton.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSLocation.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSReceivingOrder.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\DSROCarton.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\dtproperty.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\FileProcess.cs" />
+    <Compile Include="DA\Gate_ContInOut.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\Gate_TruckInOut.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\Location.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\OrderDetail.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\OrderMaster.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\Product.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\Request.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\RequestCarton.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\RMS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RMS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\RMS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\RMS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RMS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSBillingByCustomerPeriodAll_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonByhight_Aisle_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonDestructionByCustomer_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonInfo_CartonViewAll_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonInfo_Carton_Location_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonInfo_Carton_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonInfo_details_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonInfo_DO_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonInfo_Location_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonInfo_Movement_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonInfo_Retrieval_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonInfo_RO_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonLabelRemain_Created_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonLabelRemain_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonMovementFrom_combo_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonMovementLocationReview_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonMovementTo_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonMovementViewDetails_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonProblemCheckRemain_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCartonStockInStoreAll_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DScomboContracts_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSComboCustomerID_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSComboDOCartonByCriteria_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSComboDOCarton_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DScomboROCartonID_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSCustomer_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSDDCartonBarcode_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSDispatchingNote_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSDispatchingOrderCreateByHigh_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSDispatchingOrderCreate_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSDispatchingOrderDetailsCreate_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSDispatchingOrdersCreateReport_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSFindCartons_ByLocation_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSInOutView_DALL_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSInOutView_DALL_SortByDate_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSInOutView_D_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSInOutview_RALL_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSInOutview_RALL_SortByDate_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSInOutview_R_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSLabelA5StockLocationByHight_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSLabelCartonMovementToByHight_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSLabelCartonMovementTo_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSLabelRemainRD_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSLabel_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSLocationBarcode_buuTest_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSLocationBarcode_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSLocationsAll_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSLocationsBusy_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSLocationsFree_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSLocationsFree_TEST_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSOrdersUnConfirmsAll_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSOrdersUnConfirms_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSReceivingAdvice_Note_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSReceivingCartonNewBarcode_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSReceivingOrders_NotConfirm_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSROCartonBarcode_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSROComBoCarton_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSRptBillingByCustomers_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSRptStockDispatchedReport_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSRptStockOnHandCombo_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSRptStockReceivedReport_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSStockByLocationDetailsAllCustomer_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSStockByLocationDetailsByCustomerAllCustomer_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSStockByLocationDetailsByCustomer_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSStockByLocationDetails_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSStockMovementReportListBox_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSStockOnHandByLocationByBay_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSStockOnHandReportByCartons_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSStockOnHandReportByDate_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSStockOnHandReport_Export_GSK_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSStockOnHandReport_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_DSStockTakeByRequest_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\sp_helpdiagrams_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\SP_UserFullName_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\STGate_VehicleBound_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\STGate_VehicleInOutRemain_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\STGate_VehicleInOutToday_Result.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\sysdiagram.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpAttachment.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpBillingCustomer.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpBillingReport.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpCu.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpCustomer.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpCustomersViewStock.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpDSCartonsNew_Import.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpDSCustomersCarton.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpDSDispatchingOrderID.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpDSDispatchingOrderID_Recent.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpDSLocation.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpDSOrdersUpdate.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpL.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpLocationsWM.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpLocForStockTake.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpNoteDispatchingOder.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpNoteDispatchingOderDetail.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpTruckchecking.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tmpWebDSStockOnHandMonthly.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\tpmContainerChecking.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\TruckChecking.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\ViewCartonDispatchedLast2days.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\ViewCartonOnHand.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\ViewCustomer.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\View_aspnet_Users.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\View_BillingBreakDown.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\View_Customers.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\View_DSCustomerListBillings_.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\View_DSLocationBarcode.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\View_DSLocationsAll.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\View_DSLocationsHasCartons.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\View_Employees.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\View_ServicesDefinition.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DA\View_WebUsers.cs">
+      <DependentUpon>RMS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Report\frmReportPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\frmReceivingDocumentsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\rptNotes.resx">
+      <DependentUpon>rptNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DA\RMS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RMS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DA\RMS.edmx.diagram">
+      <DependentUpon>RMS.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DA\RMS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>RMS.Context.cs</LastGenOutput>
+      <DependentUpon>RMS.edmx</DependentUpon>
+    </Content>
+    <Content Include="DA\RMS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RMS.edmx</DependentUpon>
+      <LastGenOutput>RMS.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,62 @@
+﻿<Window x:Class="RMS.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RMS"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525" WindowState="Maximized">
+    <Window.Resources>
+        <Style x:Key="txtBase" TargetType="{x:Type TextBlock}">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="FontSize" Value="12"/>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsMouseOver" Value="True"/>
+                    </MultiTrigger.Conditions>
+                    <MultiTrigger.Setters>
+                        <Setter Property="Background" Value="LightGray"/>
+                    </MultiTrigger.Setters>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Name="menu" Width="200"/>
+            <ColumnDefinition Name="contents" Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <DockPanel Name="pnlMenu" Margin="5,5,397.4,4.8" Grid.ColumnSpan="2">
+            <StackPanel >
+                <TextBlock Name="lblOperation" Text="OPERATIONS" Style="{StaticResource txtBase}" FontSize="12" FontWeight="Bold" Focusable="False"/>
+                <TextBlock Name="lblReceivingDocument" Text="Receiving Document"  Style="{StaticResource txtBase}"  Foreground="Goldenrod">
+                    <TextBlock.InputBindings>
+                        <MouseBinding Command="{Binding OperationCommand}" MouseAction="LeftClick"/>
+                    </TextBlock.InputBindings>
+                </TextBlock>
+                <TextBlock Name="lblDispatchingDocument" Text="Dispatching Document"  Style="{StaticResource txtBase}"  Foreground="Goldenrod"/>
+                <TextBlock Name="lblSubOperation3" Text="Sub Operations 3"  Style="{StaticResource txtBase}"  Foreground="Goldenrod"/>
+                <TextBlock Name="lblSubOperation4" Text="Sub Operations 4"  Style="{StaticResource txtBase}"  Foreground="Goldenrod"/>
+                <TextBlock Name="lblReport" Text="REPORTS"  Style="{StaticResource txtBase}" FontSize="12" FontWeight="Bold" Focusable="False"/>
+                <TextBlock Name="lblSubReport1" Text="Sub Reports 1"  Style="{StaticResource txtBase}"  Foreground="Goldenrod"/>
+                <TextBlock Name="lblSubReport2" Text="Sub Reports 1"  Style="{StaticResource txtBase}" Foreground="Goldenrod"/>
+                <TextBlock Name="lblBillings" Text="BILLINGS"  Style="{StaticResource txtBase}"  FontSize="12" FontWeight="Bold" Focusable="False"/>
+            </StackPanel>
+        </DockPanel>
+        <DataGrid Grid.Column="1" ItemsSource="{Binding Categorys,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" AutoGenerateColumns="False" VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding CategoryID,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" />
+                <DataGridTextColumn Header="Name" Binding="{Binding CategoryName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Name="btnUpdate" Content="Update" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="100" Margin="5,0,0,5"
+                Command="{Binding UpdateCommand}"/>
+        <Button Name="btnInsert" Content="Insert" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Center" Width="100" Margin="0,0,0,5"
+                Command="{Binding InsertCommand}"/>
+        <Button Name="btnDelete" Content="Delete" Grid.Column="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="100" Margin="0,0,5,5"
+                Command="{Binding DeleteCommand}"/>
+    </Grid>
+</Window>

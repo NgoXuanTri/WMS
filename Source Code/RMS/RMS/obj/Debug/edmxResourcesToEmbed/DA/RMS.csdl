@@ -1,0 +1,2857 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DocumentDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cartontmp">
+    <Key>
+      <PropertyRef Name="CartonID" />
+    </Key>
+    <Property Name="CartonID" Type="Int32" Nullable="false" />
+    <Property Name="Account" Type="Int32" />
+    <Property Name="CTNew" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryID" />
+    </Key>
+    <Property Name="CategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Deleted_DSDOCartons">
+    <Key>
+      <PropertyRef Name="CartonDeleteID" />
+    </Key>
+    <Property Name="CartonDeleteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <Property Name="CartonID" Type="Int32" Nullable="false" />
+    <Property Name="CartonDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CartonNewID" Type="Int32" Nullable="false" />
+    <Property Name="CrowRefID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DSDOID" Type="Int32" />
+    <Property Name="CustomerID" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="Dispatched" Type="Boolean" Nullable="false" />
+    <Property Name="CartonCanmove" Type="Boolean" Nullable="false" />
+    <Property Name="LocationNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CartonSize" Type="Int32" Nullable="false" />
+    <Property Name="CartonDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserControl" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Deleted_DSROCartons">
+    <Key>
+      <PropertyRef Name="CartonDeleteID" />
+    </Key>
+    <Property Name="CartonDeleteID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DeletedDate" Type="DateTime" Precision="0" />
+    <Property Name="CartonID" Type="Int32" Nullable="false" />
+    <Property Name="CartonDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CartonNewID" Type="Int32" Nullable="false" />
+    <Property Name="CrowRefID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DSROID" Type="Int32" />
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="Dispatched" Type="Boolean" Nullable="false" />
+    <Property Name="CartonCanmove" Type="Boolean" Nullable="false" />
+    <Property Name="LocationNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CartonSize" Type="Int32" Nullable="false" />
+    <Property Name="CartonDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserControl" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DocumentVersion">
+    <Key>
+      <PropertyRef Name="VersionID" />
+    </Key>
+    <Property Name="VersionID" Type="Int32" Nullable="false" />
+    <Property Name="VersionDescription" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VersionDate" Type="DateTime" Precision="0" />
+    <Property Name="VersionRemark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VersionUpdateBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="DSCartonCategory">
+    <Key>
+      <PropertyRef Name="DSCartonCategoryID" />
+    </Key>
+    <Property Name="DSCartonCategoryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DSCustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CategoryDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CategoryDescriptionVietnam" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DSCartonsNews" Relationship="Self.FK_DSCartonsNew_DSCartonCategories" FromRole="DSCartonCategories" ToRole="DSCartonsNew" />
+  </EntityType>
+  <EntityType Name="DSCartonDetail">
+    <Key>
+      <PropertyRef Name="CartonDetailID" />
+    </Key>
+    <Property Name="CartonDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DSCustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CartonNewID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="CustomerNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="DocumentType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CartonRemark" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="LastUpdatedTime" Type="DateTime" Precision="0" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="0" />
+    <Property Name="LastUpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="DSCartonMovementDetail">
+    <Key>
+      <PropertyRef Name="DSCartonMovementDetailID" />
+    </Key>
+    <Property Name="DSCartonMovementDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DSCartonMovementID" Type="Int32" />
+    <Property Name="CartonID" Type="Int32" />
+    <NavigationProperty Name="DSCartonMovement" Relationship="Self.FK_DSCartonMovementDetails_DSCartonMovements" FromRole="DSCartonMovementDetails" ToRole="DSCartonMovements" />
+  </EntityType>
+  <EntityType Name="DSCartonMovement">
+    <Key>
+      <PropertyRef Name="DSCartonMovementID" />
+    </Key>
+    <Property Name="DSCartonMovementID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SourceLocationNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DestinationLocationNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateMovement" Type="DateTime" Precision="0" />
+    <Property Name="ReasonMovement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AuthorisedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Byte" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <NavigationProperty Name="DSCartonMovementDetails" Relationship="Self.FK_DSCartonMovementDetails_DSCartonMovements" FromRole="DSCartonMovements" ToRole="DSCartonMovementDetails" />
+  </EntityType>
+  <EntityType Name="DSCartonsNew">
+    <Key>
+      <PropertyRef Name="CartonNewID" />
+    </Key>
+    <Property Name="CartonNewID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="CartonID" Type="Int32" Nullable="false" />
+    <Property Name="CartonSelected" Type="Boolean" Nullable="false" />
+    <Property Name="CustomerRef" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CrowRefID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CartonReturned" Type="Boolean" Nullable="false" />
+    <Property Name="CartonSize" Type="Single" Nullable="false" />
+    <Property Name="CartonDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DSReceivingOrderID" Type="Int32" />
+    <Property Name="CartonPrint" Type="Boolean" />
+    <Property Name="DestructionDate" Type="DateTime" Precision="3" />
+    <Property Name="DSCartonCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="tmp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CheckSelected" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="DSCartonCategory" Relationship="Self.FK_DSCartonsNew_DSCartonCategories" FromRole="DSCartonsNew" ToRole="DSCartonCategories" />
+  </EntityType>
+  <EntityType Name="DSCartonStockOnHandDaily">
+    <Key>
+      <PropertyRef Name="ReportDateID" />
+    </Key>
+    <Property Name="ReportDateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportDate" Type="DateTime" Precision="0" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="Volume" Type="Single" />
+  </EntityType>
+  <EntityType Name="DSCartonStockOnHandMonthly">
+    <Key>
+      <PropertyRef Name="MonthDateID" />
+    </Key>
+    <Property Name="MonthDateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MonthDate" Type="DateTime" Precision="0" />
+    <Property Name="CartonStock" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="DSClosedPeriod">
+    <Key>
+      <PropertyRef Name="PeriodID" />
+    </Key>
+    <Property Name="PeriodID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+    <Property Name="CloseDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="DSDispatchingOrder">
+    <Key>
+      <PropertyRef Name="DSDispatchingOrderID" />
+    </Key>
+    <Property Name="DSDispatchingOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DSDispatchingOrderNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="DSCustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DSCustomerNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="DSCustomerID" Type="Int32" Nullable="false" />
+    <Property Name="DSDispatchingOrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DSSpecialRequirement" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DSStatus" Type="Boolean" Nullable="false" />
+    <Property Name="DSDispatchingCreatedTime" Type="DateTime" Precision="0" />
+    <Property Name="DSOwner" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DSDispatchingType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceID" Type="Int32" Nullable="false" />
+    <Property Name="StartTime" Type="DateTime" Precision="0" />
+    <Property Name="EndTime" Type="DateTime" Precision="0" />
+    <Property Name="ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ContactEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DSOrderStatus" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="DSDOCartons" Relationship="Self.FK_DSDOCartons_DSDispatchingOrders" FromRole="DSDispatchingOrders" ToRole="DSDOCartons" />
+  </EntityType>
+  <EntityType Name="DSDOCarton">
+    <Key>
+      <PropertyRef Name="DispatchedCartonID" />
+    </Key>
+    <Property Name="DispatchedCartonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DSDOID" Type="Int32" Nullable="false" />
+    <Property Name="CartonDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CrowRefID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CartonID" Type="Int32" Nullable="false" />
+    <Property Name="LocationID" Type="Int32" />
+    <Property Name="LocationNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CheckSelectDelete" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Byte" />
+    <NavigationProperty Name="DSDispatchingOrder" Relationship="Self.FK_DSDOCartons_DSDispatchingOrders" FromRole="DSDOCartons" ToRole="DSDispatchingOrders" />
+    <NavigationProperty Name="DSLocation" Relationship="Self.FK_DSDOCartons_DSLocations" FromRole="DSDOCartons" ToRole="DSLocations" />
+  </EntityType>
+  <EntityType Name="DSLocation">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoomID" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Used" Type="Boolean" Nullable="false" />
+    <Property Name="LocationCode" Type="Byte" />
+    <Property Name="Aisle" Type="Int16" />
+    <Property Name="Bay" Type="Int16" />
+    <Property Name="High" Type="Int16" />
+    <Property Name="Deep" Type="Int16" />
+    <Property Name="StandardCarton" Type="Byte" />
+    <Property Name="Referent" Type="Int32" />
+    <NavigationProperty Name="DSDOCartons" Relationship="Self.FK_DSDOCartons_DSLocations" FromRole="DSLocations" ToRole="DSDOCartons" />
+    <NavigationProperty Name="DSROCartons" Relationship="Self.FK_DSROCartons_DSLocations" FromRole="DSLocations" ToRole="DSROCartons" />
+  </EntityType>
+  <EntityType Name="DSReceivingOrder">
+    <Key>
+      <PropertyRef Name="DSReceivingOrderID" />
+    </Key>
+    <Property Name="DSReceivingOrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DSReceivingOrderNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="DSCustomerID" Type="Int32" Nullable="false" />
+    <Property Name="DSCustomerNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="DSCustomerName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DSReceivingOrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="DSStatus" Type="Boolean" Nullable="false" />
+    <Property Name="DSSpecialRequirement" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DSReceivingCreatedTime" Type="DateTime" Precision="0" />
+    <Property Name="DSOwner" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DSReceivingType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="ServiceID" Type="Int32" Nullable="false" />
+    <Property Name="StartTime" Type="DateTime" Precision="0" />
+    <Property Name="EndTime" Type="DateTime" Precision="0" />
+    <Property Name="ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="ContactEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DSOrderStatus" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="DSROCartons" Relationship="Self.FK_DSROCartons_DSReceivingOrders" FromRole="DSReceivingOrders" ToRole="DSROCartons" />
+  </EntityType>
+  <EntityType Name="DSROCarton">
+    <Key>
+      <PropertyRef Name="CartonID" />
+    </Key>
+    <Property Name="CartonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CartonDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CartonNewID" Type="Int32" Nullable="false" />
+    <Property Name="DSROID" Type="Int32" Nullable="false" />
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="CartonCanmove" Type="Boolean" Nullable="false" />
+    <Property Name="LocationNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CartonSize" Type="Single" Nullable="false" />
+    <Property Name="CartonDetails" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CrowRefID" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="DestructionDate" Type="DateTime" Precision="0" />
+    <Property Name="DSCartonCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="CheckDelete" Type="Boolean" Nullable="false" />
+    <Property Name="ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Dispatched" Type="Boolean" />
+    <Property Name="CheckSelectDispatched" Type="Boolean" />
+    <Property Name="UserID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="0" />
+    <Property Name="Status" Type="Byte" />
+    <Property Name="ScannedTime" Type="DateTime" Precision="0" />
+    <Property Name="ScannedUser" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="SealNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="DSLocation" Relationship="Self.FK_DSROCartons_DSLocations" FromRole="DSROCartons" ToRole="DSLocations" />
+    <NavigationProperty Name="DSReceivingOrder" Relationship="Self.FK_DSROCartons_DSReceivingOrders" FromRole="DSROCartons" ToRole="DSReceivingOrders" />
+  </EntityType>
+  <EntityType Name="dtproperty">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="property" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="objectid" Type="Int32" />
+    <Property Name="property" Type="String" MaxLength="64" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="value" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="uvalue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="lvalue" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="version" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailsId" />
+    </Key>
+    <Property Name="OrderDetailsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Rate" Type="Decimal" Precision="12" Scale="2" />
+    <Property Name="Quantity" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderMaster">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNo" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CategoryID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RequestCarton">
+    <Key>
+      <PropertyRef Name="RequestCartonID" />
+    </Key>
+    <Property Name="RequestCartonID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RequestID" Type="Int32" Nullable="false" />
+    <Property Name="CartonID" Type="Int32" />
+    <Property Name="Remark" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CartonNewID" Type="Int32" Nullable="false" />
+    <Property Name="CartonReference" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CartonReference2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Request" Relationship="Self.FK_RequestCartons_Requests" FromRole="RequestCartons" ToRole="Requests" />
+  </EntityType>
+  <EntityType Name="Request">
+    <Key>
+      <PropertyRef Name="RequestID" />
+    </Key>
+    <Property Name="RequestID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="RequestDate" Type="DateTime" Precision="0" />
+    <Property Name="CreatedTime" Type="DateTime" Precision="0" />
+    <Property Name="CreatedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmtyCarton" Type="Boolean" Nullable="false" />
+    <Property Name="DocumentRetrieval" Type="Boolean" Nullable="false" />
+    <Property Name="CartonDestruction" Type="Boolean" Nullable="false" />
+    <Property Name="OnSiteChecking" Type="Boolean" Nullable="false" />
+    <Property Name="RequestDescription" Type="String" MaxLength="3500" FixedLength="false" Unicode="true" />
+    <Property Name="DeliveryAddress" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPerson" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ContactPhone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactEmail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="RequestQuantity" Type="Int32" Nullable="false" />
+    <Property Name="RequestStatus" Type="Byte" Nullable="false" />
+    <Property Name="ProcessBy" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ProcessTime" Type="DateTime" Precision="0" />
+    <Property Name="UserId" Type="Guid" />
+    <Property Name="ReferenceOrderID" Type="Int32" />
+    <Property Name="FileUploaded" Type="Boolean" Nullable="false" />
+    <Property Name="FileUploadedCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ProcessFeedback" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="RequestType" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="RequestCartons" Relationship="Self.FK_RequestCartons_Requests" FromRole="Requests" ToRole="RequestCartons" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tmpAttachment">
+    <Key>
+      <PropertyRef Name="AttachmentID" />
+    </Key>
+    <Property Name="AttachmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CheckingID" Type="Int32" Nullable="false" />
+    <Property Name="AttachmentDescription" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AttachmentFile" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AttachmentDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="AttachmentUser" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TS" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="AttachmentFileSize" Type="Int32" />
+    <Property Name="OriginalFileName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CheckingUpdate" Type="Boolean" />
+    <Property Name="LocationChecking" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="CheckingType" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="tmpBillingCustomer">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <EntityType Name="tmpBillingReport">
+    <Key>
+      <PropertyRef Name="BillingDateID" />
+    </Key>
+    <Property Name="BillingDateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ReportDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="BeginC" Type="Int32" Nullable="false" />
+    <Property Name="BeginW" Type="Double" Nullable="false" />
+    <Property Name="InC" Type="Int32" Nullable="false" />
+    <Property Name="InW" Type="Double" Nullable="false" />
+    <Property Name="OutC" Type="Int32" Nullable="false" />
+    <Property Name="OutW" Type="Double" Nullable="false" />
+    <Property Name="CloseC" Type="Int32" Nullable="false" />
+    <Property Name="CloseW" Type="Double" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="BeginP" Type="Double" />
+    <Property Name="InP" Type="Double" />
+    <Property Name="OutP" Type="Double" />
+    <Property Name="CloseP" Type="Double" />
+    <Property Name="EmployeeID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tmpCu">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmpCustomer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Initial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrimaryContact" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fax2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="OtherContacts" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MarketingInfor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerInvoiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerInvoiceAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerInvoiceTaxCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerDiscontinued" Type="Boolean" Nullable="false" />
+    <Property Name="CustomerCategory" Type="Byte" Nullable="false" />
+    <Property Name="CustomerGroup" Type="Byte" Nullable="false" />
+    <Property Name="CustomerMainID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="tmpCustomersViewStock">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="CustomerNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SelectCustomer" Type="Boolean" />
+    <Property Name="ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="tmpDSCartonsNew_Import">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CartonID" Type="Int32" />
+    <Property Name="Cartonname" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerReference" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="DSRDID" Type="Int32" />
+    <Property Name="CartonSize" Type="Single" />
+    <Property Name="DestructionDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tmpDSCustomersCarton">
+    <Key>
+      <PropertyRef Name="IDRec" />
+    </Key>
+    <Property Name="IDRec" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="xXD" Type="Int32" />
+    <Property Name="DSCustomerID" Type="Int32" Nullable="false" />
+    <Property Name="Priority" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="tmpDSDispatchingOrderID">
+    <Key>
+      <PropertyRef Name="DSDispatchingOrderID" />
+    </Key>
+    <Property Name="DSDispatchingOrderID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmpDSDispatchingOrderID_Recent">
+    <Key>
+      <PropertyRef Name="DSDispatchingOrderID" />
+    </Key>
+    <Property Name="DSDispatchingOrderID" Type="Int32" Nullable="false" />
+    <Property Name="DSTime" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tmpDSLocation">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmpDSOrdersUpdate">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OrderNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="OrderCheck" Type="Boolean" />
+    <Property Name="ts" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="OrderDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="tmpL">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmpLocationsWM">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="LocationNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoomID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Aisle" Type="Int16" Nullable="false" />
+    <Property Name="Bay" Type="Int16" Nullable="false" />
+    <Property Name="High" Type="Int16" Nullable="false" />
+    <Property Name="Deep" Type="Int16" Nullable="false" />
+    <Property Name="LocationCode" Type="Byte" />
+  </EntityType>
+  <EntityType Name="tmpLocForStockTake">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="LocationNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoomID" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Aisle" Type="Int16" Nullable="false" />
+    <Property Name="Bay" Type="Int16" Nullable="false" />
+    <Property Name="High" Type="Int16" Nullable="false" />
+    <Property Name="Deep" Type="Int16" Nullable="false" />
+    <Property Name="Used" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tmpNoteDispatchingOder">
+    <Key>
+      <PropertyRef Name="NoteDispatchingOderID" />
+    </Key>
+    <Property Name="NoteDispatchingOderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NoteDispatchingOderNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="DispatchingOderID" Type="Int32" />
+    <Property Name="Note" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="NoteDate" Type="DateTime" Precision="0" />
+    <Property Name="NoteBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Checked" Type="Boolean" />
+    <NavigationProperty Name="tmpNoteDispatchingOderDetails" Relationship="Self.FK_DtmpNoteDispatchingOderdetail_tmpNoteDispatchingOder" FromRole="tmpNoteDispatchingOder" ToRole="tmpNoteDispatchingOderDetail" />
+  </EntityType>
+  <EntityType Name="tmpNoteDispatchingOderDetail">
+    <Key>
+      <PropertyRef Name="NoteDispatchingOderDetailID" />
+    </Key>
+    <Property Name="NoteDispatchingOderDetailID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NoteDispatchingOderID" Type="Int32" />
+    <Property Name="LinkImg" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Status" Type="Boolean" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="UploadBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Checked" Type="Boolean" />
+    <NavigationProperty Name="tmpNoteDispatchingOder" Relationship="Self.FK_DtmpNoteDispatchingOderdetail_tmpNoteDispatchingOder" FromRole="tmpNoteDispatchingOderDetail" ToRole="tmpNoteDispatchingOder" />
+  </EntityType>
+  <EntityType Name="tmpTruckchecking">
+    <Key>
+      <PropertyRef Name="TruckCheckingID" />
+    </Key>
+    <Property Name="TruckCheckingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TruckInOutID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="TruckNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TruckType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeIn" Type="DateTime" Precision="0" />
+    <Property Name="Operation" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TemperatureShow" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TemperatureSetup" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Running" Type="Boolean" />
+    <Property Name="Thawing" Type="Boolean" />
+    <Property Name="Stop" Type="Boolean" />
+    <Property Name="Error" Type="Boolean" />
+    <Property Name="ProductEmpty" Type="Boolean" />
+    <Property Name="Seal" Type="Boolean" />
+    <Property Name="Lock" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserCheck" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="DateTime" Precision="0" />
+    <Property Name="Finish" Type="Boolean" />
+    <Property Name="AttachmentFile" Type="Boolean" />
+    <Property Name="LocationChecking" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="tmpWebDSStockOnHandMonthly">
+    <Key>
+      <PropertyRef Name="Month" />
+    </Key>
+    <Property Name="Month" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MonthFirstDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="TruckChecking">
+    <Key>
+      <PropertyRef Name="TruckCheckingID" />
+    </Key>
+    <Property Name="TruckCheckingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TruckInOutID" Type="Int32" />
+    <Property Name="TemperatureShow" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="TemperatureSetup" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Running" Type="Boolean" />
+    <Property Name="Thawing" Type="Boolean" />
+    <Property Name="Stop" Type="Boolean" />
+    <Property Name="Error" Type="Boolean" />
+    <Property Name="ProductEmpty" Type="Boolean" />
+    <Property Name="Seal" Type="Boolean" />
+    <Property Name="Lock" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserCheck" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="DateTime" Precision="0" />
+    <Property Name="AttachmentFile" Type="Boolean" />
+    <Property Name="LocationChecking" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Aisle">
+    <Key>
+      <PropertyRef Name="AisleRoomID" />
+      <PropertyRef Name="RoomID" />
+      <PropertyRef Name="Aisle1" />
+      <PropertyRef Name="NumberOfBays" />
+      <PropertyRef Name="NumberOfDeeps" />
+      <PropertyRef Name="NumberOfHighs" />
+    </Key>
+    <Property Name="AisleRoomID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RoomID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Aisle1" Type="Byte" Nullable="false" />
+    <Property Name="NumberOfBays" Type="Int16" Nullable="false" />
+    <Property Name="NumberOfDeeps" Type="Int16" Nullable="false" />
+    <Property Name="NumberOfHighs" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BillingDetailBreakDown">
+    <Key>
+      <PropertyRef Name="BillingDetailBreakdownID" />
+      <PropertyRef Name="BillingID" />
+    </Key>
+    <Property Name="BillingDetailBreakdownID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BillingID" Type="Int32" Nullable="false" />
+    <Property Name="ReportDate" Type="DateTime" Precision="0" />
+    <Property Name="BeginC" Type="Int32" />
+    <Property Name="InC" Type="Int32" />
+    <Property Name="OutC" Type="Int32" />
+    <Property Name="CloseC" Type="Int32" />
+    <Property Name="BeginW" Type="Single" />
+    <Property Name="InW" Type="Single" />
+    <Property Name="OutW" Type="Single" />
+    <Property Name="CloseW" Type="Single" />
+    <Property Name="BeginP" Type="Int32" />
+    <Property Name="InP" Type="Int32" />
+    <Property Name="OutP" Type="Int32" />
+    <Property Name="CloseP" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ContainerChecking">
+    <Key>
+      <PropertyRef Name="ContainerCheckingID" />
+      <PropertyRef Name="ContInOutID" />
+    </Key>
+    <Property Name="ContainerCheckingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContInOutID" Type="Int32" Nullable="false" />
+    <Property Name="TemperatureShow" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TemperatureSetup" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Running" Type="Boolean" />
+    <Property Name="Thawing" Type="Boolean" />
+    <Property Name="Stop" Type="Boolean" />
+    <Property Name="Error" Type="Boolean" />
+    <Property Name="ProductEmpty" Type="Boolean" />
+    <Property Name="Seal" Type="Boolean" />
+    <Property Name="Lock" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserCheck" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="DateTime" Precision="0" />
+    <Property Name="AttachmentFile" Type="Boolean" />
+    <Property Name="LocationChecking" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DockNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="NoOperation" Type="Boolean" />
+    <Property Name="ContainerCheckingID_old" Type="Int32" />
+    <Property Name="ContainerCheckingNumber" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Gate_ContInOut">
+    <Key>
+      <PropertyRef Name="ContInOutID" />
+    </Key>
+    <Property Name="ContInOutID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContainerNum" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ContainerType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Reason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductQty" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TimeIn" Type="DateTime" Precision="0" />
+    <Property Name="TimeOut" Type="DateTime" Precision="0" />
+    <Property Name="StartTime" Type="DateTime" Precision="0" />
+    <Property Name="EndTime" Type="DateTime" Precision="0" />
+    <Property Name="UserOut" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="RunningHour" Type="DateTime" Precision="0" />
+    <Property Name="RunningFloat" Type="Double" />
+    <Property Name="PowerQuantity" Type="Double" />
+    <Property Name="CheckOut" Type="Boolean" />
+    <Property Name="Via" Type="Boolean" />
+    <Property Name="OtherServiceID" Type="Int32" />
+    <Property Name="TruckIn" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="TruckOut" Type="String" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="UserCheckOut" Type="Boolean" />
+    <Property Name="TruckCheckOut" Type="Boolean" />
+    <Property Name="UserTruckOut" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+    <Property Name="Gate" Type="Byte" />
+    <Property Name="EstimateHour" Type="Single" />
+    <Property Name="OrderNumber" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="StartWorkingTime" Type="DateTime" Precision="0" />
+    <Property Name="EndWorkingTime" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="Gate_TruckInOut">
+    <Key>
+      <PropertyRef Name="TruckInOutID" />
+      <PropertyRef Name="Gate" />
+    </Key>
+    <Property Name="TruckInOutID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TruckNum" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DriverName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TruckType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="TruckReason" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ProductQty" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TimeIn" Type="DateTime" Precision="0" />
+    <Property Name="CheckOut" Type="Boolean" />
+    <Property Name="TimeOut" Type="DateTime" Precision="0" />
+    <Property Name="CM_BL" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="UserOut" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserCheckOut" Type="Boolean" />
+    <Property Name="Gate" Type="Byte" Nullable="false" />
+    <Property Name="OrderNumber" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="StartWorkingTime" Type="DateTime" Precision="0" />
+    <Property Name="EndWorkingTime" Type="DateTime" Precision="0" />
+    <Property Name="StartTime" Type="DateTime" Precision="0" />
+    <Property Name="EndTime" Type="DateTime" Precision="0" />
+    <Property Name="OtherServiceID" Type="Int32" />
+    <Property Name="PowerQuantity" Type="Double" />
+    <Property Name="RunningFloat" Type="Double" />
+    <Property Name="Remarks" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationNumber" />
+      <PropertyRef Name="RoomID" />
+      <PropertyRef Name="Aisle" />
+      <PropertyRef Name="Bay" />
+      <PropertyRef Name="High" />
+      <PropertyRef Name="Deep" />
+      <PropertyRef Name="Used" />
+      <PropertyRef Name="Top" />
+      <PropertyRef Name="Low" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoomID" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Aisle" Type="Int16" Nullable="false" />
+    <Property Name="Bay" Type="Int16" Nullable="false" />
+    <Property Name="High" Type="Int16" Nullable="false" />
+    <Property Name="Deep" Type="Int16" Nullable="false" />
+    <Property Name="Used" Type="Int16" Nullable="false" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Top" Type="Boolean" Nullable="false" />
+    <Property Name="Low" Type="Boolean" Nullable="false" />
+    <Property Name="LocationNumberShort" Type="String" MaxLength="6" FixedLength="true" Unicode="false" />
+    <Property Name="isBusy" Type="Byte" />
+    <Property Name="ProductQuantity" Type="Int64" />
+    <Property Name="PalletQuantity" Type="Int32" />
+    <Property Name="LocationCode" Type="Byte" />
+  </EntityType>
+  <EntityType Name="tpmContainerChecking">
+    <Key>
+      <PropertyRef Name="CheckingID" />
+      <PropertyRef Name="ContInOutID" />
+    </Key>
+    <Property Name="CheckingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ContInOutID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="ContainerNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContainerType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TimeIn" Type="DateTime" Precision="0" />
+    <Property Name="Operation" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TemperatureShow" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="TemperatureSetup" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="Running" Type="Boolean" />
+    <Property Name="Thawing" Type="Boolean" />
+    <Property Name="Stop" Type="Boolean" />
+    <Property Name="Error" Type="Boolean" />
+    <Property Name="ProductEmpty" Type="Boolean" />
+    <Property Name="Seal" Type="Boolean" />
+    <Property Name="Lock" Type="Boolean" />
+    <Property Name="Remark" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserCheck" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Time" Type="DateTime" Precision="0" />
+    <Property Name="Finish" Type="Boolean" />
+    <Property Name="AttachmentFile" Type="Boolean" />
+    <Property Name="LocationChecking" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+    <Property Name="DockNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="NoOperation" Type="Boolean" />
+    <Property Name="CheckingID_old" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_aspnet_Users">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="LoweredUserName" />
+      <PropertyRef Name="IsAnonymous" />
+      <PropertyRef Name="LastActivityDate" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LoweredUserName" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="View_BillingBreakDown">
+    <Key>
+      <PropertyRef Name="BillingDetailBreakdownID" />
+      <PropertyRef Name="BillingID" />
+    </Key>
+    <Property Name="BillingDetailBreakdownID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BillingID" Type="Int32" Nullable="false" />
+    <Property Name="ReportDate" Type="DateTime" Precision="0" />
+    <Property Name="BeginC" Type="Int32" />
+    <Property Name="InC" Type="Int32" />
+    <Property Name="OutC" Type="Int32" />
+    <Property Name="CloseC" Type="Int32" />
+    <Property Name="BeginW" Type="Single" />
+    <Property Name="InW" Type="Single" />
+    <Property Name="OutW" Type="Single" />
+    <Property Name="CloseW" Type="Single" />
+    <Property Name="BeginP" Type="Int32" />
+    <Property Name="InP" Type="Int32" />
+    <Property Name="OutP" Type="Int32" />
+    <Property Name="CloseP" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_Customers">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="CustomerCategory" />
+      <PropertyRef Name="CustomerMainID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Initial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrimaryContact" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fax2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="OtherContacts" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MarketingInfor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerInvoiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerInvoiceAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerInvoiceTaxCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerDiscontinued" Type="Boolean" />
+    <Property Name="CustomerCategory" Type="Byte" Nullable="false" />
+    <Property Name="CustomerGroup" Type="Byte" />
+    <Property Name="CustomerMainID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerByExpiryDate" Type="Boolean" />
+    <Property Name="SendNote" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="View_DSCustomerListBillings_">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="CustomerName" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FromDate" Type="DateTime" Precision="0" />
+    <Property Name="ToDate" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="View_DSLocationBarcode">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationNumber" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationBarcode" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="LocationNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StandardCarton" Type="Byte" />
+  </EntityType>
+  <EntityType Name="View_DSLocationsAll">
+    <Key>
+      <PropertyRef Name="LocationID" />
+      <PropertyRef Name="LocationNumber" />
+      <PropertyRef Name="RoomID" />
+      <PropertyRef Name="Used" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="L" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="LocationNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoomID" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Used" Type="Boolean" Nullable="false" />
+    <Property Name="LocationCode" Type="Byte" />
+    <Property Name="Aisle" Type="Int16" />
+    <Property Name="Bay" Type="Int16" />
+    <Property Name="High" Type="Int16" />
+    <Property Name="Deep" Type="Int16" />
+    <Property Name="StandardCarton" Type="Byte" />
+    <Property Name="Referent" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_DSLocationsHasCartons">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="Int32" Nullable="false" />
+    <Property Name="LocationNumber" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="L" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="Quantity" Type="Int32" />
+  </EntityType>
+  <EntityType Name="View_Employees">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="Active" />
+      <PropertyRef Name="ContractPermanent" />
+      <PropertyRef Name="ManagementLevel" />
+      <PropertyRef Name="BikeUse" />
+      <PropertyRef Name="PerformanceStatus" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="Int16" />
+    <Property Name="Education" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Position" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfEntry" Type="DateTime" Precision="3" />
+    <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IDCardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Photograph" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="ContractPermanent" Type="Boolean" Nullable="false" />
+    <Property Name="ManagementLevel" Type="Int32" Nullable="false" />
+    <Property Name="ContractDate" Type="DateTime" Precision="3" />
+    <Property Name="PositionID" Type="Int32" />
+    <Property Name="VietnamName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BikeNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="BikeUse" Type="Boolean" Nullable="false" />
+    <Property Name="VietnamPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="InOutCardNumber" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="ShiftID" Type="Byte" />
+    <Property Name="Grade" Type="Byte" />
+    <Property Name="Department" Type="Byte" />
+    <Property Name="AddressNow" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="PerformanceStatus" Type="Boolean" Nullable="false" />
+    <Property Name="IDCardIssueDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="View_ServicesDefinition">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="ServiceID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ServiceNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Measure" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Code" Type="Boolean" Nullable="false" />
+    <Property Name="CustomerCategory" Type="Int32" />
+    <Property Name="ServiceCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CheckingQuantityMax" Type="Double" />
+    <Property Name="CheckingQuantityMin" Type="Double" />
+    <Property Name="ServiceNameVietnamese" Type="String" MaxLength="75" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="View_WebUsers">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="ViewCartonDispatchedLast2days">
+    <Key>
+      <PropertyRef Name="CartonNewID" />
+      <PropertyRef Name="DSReceivingOrderDate" />
+      <PropertyRef Name="DSDispatchingOrderDate" />
+    </Key>
+    <Property Name="CartonNewID" Type="Int32" Nullable="false" />
+    <Property Name="Dispatched" Type="Boolean" />
+    <Property Name="DSCustomerNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="DSCustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DSReceivingOrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CartonDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DSDispatchingOrderDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="ViewCartonOnHand">
+    <Key>
+      <PropertyRef Name="CartonNewID" />
+      <PropertyRef Name="DSReceivingOrderDate" />
+    </Key>
+    <Property Name="CartonNewID" Type="Int32" Nullable="false" />
+    <Property Name="Dispatched" Type="Boolean" />
+    <Property Name="DSCustomerNumber" Type="String" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="DSCustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DSReceivingOrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="CartonDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ViewCustomer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="CustomerName" />
+      <PropertyRef Name="CustomerCategory" />
+      <PropertyRef Name="CustomerMainID" />
+    </Key>
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Initial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="PrimaryContact" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Phone1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Phone2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fax2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="OtherContacts" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="MarketingInfor" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerInvoiceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerInvoiceAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerInvoiceTaxCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerDiscontinued" Type="Boolean" />
+    <Property Name="CustomerCategory" Type="Byte" Nullable="false" />
+    <Property Name="CustomerGroup" Type="Byte" />
+    <Property Name="CustomerMainID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerByExpiryDate" Type="Boolean" />
+    <Property Name="SendNote" Type="Boolean" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_DSCartonsNew_DSCartonCategories">
+    <End Role="DSCartonCategories" Type="Self.DSCartonCategory" Multiplicity="1" />
+    <End Role="DSCartonsNew" Type="Self.DSCartonsNew" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSCartonCategories">
+        <PropertyRef Name="DSCartonCategoryID" />
+      </Principal>
+      <Dependent Role="DSCartonsNew">
+        <PropertyRef Name="DSCartonCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSCartonMovementDetails_DSCartonMovements">
+    <End Role="DSCartonMovements" Type="Self.DSCartonMovement" Multiplicity="0..1" />
+    <End Role="DSCartonMovementDetails" Type="Self.DSCartonMovementDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSCartonMovements">
+        <PropertyRef Name="DSCartonMovementID" />
+      </Principal>
+      <Dependent Role="DSCartonMovementDetails">
+        <PropertyRef Name="DSCartonMovementID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSDOCartons_DSDispatchingOrders">
+    <End Role="DSDispatchingOrders" Type="Self.DSDispatchingOrder" Multiplicity="1" />
+    <End Role="DSDOCartons" Type="Self.DSDOCarton" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSDispatchingOrders">
+        <PropertyRef Name="DSDispatchingOrderID" />
+      </Principal>
+      <Dependent Role="DSDOCartons">
+        <PropertyRef Name="DSDOID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSDOCartons_DSLocations">
+    <End Role="DSLocations" Type="Self.DSLocation" Multiplicity="0..1" />
+    <End Role="DSDOCartons" Type="Self.DSDOCarton" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSLocations">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="DSDOCartons">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSROCartons_DSLocations">
+    <End Role="DSLocations" Type="Self.DSLocation" Multiplicity="1" />
+    <End Role="DSROCartons" Type="Self.DSROCarton" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSLocations">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="DSROCartons">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DSROCartons_DSReceivingOrders">
+    <End Role="DSReceivingOrders" Type="Self.DSReceivingOrder" Multiplicity="1" />
+    <End Role="DSROCartons" Type="Self.DSROCarton" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DSReceivingOrders">
+        <PropertyRef Name="DSReceivingOrderID" />
+      </Principal>
+      <Dependent Role="DSROCartons">
+        <PropertyRef Name="DSROID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RequestCartons_Requests">
+    <End Role="Requests" Type="Self.Request" Multiplicity="1" />
+    <End Role="RequestCartons" Type="Self.RequestCarton" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Requests">
+        <PropertyRef Name="RequestID" />
+      </Principal>
+      <Dependent Role="RequestCartons">
+        <PropertyRef Name="RequestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DtmpNoteDispatchingOderdetail_tmpNoteDispatchingOder">
+    <End Role="tmpNoteDispatchingOder" Type="Self.tmpNoteDispatchingOder" Multiplicity="0..1" />
+    <End Role="tmpNoteDispatchingOderDetail" Type="Self.tmpNoteDispatchingOderDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tmpNoteDispatchingOder">
+        <PropertyRef Name="NoteDispatchingOderID" />
+      </Principal>
+      <Dependent Role="tmpNoteDispatchingOderDetail">
+        <PropertyRef Name="NoteDispatchingOderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DocumentDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cartontmps" EntityType="Self.Cartontmp" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Deleted_DSDOCartons" EntityType="Self.Deleted_DSDOCartons" />
+    <EntitySet Name="Deleted_DSROCartons" EntityType="Self.Deleted_DSROCartons" />
+    <EntitySet Name="DocumentVersions" EntityType="Self.DocumentVersion" />
+    <EntitySet Name="DSCartonCategories" EntityType="Self.DSCartonCategory" />
+    <EntitySet Name="DSCartonDetails" EntityType="Self.DSCartonDetail" />
+    <EntitySet Name="DSCartonMovementDetails" EntityType="Self.DSCartonMovementDetail" />
+    <EntitySet Name="DSCartonMovements" EntityType="Self.DSCartonMovement" />
+    <EntitySet Name="DSCartonsNews" EntityType="Self.DSCartonsNew" />
+    <EntitySet Name="DSCartonStockOnHandDailies" EntityType="Self.DSCartonStockOnHandDaily" />
+    <EntitySet Name="DSCartonStockOnHandMonthlies" EntityType="Self.DSCartonStockOnHandMonthly" />
+    <EntitySet Name="DSClosedPeriods" EntityType="Self.DSClosedPeriod" />
+    <EntitySet Name="DSDispatchingOrders" EntityType="Self.DSDispatchingOrder" />
+    <EntitySet Name="DSDOCartons" EntityType="Self.DSDOCarton" />
+    <EntitySet Name="DSLocations" EntityType="Self.DSLocation" />
+    <EntitySet Name="DSReceivingOrders" EntityType="Self.DSReceivingOrder" />
+    <EntitySet Name="DSROCartons" EntityType="Self.DSROCarton" />
+    <EntitySet Name="dtproperties" EntityType="Self.dtproperty" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="OrderMasters" EntityType="Self.OrderMaster" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="RequestCartons" EntityType="Self.RequestCarton" />
+    <EntitySet Name="Requests" EntityType="Self.Request" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="tmpAttachments" EntityType="Self.tmpAttachment" />
+    <EntitySet Name="tmpBillingCustomers" EntityType="Self.tmpBillingCustomer" />
+    <EntitySet Name="tmpBillingReports" EntityType="Self.tmpBillingReport" />
+    <EntitySet Name="tmpCus" EntityType="Self.tmpCu" />
+    <EntitySet Name="tmpCustomers" EntityType="Self.tmpCustomer" />
+    <EntitySet Name="tmpCustomersViewStocks" EntityType="Self.tmpCustomersViewStock" />
+    <EntitySet Name="tmpDSCartonsNew_Import" EntityType="Self.tmpDSCartonsNew_Import" />
+    <EntitySet Name="tmpDSCustomersCartons" EntityType="Self.tmpDSCustomersCarton" />
+    <EntitySet Name="tmpDSDispatchingOrderIDs" EntityType="Self.tmpDSDispatchingOrderID" />
+    <EntitySet Name="tmpDSDispatchingOrderID_Recent" EntityType="Self.tmpDSDispatchingOrderID_Recent" />
+    <EntitySet Name="tmpDSLocations" EntityType="Self.tmpDSLocation" />
+    <EntitySet Name="tmpDSOrdersUpdates" EntityType="Self.tmpDSOrdersUpdate" />
+    <EntitySet Name="tmpLs" EntityType="Self.tmpL" />
+    <EntitySet Name="tmpLocationsWMS" EntityType="Self.tmpLocationsWM" />
+    <EntitySet Name="tmpLocForStockTakes" EntityType="Self.tmpLocForStockTake" />
+    <EntitySet Name="tmpNoteDispatchingOders" EntityType="Self.tmpNoteDispatchingOder" />
+    <EntitySet Name="tmpNoteDispatchingOderDetails" EntityType="Self.tmpNoteDispatchingOderDetail" />
+    <EntitySet Name="tmpTruckcheckings" EntityType="Self.tmpTruckchecking" />
+    <EntitySet Name="tmpWebDSStockOnHandMonthlies" EntityType="Self.tmpWebDSStockOnHandMonthly" />
+    <EntitySet Name="TruckCheckings" EntityType="Self.TruckChecking" />
+    <EntitySet Name="Aisles" EntityType="Self.Aisle" />
+    <EntitySet Name="BillingDetailBreakDowns" EntityType="Self.BillingDetailBreakDown" />
+    <EntitySet Name="ContainerCheckings" EntityType="Self.ContainerChecking" />
+    <EntitySet Name="Gate_ContInOut" EntityType="Self.Gate_ContInOut" />
+    <EntitySet Name="Gate_TruckInOut" EntityType="Self.Gate_TruckInOut" />
+    <EntitySet Name="Locations" EntityType="Self.Location" />
+    <EntitySet Name="tpmContainerCheckings" EntityType="Self.tpmContainerChecking" />
+    <EntitySet Name="View_aspnet_Users" EntityType="Self.View_aspnet_Users" />
+    <EntitySet Name="View_BillingBreakDown" EntityType="Self.View_BillingBreakDown" />
+    <EntitySet Name="View_Customers" EntityType="Self.View_Customers" />
+    <EntitySet Name="View_DSCustomerListBillings_" EntityType="Self.View_DSCustomerListBillings_" />
+    <EntitySet Name="View_DSLocationBarcode" EntityType="Self.View_DSLocationBarcode" />
+    <EntitySet Name="View_DSLocationsAll" EntityType="Self.View_DSLocationsAll" />
+    <EntitySet Name="View_DSLocationsHasCartons" EntityType="Self.View_DSLocationsHasCartons" />
+    <EntitySet Name="View_Employees" EntityType="Self.View_Employees" />
+    <EntitySet Name="View_ServicesDefinition" EntityType="Self.View_ServicesDefinition" />
+    <EntitySet Name="View_WebUsers" EntityType="Self.View_WebUsers" />
+    <EntitySet Name="ViewCartonDispatchedLast2days" EntityType="Self.ViewCartonDispatchedLast2days" />
+    <EntitySet Name="ViewCartonOnHands" EntityType="Self.ViewCartonOnHand" />
+    <EntitySet Name="ViewCustomers" EntityType="Self.ViewCustomer" />
+    <AssociationSet Name="FK_DSCartonsNew_DSCartonCategories" Association="Self.FK_DSCartonsNew_DSCartonCategories">
+      <End Role="DSCartonCategories" EntitySet="DSCartonCategories" />
+      <End Role="DSCartonsNew" EntitySet="DSCartonsNews" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSCartonMovementDetails_DSCartonMovements" Association="Self.FK_DSCartonMovementDetails_DSCartonMovements">
+      <End Role="DSCartonMovements" EntitySet="DSCartonMovements" />
+      <End Role="DSCartonMovementDetails" EntitySet="DSCartonMovementDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSDOCartons_DSDispatchingOrders" Association="Self.FK_DSDOCartons_DSDispatchingOrders">
+      <End Role="DSDispatchingOrders" EntitySet="DSDispatchingOrders" />
+      <End Role="DSDOCartons" EntitySet="DSDOCartons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSDOCartons_DSLocations" Association="Self.FK_DSDOCartons_DSLocations">
+      <End Role="DSLocations" EntitySet="DSLocations" />
+      <End Role="DSDOCartons" EntitySet="DSDOCartons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSROCartons_DSLocations" Association="Self.FK_DSROCartons_DSLocations">
+      <End Role="DSLocations" EntitySet="DSLocations" />
+      <End Role="DSROCartons" EntitySet="DSROCartons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DSROCartons_DSReceivingOrders" Association="Self.FK_DSROCartons_DSReceivingOrders">
+      <End Role="DSReceivingOrders" EntitySet="DSReceivingOrders" />
+      <End Role="DSROCartons" EntitySet="DSROCartons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RequestCartons_Requests" Association="Self.FK_RequestCartons_Requests">
+      <End Role="Requests" EntitySet="Requests" />
+      <End Role="RequestCartons" EntitySet="RequestCartons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DtmpNoteDispatchingOderdetail_tmpNoteDispatchingOder" Association="Self.FK_DtmpNoteDispatchingOderdetail_tmpNoteDispatchingOder">
+      <End Role="tmpNoteDispatchingOder" EntitySet="tmpNoteDispatchingOders" />
+      <End Role="tmpNoteDispatchingOderDetail" EntitySet="tmpNoteDispatchingOderDetails" />
+    </AssociationSet>
+    <FunctionImport Name="SP_DSBillingByCustomerPeriodAll" ReturnType="Collection(DocumentDBModel.SP_DSBillingByCustomerPeriodAll_Result)">
+      <Parameter Name="BillingID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSBillingConfirmationAdd_New">
+      <Parameter Name="varCustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="varFromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="CurrentUser" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSBillingReport_New" />
+    <FunctionImport Name="SP_DSBillingRun1Customer">
+      <Parameter Name="varFromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varTodate" Mode="In" Type="DateTime" />
+      <Parameter Name="varCustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="varEmployeeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSBillingRunByCustomer">
+      <Parameter Name="varFromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varTodate" Mode="In" Type="DateTime" />
+      <Parameter Name="varCustomerString" Mode="In" Type="String" />
+      <Parameter Name="EmployeeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSBillingRunByCustomerInsert">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="varEmployeeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSBillingStockMovement">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="varFromDate" Mode="In" Type="String" />
+      <Parameter Name="varToDate" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSBillingSummaryInsert">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Todate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonByhight_Aisle" ReturnType="Collection(DocumentDBModel.SP_DSCartonByhight_Aisle_Result)">
+      <Parameter Name="Flag" Mode="In" Type="Int32" />
+      <Parameter Name="High" Mode="In" Type="Int32" />
+      <Parameter Name="Aisle" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonDestructionByCustomer" ReturnType="Collection(DocumentDBModel.SP_DSCartonDestructionByCustomer_Result)">
+      <Parameter Name="DSCustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonInfo_Carton" ReturnType="Collection(DocumentDBModel.SP_DSCartonInfo_Carton_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonInfo_Carton_Location" ReturnType="Collection(DocumentDBModel.SP_DSCartonInfo_Carton_Location_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonInfo_CartonViewAll" ReturnType="Collection(DocumentDBModel.SP_DSCartonInfo_CartonViewAll_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonInfo_details" ReturnType="Collection(DocumentDBModel.SP_DSCartonInfo_details_Result)">
+      <Parameter Name="CartonNewID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonInfo_DO" ReturnType="Collection(DocumentDBModel.SP_DSCartonInfo_DO_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonInfo_Location" ReturnType="Collection(DocumentDBModel.SP_DSCartonInfo_Location_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonInfo_Movement" ReturnType="Collection(DocumentDBModel.SP_DSCartonInfo_Movement_Result)">
+      <Parameter Name="CartonNewID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonInfo_Retrieval" ReturnType="Collection(DocumentDBModel.SP_DSCartonInfo_Retrieval_Result)">
+      <Parameter Name="DSCustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonInfo_RO" ReturnType="Collection(DocumentDBModel.SP_DSCartonInfo_RO_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonLabelRemain" ReturnType="Collection(DocumentDBModel.SP_DSCartonLabelRemain_Result)">
+      <Parameter Name="DSDispatchingOrderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonLabelRemain_Created" ReturnType="Collection(DocumentDBModel.SP_DSCartonLabelRemain_Created_Result)" />
+    <FunctionImport Name="SP_DSCartonMovementDeSelectAll">
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonMovementFrom_combo" ReturnType="Collection(DocumentDBModel.SP_DSCartonMovementFrom_combo_Result)" />
+    <FunctionImport Name="SP_DSCartonMovementLocationReview" ReturnType="Collection(DocumentDBModel.SP_DSCartonMovementLocationReview_Result)">
+      <Parameter Name="SourceLocation" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonMovementSelect">
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+      <Parameter Name="CartonNewID" Mode="In" Type="Int32" />
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonMovementSelectAll">
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonMovementTo" ReturnType="Collection(DocumentDBModel.SP_DSCartonMovementTo_Result)">
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonMovementViewDetails" ReturnType="Collection(DocumentDBModel.SP_DSCartonMovementViewDetails_Result)">
+      <Parameter Name="DSCartonMovementID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonProblemCheckRemain" ReturnType="Collection(DocumentDBModel.SP_DSCartonProblemCheckRemain_Result)" />
+    <FunctionImport Name="SP_DSCartonSelect_Update" />
+    <FunctionImport Name="SP_DSCartonsNew_Import">
+      <Parameter Name="DSReceivingOrderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonsNew_ImportNew">
+      <Parameter Name="DSReceivingOrderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonsNew_ImportTruncate" />
+    <FunctionImport Name="SP_DSCartonsNew_UpdateCustomerReference">
+      <Parameter Name="DSReceivingOrderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonsNew_UpdateToOrders">
+      <Parameter Name="CartonNewID" Mode="In" Type="Int32" />
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+      <Parameter Name="UpdatedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonsNewDelete">
+      <Parameter Name="CartonNewID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCartonStockInStoreAll" ReturnType="Collection(DocumentDBModel.SP_DSCartonStockInStoreAll_Result)" />
+    <FunctionImport Name="SP_DScomboContracts" ReturnType="Collection(DocumentDBModel.SP_DScomboContracts_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="OrderType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSComboCustomerID" ReturnType="Collection(DocumentDBModel.SP_DSComboCustomerID_Result)" />
+    <FunctionImport Name="SP_DSComboDOCarton" ReturnType="Collection(DocumentDBModel.SP_DSComboDOCarton_Result)">
+      <Parameter Name="DSCustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="Flag" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSComboDOCartonByCriteria" ReturnType="Collection(DocumentDBModel.SP_DSComboDOCartonByCriteria_Result)">
+      <Parameter Name="DSCustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="Criteria" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DScomboROCartonID" ReturnType="Collection(DocumentDBModel.SP_DScomboROCartonID_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="OrderType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCreateNewCarton">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="QtyCarton" Mode="In" Type="Int32" />
+      <Parameter Name="DSReceivingOrderID" Mode="In" Type="Int32" />
+      <Parameter Name="CreatedBy" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSCustomer" ReturnType="Collection(DocumentDBModel.SP_DSCustomer_Result)" />
+    <FunctionImport Name="SP_DSCustomerProductGroupInsertNew">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDDCartonBarcode" ReturnType="Collection(DocumentDBModel.SP_DSDDCartonBarcode_Result)">
+      <Parameter Name="DSDispatchingOrdersID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDispatchingNote" ReturnType="Collection(DocumentDBModel.SP_DSDispatchingNote_Result)">
+      <Parameter Name="DSDOID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDispatchingOrderCreate" ReturnType="Collection(DocumentDBModel.SP_DSDispatchingOrderCreate_Result)" />
+    <FunctionImport Name="SP_DSDispatchingOrderCreateByCustomerInsert">
+      <Parameter Name="DSOwner" Mode="In" Type="String" />
+      <Parameter Name="varLocationIDString" Mode="In" Type="String" />
+      <Parameter Name="varCustomerIDString" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDispatchingOrderCreateByHigh" ReturnType="Collection(DocumentDBModel.SP_DSDispatchingOrderCreateByHigh_Result)" />
+    <FunctionImport Name="SP_DSDispatchingOrderCreateByLocationInsert">
+      <Parameter Name="DSOwner" Mode="In" Type="String" />
+      <Parameter Name="varLocationIDString" Mode="In" Type="String" />
+      <Parameter Name="varCustomerIDString" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDispatchingOrderDetailsCreate" ReturnType="Collection(DocumentDBModel.SP_DSDispatchingOrderDetailsCreate_Result)" />
+    <FunctionImport Name="SP_DSDispatchingOrderDetailsCreateInsert">
+      <Parameter Name="varLocationIDString" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDispatchingOrdersCreateReport" ReturnType="Collection(DocumentDBModel.SP_DSDispatchingOrdersCreateReport_Result)" />
+    <FunctionImport Name="SP_DSDOCartonByLocationInsert">
+      <Parameter Name="DSDOID" Mode="In" Type="Int32" />
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDOCartonByLocationSelect">
+      <Parameter Name="DSCustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDOCartonDelete">
+      <Parameter Name="CartonID" Mode="In" Type="Int32" />
+      <Parameter Name="DispatchedCartonID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDOCartonInsert">
+      <Parameter Name="DSDOID" Mode="In" Type="Int32" />
+      <Parameter Name="CartonID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDOCartonsAccept">
+      <Parameter Name="DSDOID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="UserID" Mode="In" Type="String" />
+      <Parameter Name="DispatchedCartonID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDOCartonsConfirm">
+      <Parameter Name="DSDOID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="UserID" Mode="In" Type="String" />
+      <Parameter Name="DispatchedCartonID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDOCartonSelectAll">
+      <Parameter Name="DSCustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDOCartonSelectInsert">
+      <Parameter Name="DSDOID" Mode="In" Type="Int32" />
+      <Parameter Name="DSCustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="UserID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDODeleteCartonSelect">
+      <Parameter Name="DSDOID" Mode="In" Type="Int32" />
+      <Parameter Name="User" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDOOrderDelete">
+      <Parameter Name="DSDispatchingOrderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDOSelectOneCarton">
+      <Parameter Name="CartonNewID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDOUpdateSelectAll">
+      <Parameter Name="DSDOID" Mode="In" Type="Int32" />
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSDOUpdateSelectOne">
+      <Parameter Name="DispatchedCartonID" Mode="In" Type="Int32" />
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSEmployeeWorkingDelete">
+      <Parameter Name="EmployeeWorkingID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSFindCartons_ByLocation" ReturnType="Collection(DocumentDBModel.SP_DSFindCartons_ByLocation_Result)">
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSInOutView_D" ReturnType="Collection(DocumentDBModel.SP_DSInOutView_D_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSInOutView_DALL" ReturnType="Collection(DocumentDBModel.SP_DSInOutView_DALL_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSInOutView_DALL_SortByDate" ReturnType="Collection(DocumentDBModel.SP_DSInOutView_DALL_SortByDate_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSInOutview_R" ReturnType="Collection(DocumentDBModel.SP_DSInOutview_R_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSInOutview_RALL" ReturnType="Collection(DocumentDBModel.SP_DSInOutview_RALL_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSInOutview_RALL_SortByDate" ReturnType="Collection(DocumentDBModel.SP_DSInOutview_RALL_SortByDate_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSLabel" ReturnType="Collection(DocumentDBModel.SP_DSLabel_Result)">
+      <Parameter Name="DSReceivingOrderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSLabelA5StockLocationByHight" ReturnType="Collection(DocumentDBModel.SP_DSLabelA5StockLocationByHight_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="Flag" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSLabelCartonMovementTo" ReturnType="Collection(DocumentDBModel.SP_DSLabelCartonMovementTo_Result)">
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSLabelCartonMovementToByHight" ReturnType="Collection(DocumentDBModel.SP_DSLabelCartonMovementToByHight_Result)">
+      <Parameter Name="LocationNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSLabelRemainRD" ReturnType="Collection(DocumentDBModel.SP_DSLabelRemainRD_Result)">
+      <Parameter Name="DSReceivingOrderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSLocationBarcode" ReturnType="Collection(DocumentDBModel.SP_DSLocationBarcode_Result)">
+      <Parameter Name="Flag" Mode="In" Type="Int32" />
+      <Parameter Name="High" Mode="In" Type="Int32" />
+      <Parameter Name="Aisle" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSLocationBarcode_buuTest" ReturnType="Collection(DocumentDBModel.SP_DSLocationBarcode_buuTest_Result)" />
+    <FunctionImport Name="SP_DSLocationInsert">
+      <Parameter Name="RoomID" Mode="In" Type="String" />
+      <Parameter Name="Aisle" Mode="In" Type="Int32" />
+      <Parameter Name="FromBay" Mode="In" Type="Int32" />
+      <Parameter Name="ToBay" Mode="In" Type="Int32" />
+      <Parameter Name="FromHigh" Mode="In" Type="Int32" />
+      <Parameter Name="ToHigh" Mode="In" Type="Int32" />
+      <Parameter Name="FromDeep" Mode="In" Type="Int32" />
+      <Parameter Name="ToDeep" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSLocationsAll" ReturnType="Collection(DocumentDBModel.SP_DSLocationsAll_Result)" />
+    <FunctionImport Name="SP_DSLocationsBusy" ReturnType="Collection(DocumentDBModel.SP_DSLocationsBusy_Result)" />
+    <FunctionImport Name="SP_DSLocationsFree" ReturnType="Collection(DocumentDBModel.SP_DSLocationsFree_Result)" />
+    <FunctionImport Name="SP_DSLocationsFree_TEST" ReturnType="Collection(DocumentDBModel.SP_DSLocationsFree_TEST_Result)">
+      <Parameter Name="LocationNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSMovementCartonUpdate">
+      <Parameter Name="varSourceLocationID" Mode="In" Type="Int32" />
+      <Parameter Name="varDestinationLocationID" Mode="In" Type="Int32" />
+      <Parameter Name="varDestinationLocationNumber" Mode="In" Type="String" />
+      <Parameter Name="User" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSMovementCartonUpdateByCarton">
+      <Parameter Name="varCartonID" Mode="In" Type="Int32" />
+      <Parameter Name="varDestinationLocationID" Mode="In" Type="Int32" />
+      <Parameter Name="varDestinationLocationNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSMovementLocation">
+      <Parameter Name="varSourceLocationNumber" Mode="In" Type="String" />
+      <Parameter Name="varSourceLocationID" Mode="In" Type="Int32" />
+      <Parameter Name="varDestinationLocationNumber" Mode="In" Type="String" />
+      <Parameter Name="varEmployeeID" Mode="In" Type="Int32" />
+      <Parameter Name="varUser" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSMovementLocationByCarton">
+      <Parameter Name="varSourceLocationNumber" Mode="In" Type="String" />
+      <Parameter Name="varSourceLocationID" Mode="In" Type="Int32" />
+      <Parameter Name="varDestinationLocationNumber" Mode="In" Type="String" />
+      <Parameter Name="varEmployeeID" Mode="In" Type="Int32" />
+      <Parameter Name="varUser" Mode="In" Type="String" />
+      <Parameter Name="varCartonID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSOrdersUnConfirms" ReturnType="Collection(DocumentDBModel.SP_DSOrdersUnConfirms_Result)">
+      <Parameter Name="DSOwner" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSOrdersUnConfirmsAll" ReturnType="Collection(DocumentDBModel.SP_DSOrdersUnConfirmsAll_Result)">
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSOrdersUnConfirmUpdate">
+      <Parameter Name="Owner" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSOtherServiceInsert">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="varFromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varEmployeeID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRDCartonsNew_Import">
+      <Parameter Name="OrderType" Mode="In" Type="String" />
+      <Parameter Name="UserID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSReceivingAdvice_Note" ReturnType="Collection(DocumentDBModel.SP_DSReceivingAdvice_Note_Result)">
+      <Parameter Name="DSROID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSReceivingCartonNewBarcode" ReturnType="Collection(DocumentDBModel.SP_DSReceivingCartonNewBarcode_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSReceivingOrders_NotConfirm" ReturnType="Collection(DocumentDBModel.SP_DSReceivingOrders_NotConfirm_Result)" />
+    <FunctionImport Name="SP_DSROAllCartonsNonAllocateToOneLocation">
+      <Parameter Name="varLocationID" Mode="In" Type="Int32" />
+      <Parameter Name="varDSROID" Mode="In" Type="Int32" />
+      <Parameter Name="varLocationNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROAllCartonsToOneLocation">
+      <Parameter Name="varLocationID" Mode="In" Type="Int32" />
+      <Parameter Name="varDSROID" Mode="In" Type="Int32" />
+      <Parameter Name="varLocationNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonBarcode" ReturnType="Collection(DocumentDBModel.SP_DSROCartonBarcode_Result)">
+      <Parameter Name="DSReceivingOrderID" Mode="In" Type="Int32" />
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonCancelAllocatedLocation">
+      <Parameter Name="varDSROID" Mode="In" Type="Int32" />
+      <Parameter Name="UserControl" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonCheckAllDelete">
+      <Parameter Name="DSROID" Mode="In" Type="Int32" />
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonsAccept">
+      <Parameter Name="DSROID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="UserID" Mode="In" Type="String" />
+      <Parameter Name="CartonID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonsAllSelectInsert">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="DSROID" Mode="In" Type="Int32" />
+      <Parameter Name="OrderType" Mode="In" Type="String" />
+      <Parameter Name="UserID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonsConfirm">
+      <Parameter Name="DSROID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="UserID" Mode="In" Type="String" />
+      <Parameter Name="CartonID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonsDelete">
+      <Parameter Name="DSROID" Mode="In" Type="Int32" />
+      <Parameter Name="User" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonSelectOne">
+      <Parameter Name="CartonNewID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonsExportToRDInsert">
+      <Parameter Name="DSDOID" Mode="In" Type="Int32" />
+      <Parameter Name="Owner" Mode="In" Type="String" />
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonsSelectAllCreateUpdate_CURSOR">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="varROID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonsSelectAllInsert">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="DSROID" Mode="In" Type="Int32" />
+      <Parameter Name="CartonID" Mode="In" Type="Int32" />
+      <Parameter Name="OrderType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonStockSelectOne">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROCartonUpdateAll">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="OrderType" Mode="In" Type="String" />
+      <Parameter Name="Flag" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROComBoCarton" ReturnType="Collection(DocumentDBModel.SP_DSROComBoCarton_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="OrderType" Mode="In" Type="String" />
+      <Parameter Name="Flag" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRONewCartonInsert">
+      <Parameter Name="DSROID" Mode="In" Type="Int32" />
+      <Parameter Name="CartonID" Mode="InOut" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROOrderDelete">
+      <Parameter Name="DSReceivingOrderID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSROSelectDelete">
+      <Parameter Name="CartonID" Mode="In" Type="Int32" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptBillingByCustomers" ReturnType="Collection(DocumentDBModel.SP_DSRptBillingByCustomers_Result)">
+      <Parameter Name="BillingID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptBillingDetails">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="varFromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockByLocation">
+      <Parameter Name="varcondition" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockDispatchedDetailSelectCustomers">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varcondition" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockDispatchedDetailSelectCustomersAll">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockDispatchedReport" ReturnType="Collection(DocumentDBModel.SP_DSRptStockDispatchedReport_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockDispatchedSelectCustomers_bk2016_02_25">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varcondition" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockDispatchedSelectCustomersAll_bk2016_02_25">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockMovementSelectCustomers">
+      <Parameter Name="varFromDate" Mode="In" Type="String" />
+      <Parameter Name="varToDate" Mode="In" Type="String" />
+      <Parameter Name="varcondition" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockMovementSelectCustomersAll">
+      <Parameter Name="varFromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockMovementSelectCustomersAllStockOnHand">
+      <Parameter Name="varFromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockOnHandCombo" ReturnType="Collection(DocumentDBModel.SP_DSRptStockOnHandCombo_Result)" />
+    <FunctionImport Name="SP_DSRptStockReceivedDetailsSelectCustomers">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varcondition" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockReceivedDetailsSelectCustomersAll">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockReceivedReport" ReturnType="Collection(DocumentDBModel.SP_DSRptStockReceivedReport_Result)">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockReceivedSelectCustomers_bk2016_02_25">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+      <Parameter Name="varcondition" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSRptStockReceivedSelectCustomersAll_bk2016_02_25">
+      <Parameter Name="FromDate" Mode="In" Type="DateTime" />
+      <Parameter Name="ToDate" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSStockByLocationDetails" ReturnType="Collection(DocumentDBModel.SP_DSStockByLocationDetails_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSStockByLocationDetailsAllCustomer" ReturnType="Collection(DocumentDBModel.SP_DSStockByLocationDetailsAllCustomer_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSStockByLocationDetailsByCustomer" ReturnType="Collection(DocumentDBModel.SP_DSStockByLocationDetailsByCustomer_Result)" />
+    <FunctionImport Name="SP_DSStockByLocationDetailsByCustomerAllCustomer" ReturnType="Collection(DocumentDBModel.SP_DSStockByLocationDetailsByCustomerAllCustomer_Result)" />
+    <FunctionImport Name="SP_DSStockMovementReportListBox" ReturnType="Collection(DocumentDBModel.SP_DSStockMovementReportListBox_Result)" />
+    <FunctionImport Name="SP_DSStockOnHandByLocationByBay" ReturnType="Collection(DocumentDBModel.SP_DSStockOnHandByLocationByBay_Result)">
+      <Parameter Name="LocationNumber" Mode="In" Type="String" />
+      <Parameter Name="Location" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSStockOnHandDailyInsert" />
+    <FunctionImport Name="SP_DSStockOnHandReport" ReturnType="Collection(DocumentDBModel.SP_DSStockOnHandReport_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSStockOnHandReport_Export_GSK" ReturnType="Collection(DocumentDBModel.SP_DSStockOnHandReport_Export_GSK_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSStockOnHandReportByCartons" ReturnType="Collection(DocumentDBModel.SP_DSStockOnHandReportByCartons_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSStockOnHandReportByDate" ReturnType="Collection(DocumentDBModel.SP_DSStockOnHandReportByDate_Result)">
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="Date" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DSStockTakeByRequest" ReturnType="Collection(DocumentDBModel.SP_DSStockTakeByRequest_Result)">
+      <Parameter Name="varCustomerString" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_DStmpCartonDescription" />
+    <FunctionImport Name="SP_DStmpCustomerUpdate" />
+    <FunctionImport Name="SP_Gate_ContInOutUpdate">
+      <Parameter Name="ContInOutID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Gate_ContInOutUpdateQty">
+      <Parameter Name="ContInOutID" Mode="In" Type="Int32" />
+      <Parameter Name="Qty" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Gate_TruckInOutUpdate">
+      <Parameter Name="TruckInOutID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SP_Gate_TruckInOutUpdateQty">
+      <Parameter Name="TruckInOutID" Mode="In" Type="Int32" />
+      <Parameter Name="Qty" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DocumentDBModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DocumentDBModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+    <FunctionImport Name="SP_UserFullName" ReturnType="Collection(DocumentDBModel.SP_UserFullName_Result)" />
+    <FunctionImport Name="SPDOCartonsExportToDDInsert">
+      <Parameter Name="DSRDID" Mode="In" Type="Int32" />
+      <Parameter Name="Owner" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SPEDI_DSProcessDispatchingOrder">
+      <Parameter Name="RequestID" Mode="In" Type="Int32" />
+      <Parameter Name="DSOwner" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spx_ImportFromExcel07">
+      <Parameter Name="FilePath" Mode="In" Type="String" />
+      <Parameter Name="RequestID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="STGate_VehicleBound" ReturnType="Collection(DocumentDBModel.STGate_VehicleBound_Result)">
+      <Parameter Name="OrderNumber" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="STGate_VehicleInOutRemain" ReturnType="Collection(DocumentDBModel.STGate_VehicleInOutRemain_Result)" />
+    <FunctionImport Name="STGate_VehicleInOutToday" ReturnType="Collection(DocumentDBModel.STGate_VehicleInOutToday_Result)" />
+    <FunctionImport Name="STGate_VehicleInOutUpdateOrderNumber">
+      <Parameter Name="VehicleType" Mode="In" Type="String" />
+      <Parameter Name="OrderNumber" Mode="In" Type="String" />
+      <Parameter Name="VehicleInOutID" Mode="In" Type="Int32" />
+      <Parameter Name="QuantityOut" Mode="In" Type="String" />
+      <Parameter Name="UserCheckOut" Mode="In" Type="String" />
+      <Parameter Name="CustomerID" Mode="In" Type="Int32" />
+      <Parameter Name="CustomerName" Mode="In" Type="String" />
+      <Parameter Name="StartTime" Mode="In" Type="DateTime" />
+      <Parameter Name="EndTime" Mode="In" Type="DateTime" />
+      <Parameter Name="Reason" Mode="In" Type="String" />
+      <Parameter Name="StartWorkingTime" Mode="In" Type="DateTime" />
+      <Parameter Name="EndWorkingTime" Mode="In" Type="DateTime" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="SP_DSBillingByCustomerPeriodAll_Result">
+    <Property Type="Int32" Name="BillingID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="Measure" Nullable="true" MaxLength="15" />
+    <Property Type="Int32" Name="ServiceID" Nullable="false" />
+    <Property Type="String" Name="ServiceNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="ServiceName" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="BillingDate" Nullable="false" Precision="16" />
+    <Property Type="DateTime" Name="BillingFromDate" Nullable="false" Precision="16" />
+    <Property Type="DateTime" Name="BillingToDate" Nullable="false" Precision="16" />
+    <Property Type="Decimal" Name="ServiceQuantity" Nullable="true" Precision="13" Scale="3" />
+    <Property Type="String" Name="Phone1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="BillingRemark" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonByhight_Aisle_Result">
+    <Property Type="Int32" Name="DSROCartonID" Nullable="false" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="DSCartonCategoryID" Nullable="false" />
+    <Property Type="String" Name="CategoryDescription" Nullable="false" MaxLength="100" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="RoomID" Nullable="false" MaxLength="2" />
+    <Property Type="Int16" Name="Aisle" Nullable="true" />
+    <Property Type="Int16" Name="High" Nullable="true" />
+    <Property Type="Boolean" Name="Used" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CartonNewIDBarcode" Nullable="true" MaxLength="12" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonDestructionByCustomer_Result">
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="DSDispatchingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+    <Property Type="Int32" Name="DSCartonCategoryID" Nullable="false" />
+    <Property Type="String" Name="DSDispatchingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSRDSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="DSDDSpecialRequirement" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSDispatchingOrderID" Nullable="false" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="String" Name="DSDispatchingType" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="CategoryDescription" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CustomerRef" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonInfo_Carton_Result">
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="Int32" Name="CartonQty" Nullable="true" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="LocationID1" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonInfo_Carton_Location_Result">
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="Int32" Name="CartonQty" Nullable="true" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonInfo_CartonViewAll_Result">
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="String" Name="CartonDetails" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LocationNumber" Nullable="true" MaxLength="20" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonInfo_details_Result">
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="String" Name="OrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonInfo_DO_Result">
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="DateTime" Name="DSDispatchingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="Qty" Nullable="true" />
+    <Property Type="String" Name="DSDispatchingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="Int32" Name="DSDispatchingOrderID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonInfo_Location_Result">
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="Int32" Name="CartonQty" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonInfo_Movement_Result">
+    <Property Type="String" Name="SourceLocationNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DestinationLocationNumber" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateMovement" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ReasonMovement" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AuthorisedBy" Nullable="true" MaxLength="30" />
+    <Property Type="Byte" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="DSCartonMovementID" Nullable="false" />
+    <Property Type="Int32" Name="CartonID" Nullable="true" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="VietnamName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonInfo_Retrieval_Result">
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="DSDispatchingOrderID" Nullable="true" />
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="Boolean" Name="CartonReturned" Nullable="false" />
+    <Property Type="Boolean" Name="CartonSelected" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="CustomerRef" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DSDispatchingOrderDate" Nullable="true" Precision="16" />
+    <Property Type="Single" Name="CartonSize" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CategoryDescription" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="DSCartonCategoryID" Nullable="true" />
+    <Property Type="String" Name="DSDispatchingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="true" Precision="16" />
+    <Property Type="String" Name="DSRDSpecialRequirement" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DSDDSpecialRequirement" Nullable="true" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonInfo_RO_Result">
+    <Property Type="Int32" Name="Qty" Nullable="true" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonLabelRemain_Result">
+    <Property Type="Int32" Name="LocationID" Nullable="true" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonLabelRemain_Created_Result">
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="LocationID" Nullable="true" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonMovementFrom_combo_Result">
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="L" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonMovementLocationReview_Result">
+    <Property Type="Int32" Name="DSCartonMovementID" Nullable="false" />
+    <Property Type="String" Name="SourceLocationNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DestinationLocationNumber" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DateMovement" Nullable="true" Precision="16" />
+    <Property Type="String" Name="ReasonMovement" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AuthorisedBy" Nullable="true" MaxLength="30" />
+    <Property Type="Byte" Name="Status" Nullable="true" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="true" />
+    <Property Type="String" Name="Remark" Nullable="false" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonMovementTo_Result">
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CartonNewIDBarcode" Nullable="true" MaxLength="12" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonMovementViewDetails_Result">
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="DSCartonMovementID" Nullable="true" />
+    <Property Type="Int32" Name="CartonID" Nullable="true" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonProblemCheckRemain_Result">
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="Received" Nullable="false" />
+    <Property Type="Int32" Name="Dispatched" Nullable="false" />
+    <Property Type="Int32" Name="Difference" Nullable="true" />
+    <Property Type="Int32" Name="StockOnHand_Remain" Nullable="false" />
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CustomerRef" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Boolean" Name="CustomerDiscontinued" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCartonStockInStoreAll_Result">
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="String" Name="LocationNumber" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DScomboContracts_Result">
+    <Property Type="Int32" Name="ServiceID" Nullable="false" />
+    <Property Type="String" Name="ServiceNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="ServiceName" Nullable="true" MaxLength="150" />
+    <Property Type="Double" Name="CheckingQuantityMin" Nullable="true" />
+    <Property Type="Double" Name="CheckingQuantityMax" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSComboCustomerID_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Boolean" Name="CustomerDiscontinued" Nullable="true" />
+    <Property Type="String" Name="CustomerType" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_DSComboDOCarton_Result">
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="String" Name="CustomerRef" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Location" Nullable="false" MaxLength="12" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="CartonIDSCS" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSComboDOCartonByCriteria_Result">
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DScomboROCartonID_Result">
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CartonIDscs" Nullable="false" />
+    <Property Type="String" Name="CartonCustomerID" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="Destruction" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="CategoryID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSCustomer_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CustomerType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="3000" />
+  </ComplexType>
+  <ComplexType Name="SP_DSDDCartonBarcode_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CartonNewIDBarcode" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Phone1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CustomerReference" Nullable="true" MaxLength="150" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="Int32" Name="Expr1" Nullable="false" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DestructionDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LocationNumber" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="DSDOID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSDispatchingNote_Result">
+    <Property Type="String" Name="DispatchingOrderID_Barcode" Nullable="true" MaxLength="8000" />
+    <Property Type="Int32" Name="DSDOID" Nullable="false" />
+    <Property Type="String" Name="DSDispatchingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Phone1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phone2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="3000" />
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DSDispatchingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="LocationNumber" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="DSDispatchingType" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="ServiceName" Nullable="true" MaxLength="301" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="109" />
+    <Property Type="String" Name="Fax2" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="referent" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSDispatchingOrderCreate_Result">
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="Location" Nullable="false" MaxLength="12" />
+    <Property Type="Int32" Name="Quatity" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSDispatchingOrderCreateByHigh_Result">
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="Location" Nullable="false" MaxLength="12" />
+    <Property Type="Int32" Name="Quatity" Nullable="true" />
+    <Property Type="Int16" Name="High" Nullable="false" />
+    <Property Type="Int16" Name="Aisle" Nullable="false" />
+    <Property Type="Int16" Name="Bay" Nullable="false" />
+    <Property Type="Int16" Name="Deep" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSDispatchingOrderDetailsCreate_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="Quantity" Nullable="true" />
+    <Property Type="Int32" Name="Total" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSDispatchingOrdersCreateReport_Result">
+    <Property Type="String" Name="DSDispatchingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="DSDispatchingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSFindCartons_ByLocation_Result">
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="LocationNumber" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="SP_DSInOutView_D_Result">
+    <Property Type="String" Name="DSDispatchingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="Int32" Name="DSDOID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CountOfCartonID" Nullable="true" />
+    <Property Type="String" Name="DSOwner" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DSDispatchingOrderDate" Nullable="false" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="SP_DSInOutView_DALL_Result">
+    <Property Type="String" Name="DSDispatchingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="Int32" Name="DSDOID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CountOfCartonID" Nullable="true" />
+    <Property Type="String" Name="DSOwner" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DSDispatchingOrderDate" Nullable="false" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="SP_DSInOutView_DALL_SortByDate_Result">
+    <Property Type="String" Name="DSDispatchingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="Int32" Name="DSDOID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CountOfCartonID" Nullable="true" />
+    <Property Type="String" Name="DSOwner" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="true" MaxLength="250" />
+    <Property Type="DateTime" Name="DSDispatchingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSInOutview_R_Result">
+    <Property Type="Int32" Name="CountOfCartonID" Nullable="true" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DSOwner" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="String" Name="DSReceivingType" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="SP_DSInOutview_RALL_Result">
+    <Property Type="Int32" Name="CountOfCartonID" Nullable="true" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DSOwner" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSReceivingType" Nullable="true" MaxLength="30" />
+  </ComplexType>
+  <ComplexType Name="SP_DSInOutview_RALL_SortByDate_Result">
+    <Property Type="Int32" Name="CountOfCartonID" Nullable="true" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DSOwner" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="SP_DSLabel_Result">
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+  </ComplexType>
+  <ComplexType Name="SP_DSLabelA5StockLocationByHight_Result">
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CartonNumber" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSLabelCartonMovementTo_Result">
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CartonNumber" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSLabelCartonMovementToByHight_Result">
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CartonNumber" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_DSLabelRemainRD_Result">
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="Int32" Name="CartonNumber" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSLocationBarcode_Result">
+    <Property Type="String" Name="LocationBarcode" Nullable="true" MaxLength="11" />
+    <Property Type="String" Name="L" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="Byte" Name="LocationCode" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSLocationBarcode_buuTest_Result">
+    <Property Type="String" Name="LocationBarcode" Nullable="true" MaxLength="8000" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="Int16" Name="Aisle" Nullable="true" />
+    <Property Type="Int16" Name="Bay" Nullable="true" />
+    <Property Type="Int16" Name="High" Nullable="true" />
+    <Property Type="Byte" Name="LocationCode" Nullable="true" />
+    <Property Type="Int16" Name="Deep" Nullable="true" />
+    <Property Type="Byte" Name="StandardCarton" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSLocationsAll_Result">
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="L" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="Int32" Name="QuantityCarton" Nullable="false" />
+    <Property Type="Byte" Name="LocationCode" Nullable="true" />
+    <Property Type="Int32" Name="Referent" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSLocationsBusy_Result">
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="L" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="Int32" Name="QuantityCarton" Nullable="true" />
+    <Property Type="Byte" Name="LocationCode" Nullable="true" />
+    <Property Type="Int32" Name="Referent" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSLocationsFree_Result">
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="L" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="Int32" Name="QuantityCarton" Nullable="false" />
+    <Property Type="Byte" Name="LocationCode" Nullable="true" />
+    <Property Type="Boolean" Name="Used" Nullable="false" />
+    <Property Type="Int32" Name="Referent" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSLocationsFree_TEST_Result">
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="LocationBarcode" Nullable="true" MaxLength="11" />
+  </ComplexType>
+  <ComplexType Name="SP_DSOrdersUnConfirms_Result">
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Boolean" Name="DSStatus" Nullable="false" />
+    <Property Type="String" Name="DSOwner" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="SP_DSOrdersUnConfirmsAll_Result">
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="16" />
+    <Property Type="Boolean" Name="DSStatus" Nullable="false" />
+    <Property Type="String" Name="DSOwner" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SP_DSReceivingAdvice_Note_Result">
+    <Property Type="String" Name="DSReceivingOrders_Barcode" Nullable="true" MaxLength="8000" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="String" Name="LocationNumber" Nullable="true" MaxLength="20" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="DSReceivingCreatedTime" Nullable="true" Precision="16" />
+    <Property Type="String" Name="DSOwner" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Phone1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phone2" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="3000" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSReceivingType" Nullable="true" MaxLength="30" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="109" />
+    <Property Type="String" Name="Fax2" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="OrderDate" Nullable="false" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="SP_DSReceivingCartonNewBarcode_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CartonNewIDBarcode" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Phone1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_DSReceivingOrders_NotConfirm_Result">
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Boolean" Name="DSStatus" Nullable="false" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="DSReceivingType" Nullable="true" MaxLength="30" />
+    <Property Type="Int32" Name="ServiceID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="TotalCarton" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSROCartonBarcode_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CartonNewIDBarcode" Nullable="true" MaxLength="12" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Phone1" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Fax" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CustomerReference" Nullable="true" MaxLength="150" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DestructionDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="LocationNumber" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="SP_DSROComBoCarton_Result">
+    <Property Type="String" Name="CustomerRef" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="DateTime" Name="DestructionDate" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="DSCartonCategoryID" Nullable="false" />
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="Int32" Name="IDCarton" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSRptBillingByCustomers_Result">
+    <Property Type="DateTime" Name="ReportDate" Nullable="true" Precision="16" />
+    <Property Type="Int32" Name="BeginC" Nullable="true" />
+    <Property Type="Decimal" Name="BeginW" Nullable="true" Precision="18" Scale="3" />
+    <Property Type="Int32" Name="InC" Nullable="true" />
+    <Property Type="Decimal" Name="InW" Nullable="true" Precision="18" Scale="3" />
+    <Property Type="Int32" Name="OutC" Nullable="true" />
+    <Property Type="Decimal" Name="OutW" Nullable="true" Precision="18" Scale="3" />
+    <Property Type="Int32" Name="CloseC" Nullable="true" />
+    <Property Type="Decimal" Name="CloseW" Nullable="true" Precision="18" Scale="3" />
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="BillingID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSRptStockDispatchedReport_Result">
+    <Property Type="String" Name="DSDispatchingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="DateTime" Name="DSDispatchingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="Carton_Qty" Nullable="true" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="Double" Name="CartonSize" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSRptStockOnHandCombo_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CustomerType" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_DSRptStockReceivedReport_Result">
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="Int32" Name="CartonQty" Nullable="true" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Double" Name="CartonSize" Nullable="true" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+  </ComplexType>
+  <ComplexType Name="SP_DSStockByLocationDetails_Result">
+    <Property Type="String" Name="CountOfCartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="String" Name="LocationNumber" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="CartonName" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSStockByLocationDetailsAllCustomer_Result">
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CartonNumber" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CartonNewIDBarcode" Nullable="true" MaxLength="12" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+  </ComplexType>
+  <ComplexType Name="SP_DSStockByLocationDetailsByCustomer_Result">
+    <Property Type="String" Name="CountOfCartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="String" Name="LocationNumber" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="CartonName" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_DSStockByLocationDetailsByCustomerAllCustomer_Result">
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="CartonNumber" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SP_DSStockMovementReportListBox_Result">
+    <Property Type="Int32" Name="CustomerID" Nullable="false" />
+    <Property Type="String" Name="CustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="String" Name="CustomerType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="CustomerDiscontinued" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSStockOnHandByLocationByBay_Result">
+    <Property Type="Int32" Name="DSROCartonID" Nullable="false" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="DSCartonCategoryID" Nullable="false" />
+    <Property Type="String" Name="CategoryDescription" Nullable="false" MaxLength="100" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="RoomID" Nullable="false" MaxLength="2" />
+    <Property Type="Int16" Name="Aisle" Nullable="true" />
+    <Property Type="Int16" Name="High" Nullable="true" />
+    <Property Type="Boolean" Name="Used" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+    <Property Type="String" Name="CartonNewIDBarcode" Nullable="true" MaxLength="12" />
+    <Property Type="Int16" Name="Bay" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSStockOnHandReport_Result">
+    <Property Type="Int32" Name="DSROCartonID" Nullable="false" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="DSCartonCategoryID" Nullable="false" />
+    <Property Type="String" Name="CategoryDescription" Nullable="false" MaxLength="100" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="FirstReceivedDate" Nullable="true" Precision="16" />
+    <Property Type="String" Name="FirstReceivedRemark" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="FirstReceivingOrderID" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="DestructionDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CreatedTime" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="DSDispatchingOrderDate" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <ComplexType Name="SP_DSStockOnHandReport_Export_GSK_Result">
+    <Property Type="Int32" Name="DSROCartonID" Nullable="false" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="DSCartonCategoryID" Nullable="false" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="FirstReceivedDate" Nullable="true" Precision="16" />
+    <Property Type="String" Name="FirstReceivedRemark" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="FirstReceivingOrderID" Nullable="true" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="DestructionDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Global_Code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Duration" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Dept_code" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Started_year" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Month" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Sequence_number" Nullable="true" MaxLength="10" />
+  </ComplexType>
+  <ComplexType Name="SP_DSStockOnHandReportByCartons_Result">
+    <Property Type="Int32" Name="DSROCartonID" Nullable="false" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="DSCartonCategoryID" Nullable="false" />
+    <Property Type="String" Name="CategoryDescription" Nullable="false" MaxLength="100" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="DateTime" Name="FirstReceivedDate" Nullable="true" Precision="16" />
+    <Property Type="String" Name="FirstReceivedRemark" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="FirstReceivingOrderID" Nullable="true" />
+    <Property Type="Boolean" Name="CheckSelectDispatched" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SP_DSStockOnHandReportByDate_Result">
+    <Property Type="Int32" Name="DSROCartonID" Nullable="false" />
+    <Property Type="Int32" Name="DSReceivingOrderID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="Int32" Name="DSROID" Nullable="false" />
+    <Property Type="Boolean" Name="Dispatched" Nullable="true" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="DateTime" Name="DSReceivingOrderDate" Nullable="false" Precision="16" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="LocationID" Nullable="false" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="80" />
+    <Property Type="Int32" Name="DSCartonCategoryID" Nullable="false" />
+    <Property Type="String" Name="CategoryDescription" Nullable="false" MaxLength="100" />
+    <Property Type="Single" Name="CartonSize" Nullable="false" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="String" Name="FirstReceivedDate" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="FirstReceivedRemark" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="FirstReceivingOrderID" Nullable="false" MaxLength="1" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="DestructionDate" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SP_DSStockTakeByRequest_Result">
+    <Property Type="Int32" Name="CartonID" Nullable="false" />
+    <Property Type="String" Name="CartonDescription" Nullable="true" MaxLength="250" />
+    <Property Type="String" Name="LocationNumber" Nullable="false" MaxLength="12" />
+    <Property Type="Int16" Name="Used" Nullable="false" />
+    <Property Type="String" Name="DSReceivingOrderNumber" Nullable="true" MaxLength="14" />
+    <Property Type="String" Name="RoomID" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="DSSpecialRequirement" Nullable="false" MaxLength="250" />
+    <Property Type="Int32" Name="CartonNewID" Nullable="false" />
+    <Property Type="String" Name="CrowRefID" Nullable="true" MaxLength="150" />
+    <Property Type="Int32" Name="DSCustomerID" Nullable="false" />
+    <Property Type="String" Name="DSCustomerNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="DSCustomerName" Nullable="true" MaxLength="80" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="SP_UserFullName_Result">
+    <Property Type="String" Name="LoginName" Nullable="false" MaxLength="20" />
+    <Property Type="Int32" Name="EmployeeID" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FullName" Nullable="true" MaxLength="101" />
+  </ComplexType>
+  <ComplexType Name="STGate_VehicleBound_Result">
+    <Property Type="Int32" Name="VehicleInOutID" Nullable="false" />
+    <Property Type="String" Name="VehicleNumber" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ProductQty" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="TimeIn" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="TimeOut" Nullable="true" Precision="16" />
+    <Property Type="Byte" Name="Gate" Nullable="true" />
+    <Property Type="String" Name="UserOut" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="UserCheckOut" Nullable="true" />
+    <Property Type="String" Name="VehicleType" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="OrderNumber" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="StartTime" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="EndTime" Nullable="true" Precision="16" />
+    <Property Type="String" Name="R" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="STGate_VehicleInOutRemain_Result">
+    <Property Type="Int32" Name="VehicleInOutID" Nullable="false" />
+    <Property Type="String" Name="VehicleNumber" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ProductQty" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="TimeIn" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="TimeOut" Nullable="true" Precision="16" />
+    <Property Type="Byte" Name="Gate" Nullable="true" />
+    <Property Type="String" Name="UserOut" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="UserCheckOut" Nullable="true" />
+    <Property Type="String" Name="VehicleType" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="OrderNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="R" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="STGate_VehicleInOutToday_Result">
+    <Property Type="Int32" Name="VehicleInOutID" Nullable="false" />
+    <Property Type="String" Name="VehicleNumber" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ProductQty" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="TimeIn" Nullable="true" Precision="16" />
+    <Property Type="DateTime" Name="TimeOut" Nullable="true" Precision="16" />
+    <Property Type="Byte" Name="Gate" Nullable="true" />
+    <Property Type="String" Name="UserOut" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="UserCheckOut" Nullable="true" />
+    <Property Type="String" Name="VehicleType" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="OrderNumber" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Reason" Nullable="true" MaxLength="50" />
+  </ComplexType>
+</Schema>
